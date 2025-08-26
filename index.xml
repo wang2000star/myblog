@@ -2,26 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Example Site</title>
-        <link>https://www.wfz521.com/</link>
+        <link>http://localhost:10799/</link>
         <description>Recent content on Example Site</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:10799/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Mod Switch</title>
-        <link>https://www.wfz521.com/p/mod-switch/</link>
+        <link>http://localhost:10799/p/mod-switch/</link>
         <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/p/mod-switch/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" /&gt;&lt;h1 id=&#34;模数切换&#34;&gt;模数切换
+        <guid>http://localhost:10799/p/mod-switch/</guid>
+        <description>&lt;img src="http://localhost:10799/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" /&gt;&lt;h1 id=&#34;模数切换&#34;&gt;模数切换
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;定义：&lt;/p&gt;
-&lt;p&gt;image = &amp;ldquo;scale.png&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:10799/p/mod-switch/scale.png&#34;
+	width=&#34;1392&#34;
+	height=&#34;86&#34;
+	srcset=&#34;http://localhost:10799/p/mod-switch/scale_hu_be4c70ae9e118a7f.png 480w, http://localhost:10799/p/mod-switch/scale_hu_28944b1dc9c52d3e.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;scale&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;1618&#34;
+		data-flex-basis=&#34;3884px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;实现：&lt;/p&gt;
-&lt;/li&gt;
+\[x^2+x-y=3\]&lt;/li&gt;
 &lt;/ul&gt;
 $$
 x&#39;=x+\lceil\frac{(p-q)x}{qr}\rfloor r
@@ -36,12 +49,12 @@ $$
 |x&#39;-x-\frac{(p-q)x}{q}|\leq r/2\\
 |x&#39;-\frac{px}{q}|\leq r/2
 $$&lt;p&gt;显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位=0.5时成立。&lt;/p&gt;
-&lt;p&gt;当然实际使用时，这里$|x&amp;rsquo;-\frac{px}{q}|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。&lt;/p&gt;
+&lt;p&gt;当然实际使用时，这里$|x&#39;-\frac{px}{q}|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;BGV密文模数切换&lt;/p&gt;
 &lt;p&gt;设BGV明文模数为$P$，密文初始模数为$Q=Q_L$对于级别$L$，类似级别$t(0\leq t\leq L)$对应$Q_t$，$Q_t=\prod_{i=0}^{t} p_i$&lt;/p&gt;
-&lt;p&gt;给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t&amp;rsquo;}$上的密文$c&amp;rsquo;=(c_0&amp;rsquo;,c_1&amp;rsquo;)$，其中$t&amp;rsquo;&amp;lt;t$。&lt;/p&gt;
+&lt;p&gt;给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t&#39;}$上的密文$c&#39;=(c_0&#39;,c_1&#39;)$，其中$t&#39;&lt;t$。&lt;/p&gt;
 &lt;p&gt;注意：$c_i\in Z_{Q_t}[x]/X^N+1$&lt;/p&gt;
 &lt;p&gt;操作如下：
 &lt;/p&gt;
@@ -51,12 +64,12 @@ $$
   |c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t|&lt;P/2,i=0,1,...,N-1
   $$&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_Q]_P$，即$c_0+c_1\cdot s\equiv m+Pv;(\text{mod};Q)$，当$|m[j]+Pv[j]|&amp;lt;Q/2$时才能保证解密唯一正确性。&lt;/p&gt;
+&lt;p&gt;分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_Q]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(\text{mod}\;Q)$，当$|m[j]+Pv[j]|&lt;Q/2$时才能保证解密唯一正确性。&lt;/p&gt;
 &lt;p&gt;模数切换成立的充要条件是解密后对应的明文相同，因此可以对应两个充分条件
-（1）$c_0+c_1\cdot s \equiv c_0&amp;rsquo;+c_1&amp;rsquo;\cdot s;(\text{mod};P)$&lt;/p&gt;
-&lt;p&gt;（2）$|m[j]+Pv[j]|&amp;lt;Q_t/2,|m[j]+Pv&amp;rsquo;[j]|&amp;lt;Q_{t&amp;rsquo;}/2$&lt;/p&gt;
+（1）$c_0+c_1\cdot s \equiv c_0&#39;+c_1&#39;\cdot s\;(\text{mod}\;P)$&lt;/p&gt;
+&lt;p&gt;（2）$|m[j]+Pv[j]|&lt;Q_t/2,|m[j]+Pv&#39;[j]|&lt;Q_{t&#39;}/2$&lt;/p&gt;
 &lt;p&gt;不妨设$c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，&lt;/p&gt;
-&lt;p&gt;令$e&amp;rsquo;[j]=c_0&amp;rsquo;[j]+(c_1&amp;rsquo;\cdot s)[j]-k[j]Q_{t&amp;rsquo;}$，
+&lt;p&gt;令$e&#39;[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，
 &lt;/p&gt;
 $$
 e&#39;[j]=c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t+Q_{t&#39;}c_0[j]/Q_t+(c_1&#39;\cdot s)[j]+(Q_{t&#39;}c_1/Q_t\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]-k[j]Q_{t&#39;}\\
@@ -72,8 +85,8 @@ c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
 ((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]
 $$&lt;p&gt;
 多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$|(c\cdot s)[j]|\leq ||c||_2||s||_2$&lt;/p&gt;
-&lt;p&gt;所以$|((c_1&amp;rsquo;-Q_{t&amp;rsquo;}c_1/Q_t)\cdot s)[j]|\leq ||(c_1&amp;rsquo;-Q_{t&amp;rsquo;}c_1/Q_t)||_2||s||_2$&lt;/p&gt;
-&lt;p&gt;因为$|c_1&amp;rsquo;[j]-Q_{t&amp;rsquo;}c_1[j]/Q_t)|\leq P/2$，所以$||(c_1&amp;rsquo;-Q_{t&amp;rsquo;}c_1/Q_t)||_2\leq P\sqrt{N}/2$&lt;/p&gt;
+&lt;p&gt;所以$|((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]|\leq ||(c_1&#39;-Q_{t&#39;}c_1/Q_t)||_2||s||_2$&lt;/p&gt;
+&lt;p&gt;因为$|c_1&#39;[j]-Q_{t&#39;}c_1[j]/Q_t)|\leq P/2$，所以$||(c_1&#39;-Q_{t&#39;}c_1/Q_t)||_2\leq P\sqrt{N}/2$&lt;/p&gt;
 &lt;p&gt;因此
 &lt;/p&gt;
 $$
@@ -81,25 +94,25 @@ $$
 +P/2\\
 +P\sqrt{N}||s||_2/2
 $$&lt;p&gt;
-显然，如果控制$|m[j]+Pv[j]|$和$||s||&lt;em&gt;2$的上界不太大，是可以做到$|e&amp;rsquo;[j]|&amp;lt;Q&lt;/em&gt;{t&amp;rsquo;}/2$的。并且如果$e&amp;rsquo;[j]&amp;lt;Q_{t&amp;rsquo;}/2$，则必须要求$m[j]+Pv[j]&amp;lt;Q_t/2$。因此满足条件下，$e&amp;rsquo;[j]=m[j]+Pv&amp;rsquo;[j]$。&lt;/p&gt;
+显然，如果控制$|m[j]+Pv[j]|$和$||s||_2$的上界不太大，是可以做到$|e&#39;[j]|&lt;Q_{t&#39;}/2$的。并且如果$e&#39;[j]&lt;Q_{t&#39;}/2$，则必须要求$m[j]+Pv[j]&lt;Q_t/2$。因此满足条件下，$e&#39;[j]=m[j]+Pv&#39;[j]$。&lt;/p&gt;
 &lt;p&gt;因此如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Archives</title>
-        <link>https://www.wfz521.com/archives/</link>
+        <link>http://localhost:10799/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/archives/</guid>
+        <guid>http://localhost:10799/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Markdown Syntax Guide</title>
-        <link>https://www.wfz521.com/p/markdown-syntax-guide/</link>
+        <link>http://localhost:10799/p/markdown-syntax-guide/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/p/markdown-syntax-guide/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
+        <guid>http://localhost:10799/p/markdown-syntax-guide/</guid>
+        <description>&lt;img src="http://localhost:10799/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
 &lt;h2 id=&#34;headings&#34;&gt;Headings
 &lt;/h2&gt;&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
 &lt;h1 id=&#34;h1&#34;&gt;H1
@@ -322,79 +335,12 @@ $$&lt;p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Rich Content</title>
-        <link>https://www.wfz521.com/p/rich-content/</link>
-        <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/rich-content/</guid>
-        <description>&lt;p&gt;Hugo ships with several &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;youtube-privacy-enhanced-shortcode&#34;&gt;YouTube Privacy Enhanced Shortcode
-&lt;/h2&gt;&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;iframe loading=&#34;lazy&#34; 
-            src=&#34;https://www.youtube.com/embed/ZJthWmvUzzc&#34; 
-            allowfullscreen 
-            title=&#34;YouTube Video&#34;
-    &gt;
-    &lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;br&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;twitter-simple-shortcode&#34;&gt;Twitter Simple Shortcode
-&lt;/h2&gt;
-&lt;br&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;vimeo-simple-shortcode&#34;&gt;Vimeo Simple Shortcode
-&lt;/h2&gt;
-&lt;h2 id=&#34;bilibilibi-shortcode&#34;&gt;bilibilibi Shortcode
-&lt;/h2&gt;
-
-
-
-
-
-    
-
-
-&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;aid=498363026&#34;
-            scrolling=&#34;no&#34;
-            frameborder=&#34;no&#34;
-            framespacing=&#34;0&#34;
-            allowfullscreen=&#34;true&#34;
-    &gt;
-    &lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;gist-shortcode&#34;&gt;Gist Shortcode
-&lt;/h2&gt;&lt;script src=&#34;https://gist.github.com/spf13/7896402.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;gitlab-snippets-shortcode&#34;&gt;Gitlab Snippets Shortcode
-&lt;/h2&gt;&lt;script
-    type=&#34;application/javascript&#34;
-    src=&#34;https://gitlab.com/-/snippets/2349278.js&#34;
-&gt;&lt;/script&gt;
-&lt;h2 id=&#34;quote-shortcode&#34;&gt;Quote Shortcode
-&lt;/h2&gt;&lt;p&gt;Stack adds a &lt;code&gt;quote&lt;/code&gt; shortcode.  For example:&lt;/p&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;span&gt;A famous person, &lt;/span&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Book&#34;&gt;&lt;cite&gt;The book they wrote&lt;/cite&gt;&lt;/a&gt;&lt;/span&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Book&#34;&gt;&lt;cite&gt;Anonymous book&lt;/cite&gt;&lt;/a&gt;&lt;/span&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;cite&gt;Some book&lt;/cite&gt;&lt;/span&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;span&gt;Somebody&lt;/span&gt;&lt;cite&gt;&lt;/cite&gt;&lt;/span&gt;&lt;/blockquote&gt;</description>
-        </item>
-        <item>
         <title>Placeholder Text</title>
-        <link>https://www.wfz521.com/p/placeholder-text/</link>
+        <link>http://localhost:10799/p/placeholder-text/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/p/placeholder-text/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
+        <guid>http://localhost:10799/p/placeholder-text/</guid>
+        <description>&lt;img src="http://localhost:10799/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
 &lt;p&gt;Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Exierant elisi ambit vivere dedere&lt;/li&gt;
@@ -421,10 +367,10 @@ $$&lt;p&gt;
         </item>
         <item>
         <title>Math Typesetting</title>
-        <link>https://www.wfz521.com/p/math-typesetting/</link>
+        <link>http://localhost:10799/p/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/p/math-typesetting/</guid>
+        <guid>http://localhost:10799/p/math-typesetting/</guid>
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
 &lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
@@ -463,11 +409,11 @@ $$</description>
         </item>
         <item>
         <title>Emoji Support</title>
-        <link>https://www.wfz521.com/p/emoji-support/</link>
+        <link>http://localhost:10799/p/emoji-support/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/p/emoji-support/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
+        <guid>http://localhost:10799/p/emoji-support/</guid>
+        <description>&lt;img src="http://localhost:10799/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
 &lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/functions/emojify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
@@ -494,10 +440,10 @@ $$</description>
         </item>
         <item>
         <title>About</title>
-        <link>https://www.wfz521.com/about/</link>
+        <link>http://localhost:10799/about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/about/</guid>
+        <guid>http://localhost:10799/about/</guid>
         <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
 &lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
@@ -522,10 +468,10 @@ $$</description>
         </item>
         <item>
         <title>Links</title>
-        <link>https://www.wfz521.com/links/</link>
+        <link>http://localhost:10799/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/links/</guid>
+        <guid>http://localhost:10799/links/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -557,10 +503,10 @@ $$</description>
         </item>
         <item>
         <title>Search</title>
-        <link>https://www.wfz521.com/search/</link>
+        <link>http://localhost:10799/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://www.wfz521.com/search/</guid>
+        <guid>http://localhost:10799/search/</guid>
         <description></description>
         </item>
         
