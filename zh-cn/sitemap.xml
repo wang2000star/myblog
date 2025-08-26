@@ -2,118 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:2874/zh-cn/</loc>
+    <loc>https://www.wfz521.com/zh-cn/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:2874/"
+                href="https://www.wfz521.com/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:2874/ar/"
+                href="https://www.wfz521.com/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:2874/zh-cn/"
+                href="https://www.wfz521.com/zh-cn/"
                 />
   </url><url>
-    <loc>http://localhost:2874/zh-cn/categories/</loc>
+    <loc>https://www.wfz521.com/zh-cn/categories/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:2874/categories/"
+                href="https://www.wfz521.com/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:2874/ar/categories/"
+                href="https://www.wfz521.com/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:2874/zh-cn/categories/"
+                href="https://www.wfz521.com/zh-cn/categories/"
                 />
   </url><url>
-    <loc>http://localhost:2874/zh-cn/p/test-chinese/</loc>
+    <loc>https://www.wfz521.com/zh-cn/p/test-chinese/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:2874/zh-cn/post/</loc>
+    <loc>https://www.wfz521.com/zh-cn/post/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:2874/post/"
+                href="https://www.wfz521.com/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:2874/ar/post/"
+                href="https://www.wfz521.com/ar/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:2874/zh-cn/post/"
+                href="https://www.wfz521.com/zh-cn/post/"
                 />
   </url><url>
-    <loc>http://localhost:2874/zh-cn/categories/test/</loc>
+    <loc>https://www.wfz521.com/zh-cn/categories/test/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:2874/categories/test/"
+                href="https://www.wfz521.com/categories/test/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:2874/zh-cn/categories/test/"
+                href="https://www.wfz521.com/zh-cn/categories/test/"
                 />
   </url><url>
-    <loc>http://localhost:2874/zh-cn/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://www.wfz521.com/zh-cn/categories/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:2874/zh-cn/page/</loc>
+    <loc>https://www.wfz521.com/zh-cn/page/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:2874/page/"
+                href="https://www.wfz521.com/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:2874/zh-cn/page/"
+                href="https://www.wfz521.com/zh-cn/page/"
                 />
   </url><url>
-    <loc>http://localhost:2874/zh-cn/tags/</loc>
+    <loc>https://www.wfz521.com/zh-cn/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:2874/tags/"
+                href="https://www.wfz521.com/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="http://localhost:2874/ar/tags/"
+                href="https://www.wfz521.com/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:2874/zh-cn/tags/"
+                href="https://www.wfz521.com/zh-cn/tags/"
                 />
   </url><url>
-    <loc>http://localhost:2874/zh-cn/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://www.wfz521.com/zh-cn/%E5%85%B3%E4%BA%8E/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:2874/about/"
+                href="https://www.wfz521.com/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:2874/zh-cn/%E5%85%B3%E4%BA%8E/"
+                href="https://www.wfz521.com/zh-cn/%E5%85%B3%E4%BA%8E/"
                 />
   </url>
 </urlset>
