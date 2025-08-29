@@ -148,11 +148,25 @@ c_0&#39; &amp;= \text{Scale}(c_0) \\
 c_1&#39; &amp;= \text{Scale}(c_1) \\
 |c_0&#39;[j] - Q_{t&#39;}c_0[j]/Q_t| &amp;\lt P/2, \quad (j=0,1,\dots,N-1)
 \end{aligned}
-$$&lt;p&gt;分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_Q]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(mod\;Q)$，当 $|m[j]+Pv[j]|\lt Q/2$ 时才能保证解密唯一正确性。&lt;/p&gt;
-&lt;p&gt;模数切换成立的充要条件是解密后对应的明文相同，因此可以对应两个充分条件
-（1）$c_0+c_1\cdot s \equiv c_0&#39;+c_1&#39;\cdot s\;(\text{mod}\;P)$&lt;/p&gt;
-&lt;p&gt;（2）$|m[j]+Pv[j]|\lt Q_t/2,|m[j]+Pv&#39;[j]|\lt Q_{t&#39;}/2$&lt;/p&gt;
-&lt;p&gt;不妨设$c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，&lt;/p&gt;
+$$&lt;p&gt;分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_{Q_t}]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(mod\;Q_t)$，当 $|m[j]+Pv[j]|\lt Q/2$ 时才能保证解密唯一正确性。&lt;/p&gt;
+&lt;p&gt;模数切换成立的充要条件是解密后对应的明文相同，因此可以对应三个充分条件
+（1）$c_0[j]+(c_1\cdot s)[j] \equiv c_0&#39;[j]+(c_1&#39;\cdot s)[j]\;(\text{mod}\;P)$&lt;/p&gt;
+&lt;p&gt;（2）$|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)|\lt Q_t/2,|c_0&#39;[j]+(c_1&#39;\cdot s)[j](\text{mod}\; Q_t&#39;)|\lt Q_{t&#39;}/2$&lt;/p&gt;
+&lt;p&gt;（3）$Q_t\equiv Q_{t&#39;}\equiv 1(\text{mod}\; P)$&lt;/p&gt;
+&lt;p&gt;证明：
+&lt;/p&gt;
+$$
+c_0[j]+(c_1\cdot s)[j]=M+k[j]Q_t\\
+c_0&#39;[j]+(c_1&#39;\cdot s)[j]=M+k[j]Q_t+rP\\
+c_0&#39;[j]+(c_1&#39;\cdot s)[j]=M&#39;+k&#39;Q_{t&#39;}\\
+M+k[j]Q_t+rP=M&#39;+k&#39;Q_{t&#39;}\\
+M+k[j]Q_t+rP=M&#39;+k&#39;Q_{t&#39;}(\text{mod}\;P)\\
+M+k[j]\equiv M&#39;+k&#39;(\text{mod}\;P)\\
+M\equiv M&#39; = m(\text{mod}\;P)
+$$&lt;p&gt;
+证毕。&lt;/p&gt;
+&lt;p&gt;在条件（1）和条件（3）满足的前提下，我们只需要验证条件（2）即可。&lt;/p&gt;
+&lt;p&gt;不妨设$c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，即$m[j]+Pv[j]=c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)$&lt;/p&gt;
 &lt;p&gt;令$e&#39;[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，
 &lt;/p&gt;
 $$
@@ -178,7 +192,7 @@ $$
 +P/2\\
 +P\sqrt{N}||s||_2/2
 $$&lt;p&gt;
-显然，如果控制$|m[j]+Pv[j]|$和$||s||_2$的上界不太大，是可以做到$|e&#39;[j]|\lt Q_{t&#39;}/2$的。并且如果$e&#39;[j]\lt Q_{t&#39;}/2$，则必须要求$m[j]+Pv[j]\lt Q_t/2$。因此满足条件下，$e&#39;[j]=m[j]+Pv&#39;[j]$。&lt;/p&gt;
+显然，如果控制$|m[j]+Pv[j]|$和$||s||_2$的上界不太大，是可以做到$|e&#39;[j]|\lt Q_{t&#39;}/2$的，此时$e&#39;[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j](\text{mod}\; Q_t&#39;)$。注意到，如果$|e&#39;[j]|\lt Q_{t&#39;}/2$，则必须要求$|m[j]+Pv[j]|=|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t|\lt Q_t/2$。因此条件（2）是可以在一定情况下满足的。&lt;/p&gt;
 &lt;p&gt;因此如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。&lt;/p&gt;
 &lt;p&gt;还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。&lt;/p&gt;
 </description>

@@ -411,11 +411,25 @@ c_0' &= \text{Scale}(c_0) \\
 c_1' &= \text{Scale}(c_1) \\
 |c_0'[j] - Q_{t'}c_0[j]/Q_t| &\lt P/2, \quad (j=0,1,\dots,N-1)
 \end{aligned}
-$$<p>分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_Q]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(mod\;Q)$，当 $|m[j]+Pv[j]|\lt Q/2$ 时才能保证解密唯一正确性。</p>
-<p>模数切换成立的充要条件是解密后对应的明文相同，因此可以对应两个充分条件
-（1）$c_0+c_1\cdot s \equiv c_0'+c_1'\cdot s\;(\text{mod}\;P)$</p>
-<p>（2）$|m[j]+Pv[j]|\lt Q_t/2,|m[j]+Pv'[j]|\lt Q_{t'}/2$</p>
-<p>不妨设$c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，</p>
+$$<p>分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_{Q_t}]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(mod\;Q_t)$，当 $|m[j]+Pv[j]|\lt Q/2$ 时才能保证解密唯一正确性。</p>
+<p>模数切换成立的充要条件是解密后对应的明文相同，因此可以对应三个充分条件
+（1）$c_0[j]+(c_1\cdot s)[j] \equiv c_0'[j]+(c_1'\cdot s)[j]\;(\text{mod}\;P)$</p>
+<p>（2）$|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)|\lt Q_t/2,|c_0'[j]+(c_1'\cdot s)[j](\text{mod}\; Q_t')|\lt Q_{t'}/2$</p>
+<p>（3）$Q_t\equiv Q_{t'}\equiv 1(\text{mod}\; P)$</p>
+<p>证明：
+</p>
+$$
+c_0[j]+(c_1\cdot s)[j]=M+k[j]Q_t\\
+c_0'[j]+(c_1'\cdot s)[j]=M+k[j]Q_t+rP\\
+c_0'[j]+(c_1'\cdot s)[j]=M'+k'Q_{t'}\\
+M+k[j]Q_t+rP=M'+k'Q_{t'}\\
+M+k[j]Q_t+rP=M'+k'Q_{t'}(\text{mod}\;P)\\
+M+k[j]\equiv M'+k'(\text{mod}\;P)\\
+M\equiv M' = m(\text{mod}\;P)
+$$<p>
+证毕。</p>
+<p>在条件（1）和条件（3）满足的前提下，我们只需要验证条件（2）即可。</p>
+<p>不妨设$c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，即$m[j]+Pv[j]=c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)$</p>
 <p>令$e'[j]=c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}$，
 </p>
 $$
@@ -441,7 +455,7 @@ $$
 +P/2\\
 +P\sqrt{N}||s||_2/2
 $$<p>
-显然，如果控制$|m[j]+Pv[j]|$和$||s||_2$的上界不太大，是可以做到$|e'[j]|\lt Q_{t'}/2$的。并且如果$e'[j]\lt Q_{t'}/2$，则必须要求$m[j]+Pv[j]\lt Q_t/2$。因此满足条件下，$e'[j]=m[j]+Pv'[j]$。</p>
+显然，如果控制$|m[j]+Pv[j]|$和$||s||_2$的上界不太大，是可以做到$|e'[j]|\lt Q_{t'}/2$的，此时$e'[j]=c_0'[j]+(c_1'\cdot s)[j](\text{mod}\; Q_t')$。注意到，如果$|e'[j]|\lt Q_{t'}/2$，则必须要求$|m[j]+Pv[j]|=|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t|\lt Q_t/2$。因此条件（2）是可以在一定情况下满足的。</p>
 <p>因此如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</p>
 <p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</p>
 
