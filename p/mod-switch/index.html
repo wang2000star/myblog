@@ -10,7 +10,7 @@
 <meta property='og:description' content="Lorem Ipsum Dolor Si Amet">
 <meta property='og:url' content='https://www.wfz521.com/p/mod-switch/'>
 <meta property='og:site_name' content='wfz&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='markdown' /><meta property='article:tag' content='text' /><meta property='article:tag' content='tag with whitespaces' /><meta property='article:published_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/mod-switch/pkq.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='BGV' /><meta property='article:tag' content='Scale' /><meta property='article:published_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/mod-switch/pkq.png' />
 <meta name="twitter:title" content="Mod Switch">
 <meta name="twitter:description" content="Lorem Ipsum Dolor Si Amet"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://www.wfz521.com/p/mod-switch/pkq.png' />
@@ -289,12 +289,12 @@
     
     <header class="article-category">
         
-            <a href="/categories/test/" style="background-color: #2a9d8f; color: #fff;">
-                Test
+            <a href="/categories/cryptography/" >
+                Cryptography
             </a>
         
-            <a href="/categories/test-with-whitespaces/" >
-                Test With Whitespaces
+            <a href="/categories/fhe/" >
+                FHE
             </a>
         
     </header>
@@ -389,12 +389,14 @@ $$<p>
 <li>分析</li>
 </ul>
 $$
-|\lceil\frac{(p-q)x}{qr}\rfloor-\frac{(p-q)x}{qr}|\leq 1/2\\
-|\lceil\frac{(p-q)x}{qr}\rfloor r-\frac{(p-q)x}{q}|\leq r/2\\
-|x'-x-\frac{(p-q)x}{q}|\leq r/2\\
-|x'-\frac{px}{q}|\leq r/2
-$$<p>显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位=0.5时成立。</p>
-<p>当然实际使用时，这里$|x'-\frac{px}{q}|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。</p>
+\begin{aligned}
+\left|\lceil\frac{(p-q)x}{qr}\rfloor-\frac{(p-q)x}{qr}\right|\leq 1/2\\
+\left|\lceil\frac{(p-q)x}{qr}\rfloor r-\frac{(p-q)x}{q}\right|\leq r/2\\
+\left|x'-x-\frac{(p-q)x}{q}\right|\leq r/2\\
+\left|x'-\frac{px}{q}\right|\leq r/2
+\end{aligned}
+$$<p>显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位$=0.5$时成立。</p>
+<p>当然实际使用时，这里$\left|x'-\frac{px}{q}\right|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。</p>
 <ul>
 <li>
 <p>BGV密文模数切换</p>
@@ -409,53 +411,57 @@ $$
 c' &= \text{Scale}(c) \\
 c_0' &= \text{Scale}(c_0) \\
 c_1' &= \text{Scale}(c_1) \\
-|c_0'[j] - Q_{t'}c_0[j]/Q_t| &\lt P/2, \quad (j=0,1,\dots,N-1)
+\left|c_0'[j] - Q_{t'}c_0[j]/Q_t\right| &\lt P/2, \quad (j=0,1,\dots,N-1)
 \end{aligned}
 $$<p>分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_{Q_t}]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(mod\;Q_t)$，当 $|m[j]+Pv[j]|\lt Q/2$ 时才能保证解密唯一正确性。</p>
-<p>模数切换成立的充要条件是解密后对应的明文相同，因此可以对应三个充分条件
-（1）$c_0[j]+(c_1\cdot s)[j] \equiv c_0'[j]+(c_1'\cdot s)[j]\;(\text{mod}\;P)$</p>
-<p>（2）$|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)|\lt Q_t/2,|c_0'[j]+(c_1'\cdot s)[j](\text{mod}\; Q_t')|\lt Q_{t'}/2$</p>
-<p>（3）$Q_t\equiv Q_{t'}\equiv 1(\text{mod}\; P)$</p>
+<p>模数切换成立的充要条件是解密后对应的明文相同，因此可以对应三个充分条件：</p>
+<ul>
+<li>(1) $c_0[j]+(c_1\cdot s)[j] \equiv c_0'[j]+(c_1'\cdot s)[j]\;(\text{mod}\;P)$</li>
+<li>(2) $\left|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)\right|\lt Q_t/2,\;\left|c_0'[j]+(c_1'\cdot s)[j](\text{mod}\; Q_t')\right|\lt Q_{t'}/2$</li>
+<li>(3) $Q_t\equiv Q_{t'}\equiv 1(\text{mod}\; P)$</li>
+</ul>
 <p>证明：
 </p>
 $$
-c_0[j]+(c_1\cdot s)[j]=M+k[j]Q_t\\
-c_0'[j]+(c_1'\cdot s)[j]=M+k[j]Q_t+rP\\
-c_0'[j]+(c_1'\cdot s)[j]=M'+k'Q_{t'}\\
-M+k[j]Q_t+rP=M'+k'Q_{t'}\\
-M+k[j]Q_t+rP=M'+k'Q_{t'}(\text{mod}\;P)\\
-M+k[j]\equiv M'+k'(\text{mod}\;P)\\
-M\equiv M' = m(\text{mod}\;P)
+\begin{aligned}
+c_0[j]+(c_1\cdot s)[j]&=M+k[j]Q_t\\
+c_0'[j]+(c_1'\cdot s)[j]&=M+k[j]Q_t+rP\\
+c_0'[j]+(c_1'\cdot s)[j]&=M'+k'Q_{t'}\\
+M+k[j]Q_t+rP&=M'+k'Q_{t'}\\
+M+k[j]Q_t+rP&=M'+k'Q_{t'}(\text{mod}\;P)\\
+M+k[j]&\equiv M'+k'(\text{mod}\;P)\\
+M&\equiv M'(\text{mod}\;P)
+\end{aligned}
 $$<p>
 证毕。</p>
-<p>在条件（1）和条件（3）满足的前提下，我们只需要验证条件（2）即可。</p>
-<p>不妨设$c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，即$m[j]+Pv[j]=c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)$</p>
-<p>令$e'[j]=c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}$，
+<p>在条件 (1) 和条件 (3) 满足的前提下，我们只需要验证条件 (2) 即可。</p>
+<p>不妨设 $c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，即 $m[j]+Pv[j]=c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)$</p>
+<p>令 $e'[j]=c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}$，
 </p>
 $$
-e'[j]=c_0'[j]-Q_{t'}c_0[j]/Q_t+Q_{t'}c_0[j]/Q_t+(c_1'\cdot s)[j]+(Q_{t'}c_1/Q_t\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]-k[j]Q_{t'}\\
-=(-k[j]Q_{t'}+Q_{t'}c_0[j]/Q_t+(Q_{t'}c_1/Q_t\cdot s)[j])\\
-+\\
-c_0'[j]-Q_{t'}c_0[j]/Q_t\\
-+\\
-(c_1'\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]\\=
-Q_{t'}(m[j]+Pv[j])/Q_t\\
-+\\
-c_0'[j]-Q_{t'}c_0[j]/Q_t\\
-+\\
-((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]
+\begin{aligned}
+e'[j]&=c_0'[j]-Q_{t'}c_0[j]/Q_t+Q_{t'}c_0[j]/Q_t+(c_1'\cdot s)[j]+(Q_{t'}c_1/Q_t\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]-k[j]Q_{t'}\\
+&=(-k[j]Q_{t'}+Q_{t'}c_0[j]/Q_t+(Q_{t'}c_1/Q_t\cdot s)[j])\\
+&+c_0'[j]-Q_{t'}c_0[j]/Q_t\\
+&+(c_1'\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]\\
+&=Q_{t'}(m[j]+Pv[j])/Q_t\\
+&+c_0'[j]-Q_{t'}c_0[j]/Q_t\\
+&+((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]
+\end{aligned}
 $$<p>
-多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$|(c\cdot s)[j]|\leq ||c||_2||s||_2$</p>
-<p>所以$|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]|\leq ||(c_1'-Q_{t'}c_1/Q_t)||_2||s||_2$</p>
-<p>因为$|c_1'[j]-Q_{t'}c_1[j]/Q_t)|\leq P/2$，所以$||(c_1'-Q_{t'}c_1/Q_t)||_2\leq P\sqrt{N}/2$</p>
+多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$</p>
+<p>所以$\left|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1'-Q_{t'}c_1/Q_t)\Vert_2\Vert s\Vert_2$</p>
+<p>因为$\left|c_1'[j]-Q_{t'}c_1[j]/Q_t)\right|\leq P/2$，所以$||(c_1'-Q_{t'}c_1/Q_t)||_2\leq P\sqrt{N}/2$</p>
 <p>因此
 </p>
 $$
-|e'[j]|\leq \frac{Q_{t'}}{Q_t}|m[j]+Pv[j]|\\
-+P/2\\
-+P\sqrt{N}||s||_2/2
+\begin{aligned}
+\left|e'[j]\right|&\leq \frac{Q_{t'}}{Q_t}\left|m[j]+Pv[j]\right|\\
+&+P/2\\
+&+P\sqrt{N}\Vert s\Vert_2/2
+\end{aligned}
 $$<p>
-显然，如果控制$|m[j]+Pv[j]|$和$||s||_2$的上界不太大，是可以做到$|e'[j]|\lt Q_{t'}/2$的，此时$e'[j]=c_0'[j]+(c_1'\cdot s)[j](\text{mod}\; Q_t')$。注意到，如果$|e'[j]|\lt Q_{t'}/2$，则必须要求$|m[j]+Pv[j]|=|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t|\lt Q_t/2$。因此条件（2）是可以在一定情况下满足的。</p>
+显然，如果控制$\left|m[j]+Pv[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|e'[j]\right|\lt Q_{t'}/2$的，此时$e'[j]=c_0'[j]+(c_1'\cdot s)[j](\text{mod}\; Q_t')$。注意到，如果$\left|e'[j]\right|\lt Q_{t'}/2$，则必须要求$\left|m[j]+Pv[j]\right|=\left|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t\right|\lt Q_t/2$。因此条件 (2) 是可以在一定情况下满足的。</p>
 <p>因此如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</p>
 <p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</p>
 
@@ -466,11 +472,9 @@ $$<p>
     
     <section class="article-tags">
         
-            <a href="/tags/markdown/">Markdown</a>
+            <a href="/tags/bgv/">BGV</a>
         
-            <a href="/tags/text/">Text</a>
-        
-            <a href="/tags/tag-with-whitespaces/">Tag With Whitespaces</a>
+            <a href="/tags/scale/">Scale</a>
         
     </section>
 
@@ -522,87 +526,6 @@ $$<p>
     
 
     
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">Related content</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/fhe/">
-        
-        
-            <div class="article-image">
-                <img src="/p/fhe/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post FHE"
-                        
-                        data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">FHE</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/placeholder-text/">
-        
-        
-            <div class="article-image">
-                <img src="/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.8eae06664ddfb3e8dc6e000756cb703b_hu_cc847465c05fc251.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Placeholder Text"
-                        
-                        data-hash="md5-jq4GZk3fs&#43;jcbgAHVstwOw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Placeholder Text</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/emoji-support/">
-        
-        
-            <div class="article-image">
-                <img src="/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.60116b1ccfc8632e9a65f7d51df3efc2_hu_c1cfd6b8275d624a.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Emoji Support"
-                        
-                        data-hash="md5-YBFrHM/IYy6aZffVHfPvwg==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Emoji Support</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
 
      
     

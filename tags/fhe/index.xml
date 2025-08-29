@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>FHE on wfz&#39;s Blog</title>
+        <link>http://localhost:3284/tags/fhe/</link>
+        <description>Recent content in FHE on wfz&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:3284/tags/fhe/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Mod Switch</title>
+        <link>http://localhost:3284/p/mod-switch/</link>
+        <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:3284/p/mod-switch/</guid>
+        <description>&lt;img src="http://localhost:3284/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" /&gt;&lt;h1 id=&#34;模数切换&#34;&gt;模数切换
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;定义：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:3284/p/mod-switch/scale.png&#34;
+	width=&#34;1392&#34;
+	height=&#34;86&#34;
+	srcset=&#34;http://localhost:3284/p/mod-switch/scale_hu_be4c70ae9e118a7f.png 480w, http://localhost:3284/p/mod-switch/scale_hu_28944b1dc9c52d3e.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;scale&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;1618&#34;
+		data-flex-basis=&#34;3884px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;实现：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+$$
+x&#39;=x+\lceil\frac{(p-q)x}{qr}\rfloor r
+$$&lt;p&gt;
+如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时通常选择使得最后$[*]_p$之后绝对值较小的那一个。当然也可以随机选择一个，对于噪声上界估计无影响。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分析&lt;/li&gt;
+&lt;/ul&gt;
+$$
+\begin{aligned}
+\left|\lceil\frac{(p-q)x}{qr}\rfloor-\frac{(p-q)x}{qr}\right|\leq 1/2\\
+\left|\lceil\frac{(p-q)x}{qr}\rfloor r-\frac{(p-q)x}{q}\right|\leq r/2\\
+\left|x&#39;-x-\frac{(p-q)x}{q}\right|\leq r/2\\
+\left|x&#39;-\frac{px}{q}\right|\leq r/2
+\end{aligned}
+$$&lt;p&gt;显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位$=0.5$时成立。&lt;/p&gt;
+&lt;p&gt;当然实际使用时，这里$\left|x&#39;-\frac{px}{q}\right|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;BGV密文模数切换&lt;/p&gt;
+&lt;p&gt;设BGV明文模数为$P$，密文初始模数为$Q=Q_L$对于级别$L$，类似级别$t(0\leq t\leq L)$对应$Q_t$，$Q_t=\prod_{i=0}^{t} p_i$&lt;/p&gt;
+&lt;p&gt;给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t&#39;}$上的密文$c&#39;=(c_0&#39;,c_1&#39;)$，其中$t&#39;\lt t$。&lt;/p&gt;
+&lt;p&gt;注意：$c_i\in Z_{Q_t}[x]/X^N+1$&lt;/p&gt;
+&lt;p&gt;操作如下：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+$$
+\begin{aligned}
+c&#39; &amp;= \text{Scale}(c) \\
+c_0&#39; &amp;= \text{Scale}(c_0) \\
+c_1&#39; &amp;= \text{Scale}(c_1) \\
+\left|c_0&#39;[j] - Q_{t&#39;}c_0[j]/Q_t\right| &amp;\lt P/2, \quad (j=0,1,\dots,N-1)
+\end{aligned}
+$$&lt;p&gt;分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_{Q_t}]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(mod\;Q_t)$，当 $|m[j]+Pv[j]|\lt Q/2$ 时才能保证解密唯一正确性。&lt;/p&gt;
+&lt;p&gt;模数切换成立的充要条件是解密后对应的明文相同，因此可以对应三个充分条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) $c_0[j]+(c_1\cdot s)[j] \equiv c_0&#39;[j]+(c_1&#39;\cdot s)[j]\;(\text{mod}\;P)$&lt;/li&gt;
+&lt;li&gt;(2) $\left|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)\right|\lt Q_t/2,\;\left|c_0&#39;[j]+(c_1&#39;\cdot s)[j](\text{mod}\; Q_t&#39;)\right|\lt Q_{t&#39;}/2$&lt;/li&gt;
+&lt;li&gt;(3) $Q_t\equiv Q_{t&#39;}\equiv 1(\text{mod}\; P)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;证明：
+&lt;/p&gt;
+$$
+\begin{aligned}
+c_0[j]+(c_1\cdot s)[j]&amp;=M+k[j]Q_t\\
+c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M+k[j]Q_t+rP\\
+c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M&#39;+k&#39;Q_{t&#39;}\\
+M+k[j]Q_t+rP&amp;=M&#39;+k&#39;Q_{t&#39;}\\
+M+k[j]Q_t+rP&amp;=M&#39;+k&#39;Q_{t&#39;}(\text{mod}\;P)\\
+M+k[j]&amp;\equiv M&#39;+k&#39;(\text{mod}\;P)\\
+M&amp;\equiv M&#39;(\text{mod}\;P)
+\end{aligned}
+$$&lt;p&gt;
+证毕。&lt;/p&gt;
+&lt;p&gt;在条件 (1) 和条件 (3) 满足的前提下，我们只需要验证条件 (2) 即可。&lt;/p&gt;
+&lt;p&gt;不妨设 $c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，即 $m[j]+Pv[j]=c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)$&lt;/p&gt;
+&lt;p&gt;令 $e&#39;[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，
+&lt;/p&gt;
+$$
+\begin{aligned}
+e&#39;[j]&amp;=c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t+Q_{t&#39;}c_0[j]/Q_t+(c_1&#39;\cdot s)[j]+(Q_{t&#39;}c_1/Q_t\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]-k[j]Q_{t&#39;}\\
+&amp;=(-k[j]Q_{t&#39;}+Q_{t&#39;}c_0[j]/Q_t+(Q_{t&#39;}c_1/Q_t\cdot s)[j])\\
+&amp;+c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
+&amp;+(c_1&#39;\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]\\
+&amp;=Q_{t&#39;}(m[j]+Pv[j])/Q_t\\
+&amp;+c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
+&amp;+((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]
+\end{aligned}
+$$&lt;p&gt;
+多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$&lt;/p&gt;
+&lt;p&gt;所以$\left|((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1&#39;-Q_{t&#39;}c_1/Q_t)\Vert_2\Vert s\Vert_2$&lt;/p&gt;
+&lt;p&gt;因为$\left|c_1&#39;[j]-Q_{t&#39;}c_1[j]/Q_t)\right|\leq P/2$，所以$||(c_1&#39;-Q_{t&#39;}c_1/Q_t)||_2\leq P\sqrt{N}/2$&lt;/p&gt;
+&lt;p&gt;因此
+&lt;/p&gt;
+$$
+\begin{aligned}
+\left|e&#39;[j]\right|&amp;\leq \frac{Q_{t&#39;}}{Q_t}\left|m[j]+Pv[j]\right|\\
+&amp;+P/2\\
+&amp;+P\sqrt{N}\Vert s\Vert_2/2
+\end{aligned}
+$$&lt;p&gt;
+显然，如果控制$\left|m[j]+Pv[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|e&#39;[j]\right|\lt Q_{t&#39;}/2$的，此时$e&#39;[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j](\text{mod}\; Q_t&#39;)$。注意到，如果$\left|e&#39;[j]\right|\lt Q_{t&#39;}/2$，则必须要求$\left|m[j]+Pv[j]\right|=\left|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t\right|\lt Q_t/2$。因此条件 (2) 是可以在一定情况下满足的。&lt;/p&gt;
+&lt;p&gt;因此如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。&lt;/p&gt;
+&lt;p&gt;还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
