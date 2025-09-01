@@ -10,7 +10,7 @@
 <meta property='og:description' content="Lorem Ipsum Dolor Si Amet">
 <meta property='og:url' content='https://www.wfz521.com/p/mod-switch/'>
 <meta property='og:site_name' content='wfz&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='BGV' /><meta property='article:tag' content='Scale' /><meta property='article:published_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/mod-switch/pkq.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='BGV' /><meta property='article:tag' content='Scale' /><meta property='article:published_time' content='2025-09-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-09-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/mod-switch/pkq.png' />
 <meta name="twitter:title" content="Mod Switch">
 <meta name="twitter:description" content="Lorem Ipsum Dolor Si Amet"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://www.wfz521.com/p/mod-switch/pkq.png' />
@@ -328,7 +328,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Aug 27, 2025</time>
+                <time class="article-time--published">Sep 01, 2025</time>
             </div>
         
 
@@ -475,10 +475,10 @@ $$<p>
 $$
 \begin{aligned}
 c_0[j]+(c_1\cdot s)[j]&=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
-c_0'[j]+(c_1'\cdot s)[j]&=M+k[j]Q_t+rP\\
+c_0'[j]+(c_1'\cdot s)[j]&=M+k[j]Q_t+r[j]P\\
 c_0'[j]+(c_1'\cdot s)[j]&=M'+k'[j]Q_{t'},\left|M'\right|\lt Q_{t'}/2\\
-M+k[j]Q_t+rP&=M'+k'[j]Q_{t'}\\
-M+k[j]Q_t+rP&=M'+k'[j]Q_{t'}(\text{mod}\;P)\\
+M+k[j]Q_t+r[j]P&=M'+k'[j]Q_{t'}\\
+M+k[j]Q_t+r[j]P&=M'+k'[j]Q_{t'}(\text{mod}\;P)\\
 M+k[j]&\equiv M'+k'[j](\text{mod}\;P)\\
 \end{aligned}
 $$<p>
@@ -500,7 +500,7 @@ $$<p>
 只需要说明此时的$\left|M^*[j]\right|\lt Q_{t'}/2 $即$M^*=M'$。</p>
 <p>多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$</p>
 <p>所以$\left|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1'-Q_{t'}c_1/Q_t)\Vert_2\Vert s\Vert_2$</p>
-<p>因为$\left|c_1'[j]-Q_{t'}c_1[j]/Q_t)\right|\leq P/2$，所以$||(c_1'-Q_{t'}c_1/Q_t)||_2\leq P\sqrt{N}/2$</p>
+<p>因为$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$，所以$||(c_0'-Q_{t'}c_0/Q_t)||_2\leq P\sqrt{N}/2$</p>
 <p>因此
 </p>
 $$
@@ -512,16 +512,74 @@ $$<p>
 <p>因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$即可，这就是条件(3)。</p>
 <p>证毕。</p>
 <ul>
+<li>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</li>
+<li>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</li>
+</ul>
+<h2 id="拓展">拓展
+</h2><p>我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。</p>
+<ul>
 <li>
-<p>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</p>
-</li>
+<p><strong>Scale_new</strong></p>
+<p>令$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，$Q_td_i\equiv b_i(\text{mod}\;P),\left|d_i\right|\leq P/2$，则
+</p>
+$$
+  c'_i=a_i+d_i
+  $$</li>
 <li>
-<p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</p>
-</li>
-<li>
-<p>补充：事实上，我们可以消除条件(2)的约束，只需要保留因子k带来的影响。</p>
+<p>新的公钥加解密操作如下：</p>
 </li>
 </ul>
+<p>（1）加密</p>
+<p>令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$
+</p>
+$$
+b=a\cdot s+P\cdot e_s\\
+c_0=b\cdot v+P\cdot e_0+\hat{m}\cdot Q_t\\
+c_1=-a\cdot v+P\cdot e_1
+$$<p>
+（2）解密
+</p>
+$$
+\hat{m}=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P\\
+m=\left[\hat{m}\cdot k_t^{-1}\right]_P
+$$<p>
+重写上述证明如下：
+</p>
+$$
+\begin{aligned}
+c_0[j]+(c_1\cdot s)[j]&=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
+c_0'[j]+(c_1'\cdot s)[j]&=M'+k'[j]Q_{t'},\left|M'\right|\lt Q_{t'}/2\\
+\end{aligned}
+$$<p>
+此时我们不需要证明$M\equiv M'(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M'\cdot Q_{t'}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t'}\equiv M'\cdot Q_t(\text{mod}\;P)$。也就是要验证
+</p>
+$$
+(c_0[j]+(c_1\cdot s)[j]-k[j]Q_t)Q_{t'}=(c_0'[j]+(c_1'\cdot s)[j]-k'[j]Q_{t'})Q_{t}(\text{mod}\;P)\\
+(c_0[j]+(c_1\cdot s)[j])Q_{t'}-k[j]Q_tQ_{t'}=(c_0'[j]+(c_1'\cdot s)[j])Q_{t}-k'[j]Q_tQ_{t'}(\text{mod}\;P)
+$$<p>
+由Scale_new操作可得，
+</p>
+$$
+Q_{t'}c_i=Q_ta_i+b_i\\
+Q_{t'}c_i\equiv Q_ta_i+Q_td_i(\text{mod}\;P)\\
+Q_{t'}c_i\equiv Q_t(a_i+d_i)(\text{mod}\;P)\\
+Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)\\
+$$<p>
+所以和前面的证明类似，我们只需要说明$k[j]=k'[j]$即可。</p>
+<p>类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。
+</p>
+$$
+c_0'[j]-Q_{t'}c_0[j]/Q_t)=a_0+d_0-Q_{t'}c_0/Q_t=d_0-b_0/Q_t
+$$<p>
+因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以
+</p>
+$$
+\left|d_0-b_0/Q_t\right|\leq \left|d_0\right|+\left|b_0/Q_t\right|\leq \frac{P+1}{2}
+$$<p>
+相当于原来的上界增加1/2，这个几乎可以看做没有增加了。</p>
+<p>条件(3)也可以更新为$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</p>
+<p>总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！</p>
+<p>当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。</p>
 
 </section>
 
