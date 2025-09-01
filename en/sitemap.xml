@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.wfz521.com/</loc>
-    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -15,8 +15,18 @@
                 href="https://www.wfz521.com/"
                 />
   </url><url>
-    <loc>https://www.wfz521.com/tags/bgv/</loc>
-    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
+    <loc>https://www.wfz521.com/post/</loc>
+    <lastmod>2025-09-02T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://www.wfz521.com/zh-cn/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.wfz521.com/post/"
+                />
   </url><url>
     <loc>https://www.wfz521.com/categories/</loc>
     <lastmod>2025-08-27T00:00:00+00:00</lastmod>
@@ -31,35 +41,10 @@
                 href="https://www.wfz521.com/categories/"
                 />
   </url><url>
-    <loc>https://www.wfz521.com/categories/cryptography/</loc>
-    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.wfz521.com/categories/fhe/</loc>
-    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.wfz521.com/p/fhe/</loc>
     <lastmod>2025-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.wfz521.com/tags/markdown/</loc>
-    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.wfz521.com/p/mod-switch/</loc>
-    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.wfz521.com/post/</loc>
-    <lastmod>2025-08-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://www.wfz521.com/zh-cn/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.wfz521.com/post/"
-                />
-  </url><url>
-    <loc>https://www.wfz521.com/tags/scale/</loc>
     <lastmod>2025-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.wfz521.com/tags/tag-with-whitespaces/</loc>
