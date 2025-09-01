@@ -98,6 +98,11 @@ $$&lt;ul&gt;
         <description>&lt;img src="https://www.wfz521.com/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" /&gt;&lt;h1 id=&#34;模数切换&#34;&gt;模数切换
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;符号说明&lt;/p&gt;
+&lt;p&gt;$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。&lt;/p&gt;
+&lt;p&gt;$\lceil x \rfloor$：表示四舍五入取整即round。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;定义：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.wfz521.com/p/mod-switch/scale.png&#34;
 	width=&#34;1392&#34;
@@ -121,7 +126,7 @@ $$&lt;ul&gt;
 $$
 x&#39;=x+\lceil\frac{(p-q)x}{qr}\rfloor r
 $$&lt;p&gt;
-如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时通常选择使得最后$[*]_p$之后绝对值较小的那一个。当然也可以随机选择一个，对于噪声上界估计无影响。&lt;/p&gt;
+如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;分析&lt;/li&gt;
 &lt;/ul&gt;
@@ -150,57 +155,110 @@ c_0&#39; &amp;= \text{Scale}(c_0) \\
 c_1&#39; &amp;= \text{Scale}(c_1) \\
 \left|c_0&#39;[j] - Q_{t&#39;}c_0[j]/Q_t\right| &amp;\lt P/2, \quad (j=0,1,\dots,N-1)
 \end{aligned}
-$$&lt;p&gt;分析：设私钥为$s$，则BGV解密操作为$m=[[c_0+c_1\cdot s]_{Q_t}]_P$，即$c_0+c_1\cdot s\equiv m+Pv\;(mod\;Q_t)$，当 $|m[j]+Pv[j]|\lt Q/2$ 时才能保证解密唯一正确性。&lt;/p&gt;
-&lt;p&gt;模数切换成立的充要条件是解密后对应的明文相同，因此可以对应三个充分条件：&lt;/p&gt;
+$$&lt;p&gt;分析：设私钥为$s$，则BGV公钥加密如下，
+&lt;/p&gt;
+$$
+b=a\cdot s+P\cdot e_s\\
+c_0=b\cdot v+P\cdot e_0+m\\
+c_1=-a\cdot v+P\cdot e_1
+$$&lt;p&gt;
+其中$a,b,s,e_s,v,e_0,e_1$都需要满足特定的离散概率分布才能保证安全性。&lt;/p&gt;
+&lt;p&gt;解密操作为$m=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P$，$c_0+c_1\cdot s=m+P(e_s\cdot v+e_0+s\cdot e_1)$&lt;/p&gt;
+&lt;p&gt;令$e=e_s\cdot v+e_0+s\cdot e_1$，则
+&lt;/p&gt;
+$$
+\begin{aligned}
+\left|m\right| &amp;\leq P/2\\
+\left(c_0,c_1\right)&amp;\rightarrow c_0+c_1\cdot s = m+Pe\\
+m&amp;=\left[m+Pe\right]_P=\left[c_0+c_1\cdot s\right]_P\\
+\left[\left[c_0\right]_{Q_t}+\left[c_1\cdot s\right]_{Q_t}\right]_{Q_t}&amp;=\left[c_0+c_1\cdot s\right]_{Q_t}=\left[m+Pe\right]_{Q_t}\\
+\end{aligned}
+$$&lt;p&gt;
+我们需要确保$\left[\left[m+Pe\right]_{Q_t}\right]_P=m$，因此需要满足$\left|m+Pe\right|=\left|c_0+c_1\cdot s\right|\lt Q_t/2$&lt;/p&gt;
+&lt;p&gt;事实上，这里的$e$可以根据加密参数设置一个上界比如$e_b&gt;0$，需要满足$\left|m+Pe\right|\leq\left|m\right|+P\left|e\right|\lt P/2 +P\left|e\right|\lt Q_t/2$&lt;/p&gt;
+&lt;p&gt;即$\left|e\right|\leq e_b\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p&gt;
+&lt;p&gt;又$\left|e\right|=\left|e_s\cdot v+e_0+s\cdot e_1\right|$，所以$\Vert e\Vert_{\infty}\leq \Vert e_s\Vert_2 \Vert v\Vert_2+\Vert e_0\Vert_{\infty}+\Vert s\Vert_2 \Vert e_1\Vert_2$&lt;/p&gt;
+&lt;p&gt;显然，$e_b$的大小应该和$s,e_s,v,e_0,e_1$的离散概率分布参数有关。&lt;/p&gt;
+&lt;p&gt;注意，上面的分析是在解密前没有对密文进行运算的前提下展开的，下面分析如果密文参与运算如何解密分析：&lt;/p&gt;
+&lt;p&gt;$(\left[c_0^*\right]_{Q_t},\left[c_1^*\right]_{Q_t})$，&lt;/p&gt;
+&lt;p&gt;以加法为例，不妨假设密文$(\left[c_0^0\right]_{Q_t},\left[c_1^0\right]_{Q_t},e_b^0),(\left[c_0^1\right]_{Q_t},\left[c_1^1\right]_{Q_t},e_b^1)$进行加法运算得到
+&lt;/p&gt;
+$$
+\left(c_0^*=\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t},c_1^*=\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right)\\
+\left(\left[c_0^*\right]_{Q_t}=\left[\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}\right]_{Q_t},\left[c_1^*\right]_{Q_t}=\left[\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right]_{Q_t}\right)\\
+c_0^0+c_1^0\cdot s = m^0+Pe^0,\left|e^0\right|\leq e_b^0\\
+c_0^1+c_1^1\cdot s = m^1+Pe^1,\left|e^1\right|\leq e_b^1\\
+c_0^*+c_1^*\cdot s = \left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}+\left[c_1^0\right]_{Q_t}\cdot s+\left[c_1^1\right]_{Q_t}\cdot s\\
+\left[c_0^*\right]_{Q_t}+\left[c_1^*\right]_{Q_t}\cdot s = \left[c_0^0+c_0^1\right]_{Q_t}+\left[c_1^0+c_1^1\right]_{Q_t}\cdot s\\
+\left[\left[c_0^*\right]_{Q_t}+\left[c_1^*\right]_{Q_t}\cdot s\right]_{Q_t}=
+\left[\left[c_0^0+c_0^1\right]_{Q_t}+\left[c_1^0+c_1^1\right]_{Q_t}\cdot s\right]_{Q_t}
+=\left[c_0^0+c_0^1+(c_1^0+c_1^1)\cdot s\right]_{Q_t}=\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}
+$$&lt;p&gt;
+我们显然期待$\left[\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}\right]_P=\left[m^0+m^1\right]_P$&lt;/p&gt;
+&lt;p&gt;由前面的分析，可知，需要保证$\left|e^0+e^1\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$，只需要$e_b^0+e_b^1\lt \frac{Q_t}{2P}-\frac{1}{2}$即可。&lt;/p&gt;
+&lt;p&gt;这也是为什么经常说加法的噪声是累加的。&lt;/p&gt;
+&lt;p&gt;推广：&lt;/p&gt;
+&lt;p&gt;$\left[\left[f\left(m^0,m^1,\dots,m^k\right)+Pg\left(e^0,e^1,\dots,e^k\right)\right]_{Q_t}\right]_P=\left[f\left(m^0,m^1,\dots,m^k\right)\right]_P$&lt;/p&gt;
+&lt;p&gt;成立的条件是$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p&gt;
+&lt;p&gt;通过各种不等式放缩，一般可以得到$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\leq h(e_b^0,e_b^1,\dots,e_b^k)\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p&gt;
+&lt;p&gt;模数切换成立的条件是解密后对应的明文相同，因此可以对应三个充分条件：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;(1) $c_0[j]+(c_1\cdot s)[j] \equiv c_0&#39;[j]+(c_1&#39;\cdot s)[j]\;(\text{mod}\;P)$&lt;/li&gt;
-&lt;li&gt;(2) $\left|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)\right|\lt Q_t/2,\;\left|c_0&#39;[j]+(c_1&#39;\cdot s)[j](\text{mod}\; Q_t&#39;)\right|\lt Q_{t&#39;}/2$&lt;/li&gt;
-&lt;li&gt;(3) $Q_t\equiv Q_{t&#39;}\equiv 1(\text{mod}\; P)$&lt;/li&gt;
+&lt;li&gt;(1) $c_0&#39;=\text{Scale}(c_0),\;c_1&#39;=\text{Scale}(c_1)$&lt;/li&gt;
+&lt;li&gt;(2) $Q_t\equiv Q_{t&#39;}\equiv 1(\text{mod}\; P)$&lt;/li&gt;
+&lt;li&gt;(3) $\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;证明：
 &lt;/p&gt;
 $$
 \begin{aligned}
-c_0[j]+(c_1\cdot s)[j]&amp;=M+k[j]Q_t\\
+c_0[j]+(c_1\cdot s)[j]&amp;=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
 c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M+k[j]Q_t+rP\\
-c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M&#39;+k&#39;Q_{t&#39;}\\
-M+k[j]Q_t+rP&amp;=M&#39;+k&#39;Q_{t&#39;}\\
-M+k[j]Q_t+rP&amp;=M&#39;+k&#39;Q_{t&#39;}(\text{mod}\;P)\\
-M+k[j]&amp;\equiv M&#39;+k&#39;(\text{mod}\;P)\\
-M&amp;\equiv M&#39;(\text{mod}\;P)
+c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M&#39;+k&#39;[j]Q_{t&#39;},\left|M&#39;\right|\lt Q_{t&#39;}/2\\
+M+k[j]Q_t+rP&amp;=M&#39;+k&#39;[j]Q_{t&#39;}\\
+M+k[j]Q_t+rP&amp;=M&#39;+k&#39;[j]Q_{t&#39;}(\text{mod}\;P)\\
+M+k[j]&amp;\equiv M&#39;+k&#39;[j](\text{mod}\;P)\\
 \end{aligned}
 $$&lt;p&gt;
-证毕。&lt;/p&gt;
-&lt;p&gt;在条件 (1) 和条件 (3) 满足的前提下，我们只需要验证条件 (2) 即可。&lt;/p&gt;
-&lt;p&gt;不妨设 $c_0[j]+(c_1\cdot s)[j]=m[j]+Pv[j]+k[j]Q_t$，即 $m[j]+Pv[j]=c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t)$&lt;/p&gt;
-&lt;p&gt;令 $e&#39;[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，
+显然只需要说明$k[j]=k&#39;[j]$，即可得到$M\equiv M&#39;(\text{mod}\;P)$，因此对应明文相同。&lt;/p&gt;
+&lt;p&gt;证明$k=k&#39;$等价于证明当$k=k&#39;$时有$\left|M&#39;\right|\lt Q_{t&#39;/2}$成立即$\left|c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}\right|\lt Q_{t&#39;}/2$&lt;/p&gt;
+&lt;p&gt;直接代入验证，令 $M^*[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，则
 &lt;/p&gt;
 $$
 \begin{aligned}
-e&#39;[j]&amp;=c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t+Q_{t&#39;}c_0[j]/Q_t+(c_1&#39;\cdot s)[j]+(Q_{t&#39;}c_1/Q_t\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]-k[j]Q_{t&#39;}\\
+M^*[j]&amp;=c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t+Q_{t&#39;}c_0[j]/Q_t+(c_1&#39;\cdot s)[j]+(Q_{t&#39;}c_1/Q_t\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]-k[j]Q_{t&#39;}\\
 &amp;=(-k[j]Q_{t&#39;}+Q_{t&#39;}c_0[j]/Q_t+(Q_{t&#39;}c_1/Q_t\cdot s)[j])\\
 &amp;+c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
 &amp;+(c_1&#39;\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]\\
-&amp;=Q_{t&#39;}(m[j]+Pv[j])/Q_t\\
+&amp;=Q_{t&#39;}M[j]/Q_t\\
 &amp;+c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
 &amp;+((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]
 \end{aligned}
 $$&lt;p&gt;
-多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$&lt;/p&gt;
+只需要说明此时的$\left|M^*[j]\right|\lt Q_{t&#39;}/2 $即$M^*=M&#39;$。&lt;/p&gt;
+&lt;p&gt;多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$&lt;/p&gt;
 &lt;p&gt;所以$\left|((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1&#39;-Q_{t&#39;}c_1/Q_t)\Vert_2\Vert s\Vert_2$&lt;/p&gt;
 &lt;p&gt;因为$\left|c_1&#39;[j]-Q_{t&#39;}c_1[j]/Q_t)\right|\leq P/2$，所以$||(c_1&#39;-Q_{t&#39;}c_1/Q_t)||_2\leq P\sqrt{N}/2$&lt;/p&gt;
 &lt;p&gt;因此
 &lt;/p&gt;
 $$
 \begin{aligned}
-\left|e&#39;[j]\right|&amp;\leq \frac{Q_{t&#39;}}{Q_t}\left|m[j]+Pv[j]\right|\\
-&amp;+P/2\\
-&amp;+P\sqrt{N}\Vert s\Vert_2/2
+\left|M^*[j]\right|&amp;\leq \frac{Q_{t&#39;}}{Q_t}\left|M[j]\right|+P/2+P\sqrt{N}\Vert s\Vert_2/2
 \end{aligned}
 $$&lt;p&gt;
-显然，如果控制$\left|m[j]+Pv[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|e&#39;[j]\right|\lt Q_{t&#39;}/2$的，此时$e&#39;[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j](\text{mod}\; Q_t&#39;)$。注意到，如果$\left|e&#39;[j]\right|\lt Q_{t&#39;}/2$，则必须要求$\left|m[j]+Pv[j]\right|=\left|c_0[j]+(c_1\cdot s)[j](\text{mod}\; Q_t\right|\lt Q_t/2$。因此条件 (2) 是可以在一定情况下满足的。&lt;/p&gt;
-&lt;p&gt;因此如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。&lt;/p&gt;
+显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t&#39;}/2$的，此时$M^*=M&#39;$。注意到，如果$\left|M^*[j]\right|\lt Q_{t&#39;}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。&lt;/p&gt;
+&lt;p&gt;因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$即可，这就是条件(3)。&lt;/p&gt;
+&lt;p&gt;证毕。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;补充：事实上，我们可以消除条件(2)的约束，只需要保留因子k带来的影响。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
