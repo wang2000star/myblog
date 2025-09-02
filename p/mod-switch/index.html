@@ -267,7 +267,40 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#拓展1">拓展1</a></li>
+    <li><a href="#拓展2">拓展2</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="has-image main-article">
@@ -500,7 +533,7 @@ $$<p>
 只需要说明此时的$\left|M^*[j]\right|\lt Q_{t'}/2 $即$M^*=M'$。</p>
 <p>多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$</p>
 <p>所以$\left|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1'-Q_{t'}c_1/Q_t)\Vert_2\Vert s\Vert_2$</p>
-<p>因为$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$，所以$||(c_0'-Q_{t'}c_0/Q_t)||_2\leq P\sqrt{N}/2$</p>
+<p>因为$\left|c_i'[j]-Q_{t'}c_i[j]/Q_t)\right|\leq P/2$，所以$||(c_i'-Q_{t'}c_i/Q_t)||_2\leq P\sqrt{N}/2$</p>
 <p>因此
 </p>
 $$
@@ -512,10 +545,36 @@ $$<p>
 <p>因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$即可，这就是条件(3)。</p>
 <p>证毕。</p>
 <ul>
-<li>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</li>
-<li>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</li>
+<li>
+<p>噪声
+</p>
+$$
+  \begin{aligned}
+  e'&=\frac{M'-m}{P}\\&=\frac{Q_{t'}M[j]/Q_t+(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)-m}{P}\\
+  &=\frac{Q_{t'}}{Q_t}\frac{M[j]-m}{P}+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\\
+  &=\frac{Q_{t'}}{Q_t}e+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}
+  \end{aligned}
+  $$$$
+  \begin{aligned}
+  \left|e'\right|&\leq \left|\frac{Q_{t'}}{Q_t}e\right|+\left|\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}\right|+\left|(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\right| \\ 
+  &\leq \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{1}{2}+\frac{\sqrt{N}\Vert s\Vert_2}{2}+1-\frac{Q_{t'}}{Q_t}
+  \\
+  &=\frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}+\frac{3}{2}-\frac{Q_{t'}}{Q_t}
+  \\
+  &\approx \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}
+  \\
+  &\leq \frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}
+  \end{aligned}
+  $$<p>所以$e_b'=\frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}$。</p>
+</li>
+<li>
+<p>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</p>
+</li>
+<li>
+<p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</p>
+</li>
 </ul>
-<h2 id="拓展">拓展
+<h2 id="拓展1">拓展1
 </h2><p>我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。</p>
 <ul>
 <li>
@@ -569,7 +628,7 @@ $$<p>
 <p>类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。
 </p>
 $$
-c_0'[j]-Q_{t'}c_0[j]/Q_t)=a_0+d_0-Q_{t'}c_0/Q_t=d_0-b_0/Q_t
+c_0'[j]-Q_{t'}c_0[j]/Q_t=a_0+d_0-Q_{t'}c_0/Q_t=d_0-b_0/Q_t
 $$<p>
 因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以
 </p>
@@ -577,9 +636,27 @@ $$
 \left|d_0-b_0/Q_t\right|\leq \left|d_0\right|+\left|b_0/Q_t\right|\leq \frac{P+1}{2}
 $$<p>
 相当于原来的上界增加1/2，这个几乎可以看做没有增加了。</p>
-<p>条件(3)也可以更新为$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</p>
+<p>条件(3)也可以更新为$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+(P+1)\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</p>
 <p>总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！</p>
 <p>当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。</p>
+<h2 id="拓展2">拓展2
+</h2><p>拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t'}|Q_t, t'<t$。设$R=Q_t/Q_{t'}$</p>
+<p>我们想保证$Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)$，一个想法是：</p>
+<p>令$Q_tc_i'=Q_{t'}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。</p>
+<p>显然，此时有$c_i'=\frac{Q_{t'}(c_i+r_iP)}{Q_t}$。</p>
+<p>令$Q_{t'}|Q_t$，则$c_i'=\frac{c_i+r_iP}{R}$</p>
+<p>所以$r_iP\equiv -c_i(\text{mod}\;R)$</p>
+<p>因为$\text{gcd}(P,R)=1$，令$r_i=-c_iP^{-1}(\text{mod}\;R)$。</p>
+<p>所以新的scale是</p>
+<ul>
+<li><strong>Scale_2</strong>
+$$
+  c_i'=\frac{c_i+\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}
+  $$</li>
+</ul>
+<p>$\left|c_i'-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$</p>
+<h2 id="总结">总结
+</h2><p>这是目前看到的三种实现BGV mod-switch的方法，三种方法既有相同之处又有各自的特点，应该根据参数选取，性能，噪声等等指标来权衡使用哪一种方式。注意：拓展2和拓展3是可以一起使用的。</p>
 
 </section>
 
