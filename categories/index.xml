@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Categories on wfz&#39;s Blog</title>
+        <title>Categories on wfz的博客</title>
         <link>https://www.wfz521.com/categories/</link>
-        <description>Recent content in Categories on wfz&#39;s Blog</description>
+        <description>Recent content in Categories on wfz的博客</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <copyright>Example Person</copyright>
+        <language>zh-cn</language>
+        <copyright>2025-皮卡丘的守护神</copyright>
         <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Cryptography</title>
         <link>https://www.wfz521.com/categories/cryptography/</link>
@@ -37,6 +37,14 @@
         <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>https://www.wfz521.com/categories/test-with-whitespaces/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>测试</title>
+        <link>https://www.wfz521.com/categories/%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.wfz521.com/categories/%E6%B5%8B%E8%AF%95/</guid>
         <description></description>
         </item>
         <item>
