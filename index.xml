@@ -7,21 +7,112 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Key Switch (BGV)</title>
+        <link>https://www.wfz521.com/p/key-switch-bgv/</link>
+        <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.wfz521.com/p/key-switch-bgv/</guid>
+        <description>&lt;img src="https://www.wfz521.com/p/key-switch-bgv/pkq.png" alt="Featured image of post Key Switch (BGV)" /&gt;&lt;h2 id=&#34;本质&#34;&gt;本质
+&lt;/h2&gt;&lt;p&gt;BGV方案里面的key-swith的本质是在已有$s_A, s_B, (c_0^A,c_1^A)$并且$s_A,s_B$保密的基础上，构造出$(c_0^B,c_1^B)$，使其满足：
+&lt;/p&gt;
+$$
+\left[\left[c_0^A+s_A\cdot c_1^A\right]_Q\right]_P=\left[\left[c_0^B+s_B\cdot c_1^B\right]_Q\right]_P
+$$&lt;p&gt;
+充分条件是：&lt;/p&gt;
+&lt;p&gt;（1）$c_0^B+s_B\cdot c_1^B\equiv c_0^A+s_A\cdot c_1^A+Pv(\text{mod}\;Q)$&lt;/p&gt;
+&lt;p&gt;（2）$\left|v\right|\leq \frac{Q-P}{2P}-\left|e_A\right|$&lt;/p&gt;
+&lt;p&gt;key-switch的几种构造方式本质都是在不断缩小$\left|v\right|$的上界，&lt;/p&gt;
+&lt;h2 id=&#34;high-level&#34;&gt;high level
+&lt;/h2&gt;&lt;p&gt;用$s_B$加密$s_A$即$ks_{A\rightarrow B}=(\left[s_A+a\cdot s_B+Pe_{ks}\right]_Q,-a)\in \mathcal{R}_Q^2$，称$ks_{A\rightarrow B}$是从$s_A$到$s_B$的切换密钥（公钥）。&lt;/p&gt;
+&lt;p&gt;令$c^B=(\left[ c_0^A+c_1^A\cdot ks^{A\rightarrow B}_0\right]_Q,\left[c_1^A\cdot ks^{A\rightarrow B}_1\right]_Q)$，则
+&lt;/p&gt;
+$$
+\begin{aligned}
+c_0^B+c_1^B\cdot s_B&amp; = c_0^A+c_1^A\cdot ks^{A\rightarrow B}_0+c_1^A\cdot ks^{A\rightarrow B}_1\cdot s_B\\
+&amp;=c_0^A+c_1^A\cdot s_A+Pc_1^A\cdot e_{ks}\\
+&amp;\equiv m+P(e_A+c_1^A\cdot e_{ks})(\text{mod}\;Q)
+\end{aligned}
+$$&lt;p&gt;
+只要保证$\Vert e_A+c_1^A\cdot e_{ks} \Vert_{\infty}\leq\Vert e_A\Vert_{\infty}+\Vert c_1^A\cdot e_{ks} \Vert_{\infty} \leq \frac{Q-P}{2P}$，则密钥切换成功。&lt;/p&gt;
+&lt;p&gt;但是$\Vert c_1^A\cdot e_{ks}\Vert_{\infty}\leq N \Vert c_1^A\Vert_{\infty}\Vert e_{ks}\Vert_{\infty}\leq \frac{NQB_{ks}}{2}$，因此有很大概率超出界，所以我们需要想办法降低$\Vert c_1^A\cdot e_{ks}\Vert_{\infty}$。&lt;/p&gt;
+&lt;p&gt;下面介绍几种key-switch的具体构造方式，均参考自&lt;a class=&#34;link&#34; href=&#34;#ref-KPZ22&#34; &gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;bv11&#34;&gt;BV11
+&lt;/h2&gt;&lt;h2 id=&#34;ghs&#34;&gt;GHS
+&lt;/h2&gt;&lt;h2 id=&#34;hybrid&#34;&gt;HYBRID
+&lt;/h2&gt;&lt;h2 id=&#34;重线性化&#34;&gt;重线性化
+&lt;/h2&gt;&lt;p&gt;重线性化技术是在处理密文乘法时提到的，对于密文乘法我们有
+&lt;/p&gt;
+$$
+c^1\cdot c^2=(c_0^1+s\cdot c_1^1)\cdot(c_0^2+s\cdot c_1^2)=c_0^1\cdot c_0^2+(c_0^1\cdot c_1^2+c_1^1\cdot c_0^2)\cdot s+(c_1^1\cdot c_1^2)\cdot s^2\\
+\left[c^1\cdot c^2\right]_Q=\left[(m_1+Pe_1)(m_2+Pe_2)\right]_Q=\left[m_1m_2+P(m_1e_2+m_2e_1+Pe_1e_2)\right]_Q
+$$&lt;p&gt;
+令$d_0=c_0^1\cdot c_0^2,d_1=c_0^1\cdot c_1^2+c_1^1\cdot c_0^2,d_2=c_1^1\cdot c_1^2$，则
+&lt;/p&gt;
+$$
+\left[d_0+d_1\cdot s+d_2\cdot s^2\right]_Q=\left[m_1m_2+P(m_1e_2+m_2e_1+Pe_1e_2)\right]_Q
+$$&lt;p&gt;
+如果$\left|m_1e_2+m_2e_1+Pe_1e_2\right|\leq \frac{Q-P}{2P}$，则
+&lt;/p&gt;
+$$
+\left[\left[d_0+d_1\cdot s+d_2\cdot s^2\right]_Q\right]_P=\left[m_1m_2\right]_P
+$$&lt;p&gt;
+这样就可以把$(d_0,d_1,d_2)$看做是$\left[m_1m_2\right]_P$的密文。&lt;/p&gt;
+&lt;p&gt;噪声上界估计：
+&lt;/p&gt;
+$$
+\Vert m_1e_2+m_2e_1+Pe_1e_2\Vert_{\infty}\leq \frac{P}{2}(e^1_b+e^2_b)+ne^1_be^2_b
+$$&lt;p&gt;
+重线性化的本质是在已有$s_B,(d_0^A,d_1^A,d_2^A)$并且$s_B$保密的基础上，构造出$(c_0^B,c_1^B)$，使其满足：
+&lt;/p&gt;
+$$
+c_0^B+s_B\cdot c_1^B \equiv d_0^A+s_B\cdot d_1^A+s_B^2\cdot d_2^A+Pv(\text{mod}\;Q)\\
+\left|v\right|\leq \frac{Q-P}{2P}-\left|e_A\right|
+$$&lt;p&gt;
+令$c_1^B=c_1^{B&#39;}+d_1^A,s_A=s_B^2$，则只需要构造出$(c_0^B,c_1^{B&#39;})$，使其满足：
+&lt;/p&gt;
+$$
+c_0^B+s_B\cdot c_1^{B&#39;} \equiv d_0^A+s_A\cdot d_2^A+Pv(\text{mod}\;Q)\\
+\left|v\right|\leq \frac{Q-P}{2P}-\left|e_A\right|
+$$&lt;p&gt;
+此时就可以看做正常的key-switch操作了，唯一的区别在于噪声上界由上面的三者确定而不是下面的两者确定，这是因为上面的三者有确定的明文形式，而下面的两者没有实际明文对应。&lt;/p&gt;
+&lt;p&gt;噪声上界估计：
+&lt;/p&gt;
+$$
+\Vert e_B\Vert_{\infty}=\Vert v+e_A\Vert_{\infty}\leq \Vert v\Vert_{\infty}+\frac{P}{2}(e^1_b+e^2_b)+ne^1_be^2_b
+$$&lt;p&gt;
+因此密钥切换后的噪声会有所增加，且增加项为$\left|v\right|$。&lt;/p&gt;
+&lt;p&gt;进行乘法的两个密文的噪声上界分别为$e_b^1,e_b^2$，但是重线性化的乘积密文噪声上界增大到$\Vert v\Vert_{\infty}+\frac{P}{2}(e^1_b+e^2_b)+ne^1_be^2_b$。&lt;/p&gt;
+&lt;p&gt;显然，这个噪声上界有很大的概率接近解密上界即$\frac{Q-P}{2P}$，因此需要降噪，这里BGV使用了Mod Switch的方法来进行处理，可以参考上一篇博客内容。&lt;/p&gt;
+&lt;p&gt;此时有两种思路，（1）先分别进行Mod Switch，再进行重线性化；（2）先进行重线性化再进行Mod Switch。&lt;/p&gt;
+&lt;p&gt;如果是把模qR的密文通过Mod Switch变成模q的密文，那么噪声上界将从$e_b$变为$\frac{e_b}{R}+\frac{\sqrt{Nw(s)}}{2}$，其中$w(s)$是私钥的非零元素个数。&lt;/p&gt;
+&lt;p&gt;单纯从噪声角度看，（1）的噪声近似为$\frac{Ne^1_be^2_b}{R^2}+\frac{N^2w(s)}{4}$，（2）的噪声近似为$\frac{Ne^1_be^2_b}{R}$。这里不确定$N,R,e$三者取值，不好比较。&lt;/p&gt;
+&lt;p&gt;从计算角度看，（1）似乎比（2）增加了一个Mod Switch操作，前者的重线性化操作处理的模数要比后者低，并且重线性化的时间要显著高于Mod Switch操作，因此（1）的计算性能不会显著低于（2）。&lt;/p&gt;
+&lt;p&gt;因为，没有具体数值，所以目前无法得到哪种方法更好。但是看到很多开源库里面似乎都使用了第二种方法。&lt;/p&gt;
+&lt;p&gt;此外，重线性化技术本身可以看做key-switch的一个推广特例。&lt;/p&gt;
+&lt;h2 id=&#34;未来计划&#34;&gt;未来计划
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;结合安全性、噪声和性能分析参数设计方法&lt;/li&gt;
+&lt;li&gt;分析simd下的旋转操作如何加速&lt;/li&gt;
+&lt;li&gt;分析自举操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考
+&lt;/h2&gt;&lt;div id=&#34;ref-KPZ22&#34;&gt;&lt;/div&gt; 
+- [1] [KPZ22](https://eprint.iacr.org/2021/204.pdf)</description>
+        </item>
+        <item>
         <title>Mod Switch</title>
         <link>https://www.wfz521.com/p/mod-switch/</link>
         <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
         
         <guid>https://www.wfz521.com/p/mod-switch/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" /&gt;&lt;h1 id=&#34;模数切换&#34;&gt;模数切换
-&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;符号说明&lt;/p&gt;
-&lt;p&gt;$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。&lt;/p&gt;
+        <description>&lt;img src="https://www.wfz521.com/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" /&gt;&lt;h2 id=&#34;符号&#34;&gt;符号
+&lt;/h2&gt;&lt;p&gt;$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。&lt;/p&gt;
 &lt;p&gt;$\lceil x \rfloor$：表示四舍五入取整即round。&lt;/p&gt;
-&lt;/li&gt;
+&lt;h2 id=&#34;原始&#34;&gt;原始
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;定义：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;&lt;a class=&#34;link&#34; href=&#34;#ref-BGV11&#34; &gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.wfz521.com/p/mod-switch/scale.png&#34;
 	width=&#34;1392&#34;
 	height=&#34;86&#34;
@@ -43,8 +134,7 @@
 &lt;/ul&gt;
 $$
 x&#39;=x+\lceil\frac{(p-q)x}{qr}\rfloor r
-$$&lt;p&gt;
-如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。&lt;/p&gt;
+$$&lt;p&gt;如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;分析&lt;/li&gt;
 &lt;/ul&gt;
@@ -125,8 +215,7 @@ $$&lt;p&gt;
 &lt;li&gt;(2) $Q_t\equiv Q_{t&#39;}\equiv 1(\text{mod}\; P)$&lt;/li&gt;
 &lt;li&gt;(3) $\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;证明：
-&lt;/p&gt;
+&lt;p&gt;证明：&lt;/p&gt;
 $$
 \begin{aligned}
 c_0[j]+(c_1\cdot s)[j]&amp;=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
@@ -136,11 +225,9 @@ M+k[j]Q_t+r[j]P&amp;=M&#39;+k&#39;[j]Q_{t&#39;}\\
 M+k[j]Q_t+r[j]P&amp;=M&#39;+k&#39;[j]Q_{t&#39;}(\text{mod}\;P)\\
 M+k[j]&amp;\equiv M&#39;+k&#39;[j](\text{mod}\;P)\\
 \end{aligned}
-$$&lt;p&gt;
-显然只需要说明$k[j]=k&#39;[j]$，即可得到$M\equiv M&#39;(\text{mod}\;P)$，因此对应明文相同。&lt;/p&gt;
+$$&lt;p&gt;显然只需要说明$k[j]=k&#39;[j]$，即可得到$M\equiv M&#39;(\text{mod}\;P)$，因此对应明文相同。&lt;/p&gt;
 &lt;p&gt;证明$k=k&#39;$等价于证明当$k=k&#39;$时有$\left|M&#39;\right|\lt Q_{t&#39;/2}$成立即$\left|c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}\right|\lt Q_{t&#39;}/2$&lt;/p&gt;
-&lt;p&gt;直接代入验证，令 $M^*[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，则
-&lt;/p&gt;
+&lt;p&gt;直接代入验证，令 $M^*[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，则&lt;/p&gt;
 $$
 \begin{aligned}
 M^*[j]&amp;=c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t+Q_{t&#39;}c_0[j]/Q_t+(c_1&#39;\cdot s)[j]+(Q_{t&#39;}c_1/Q_t\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]-k[j]Q_{t&#39;}\\
@@ -151,25 +238,21 @@ M^*[j]&amp;=c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t+Q_{t&#39;}c_0[j]/Q_t+(c_1&#39;\cdot
 &amp;+c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
 &amp;+((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]
 \end{aligned}
-$$&lt;p&gt;
-只需要说明此时的$\left|M^*[j]\right|\lt Q_{t&#39;}/2 $即$M^*=M&#39;$。&lt;/p&gt;
+$$&lt;p&gt;只需要说明此时的$\left|M^*[j]\right|\lt Q_{t&#39;}/2 $即$M^*=M&#39;$。&lt;/p&gt;
 &lt;p&gt;多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$&lt;/p&gt;
 &lt;p&gt;所以$\left|((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1&#39;-Q_{t&#39;}c_1/Q_t)\Vert_2\Vert s\Vert_2$&lt;/p&gt;
 &lt;p&gt;因为$\left|c_i&#39;[j]-Q_{t&#39;}c_i[j]/Q_t)\right|\leq P/2$，所以$||(c_i&#39;-Q_{t&#39;}c_i/Q_t)||_2\leq P\sqrt{N}/2$&lt;/p&gt;
-&lt;p&gt;因此
-&lt;/p&gt;
+&lt;p&gt;因此&lt;/p&gt;
 $$
 \begin{aligned}
 \left|M^*[j]\right|&amp;\leq \frac{Q_{t&#39;}}{Q_t}\left|M[j]\right|+P/2+P\sqrt{N}\Vert s\Vert_2/2
 \end{aligned}
-$$&lt;p&gt;
-显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t&#39;}/2$的，此时$M^*=M&#39;$。注意到，如果$\left|M^*[j]\right|\lt Q_{t&#39;}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。&lt;/p&gt;
+$$&lt;p&gt;显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t&#39;}/2$的，此时$M^*=M&#39;$。注意到，如果$\left|M^*[j]\right|\lt Q_{t&#39;}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。&lt;/p&gt;
 &lt;p&gt;因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$即可，这就是条件(3)。&lt;/p&gt;
 &lt;p&gt;证毕。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;噪声
-&lt;/p&gt;
+&lt;p&gt;噪声&lt;/p&gt;
 $$
   \begin{aligned}
   e&#39;&amp;=\frac{M&#39;-m}{P}\\&amp;=\frac{Q_{t&#39;}M[j]/Q_t+(c_0&#39;-Q_{t&#39;}c_0/Q_t)+\left(\left(c_1&#39;-Q_{t&#39;}c_1/Q_t\right)\cdot s\right)-m}{P}\\
@@ -200,7 +283,7 @@ $$
 &lt;/h2&gt;&lt;p&gt;我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Scale_new&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scale_1&lt;a class=&#34;link&#34; href=&#34;#ref-HElib20&#34; &gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;令$Q_{t&#39;}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，$Q_td_i\equiv b_i(\text{mod}\;P),\left|d_i\right|\leq P/2$，则
 &lt;/p&gt;
 $$
@@ -211,53 +294,39 @@ $$
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;（1）加密&lt;/p&gt;
-&lt;p&gt;令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$
-&lt;/p&gt;
+&lt;p&gt;令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$&lt;/p&gt;
 $$
 b=a\cdot s+P\cdot e_s\\
 c_0=b\cdot v+P\cdot e_0+\hat{m}\cdot Q_t\\
 c_1=-a\cdot v+P\cdot e_1
-$$&lt;p&gt;
-（2）解密
-&lt;/p&gt;
+$$&lt;p&gt;（2）解密&lt;/p&gt;
 $$
 \hat{m}=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P\\
 m=\left[\hat{m}\cdot k_t^{-1}\right]_P
-$$&lt;p&gt;
-重写上述证明如下：
-&lt;/p&gt;
+$$&lt;p&gt;重写上述证明如下：&lt;/p&gt;
 $$
 \begin{aligned}
 c_0[j]+(c_1\cdot s)[j]&amp;=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
 c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M&#39;+k&#39;[j]Q_{t&#39;},\left|M&#39;\right|\lt Q_{t&#39;}/2\\
 \end{aligned}
-$$&lt;p&gt;
-此时我们不需要证明$M\equiv M&#39;(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M&#39;\cdot Q_{t&#39;}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t&#39;}\equiv M&#39;\cdot Q_t(\text{mod}\;P)$。也就是要验证
-&lt;/p&gt;
+$$&lt;p&gt;此时我们不需要证明$M\equiv M&#39;(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M&#39;\cdot Q_{t&#39;}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t&#39;}\equiv M&#39;\cdot Q_t(\text{mod}\;P)$。也就是要验证&lt;/p&gt;
 $$
 (c_0[j]+(c_1\cdot s)[j]-k[j]Q_t)Q_{t&#39;}=(c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k&#39;[j]Q_{t&#39;})Q_{t}(\text{mod}\;P)\\
 (c_0[j]+(c_1\cdot s)[j])Q_{t&#39;}-k[j]Q_tQ_{t&#39;}=(c_0&#39;[j]+(c_1&#39;\cdot s)[j])Q_{t}-k&#39;[j]Q_tQ_{t&#39;}(\text{mod}\;P)
-$$&lt;p&gt;
-由Scale_new操作可得，
-&lt;/p&gt;
+$$&lt;p&gt;由Scale_new操作可得，&lt;/p&gt;
 $$
 Q_{t&#39;}c_i=Q_ta_i+b_i\\
 Q_{t&#39;}c_i\equiv Q_ta_i+Q_td_i(\text{mod}\;P)\\
 Q_{t&#39;}c_i\equiv Q_t(a_i+d_i)(\text{mod}\;P)\\
 Q_{t&#39;}c_i\equiv Q_tc_i&#39;(\text{mod}\;P)\\
-$$&lt;p&gt;
-所以和前面的证明类似，我们只需要说明$k[j]=k&#39;[j]$即可。&lt;/p&gt;
-&lt;p&gt;类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。
-&lt;/p&gt;
+$$&lt;p&gt;所以和前面的证明类似，我们只需要说明$k[j]=k&#39;[j]$即可。&lt;/p&gt;
+&lt;p&gt;类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。&lt;/p&gt;
 $$
 c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t=a_0+d_0-Q_{t&#39;}c_0/Q_t=d_0-b_0/Q_t
-$$&lt;p&gt;
-因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以
-&lt;/p&gt;
+$$&lt;p&gt;因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以&lt;/p&gt;
 $$
 \left|d_0-b_0/Q_t\right|\leq \left|d_0\right|+\left|b_0/Q_t\right|\leq \frac{P+1}{2}
-$$&lt;p&gt;
-相当于原来的上界增加1/2，这个几乎可以看做没有增加了。&lt;/p&gt;
+$$&lt;p&gt;相当于原来的上界增加1/2，这个几乎可以看做没有增加了。&lt;/p&gt;
 &lt;p&gt;条件(3)也可以更新为$\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+(P+1)\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$&lt;/p&gt;
 &lt;p&gt;总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！&lt;/p&gt;
 &lt;p&gt;当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。&lt;/p&gt;
@@ -271,15 +340,26 @@ $$&lt;p&gt;
 &lt;p&gt;因为$\text{gcd}(P,R)=1$，令$r_i=-c_iP^{-1}(\text{mod}\;R)$。&lt;/p&gt;
 &lt;p&gt;所以新的scale是&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Scale_2&lt;/strong&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scale_2&lt;/strong&gt;&lt;a class=&#34;link&#34; href=&#34;#ref-KPZ22&#34; &gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 $$
   c_i&#39;=\frac{c_i+\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}
   $$&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;$\left|c_i&#39;-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$&lt;/p&gt;
+&lt;p&gt;类似的，有$\left|c_i&#39;-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$&lt;/p&gt;
 &lt;h2 id=&#34;总结&#34;&gt;总结
 &lt;/h2&gt;&lt;p&gt;这是目前看到的三种实现BGV mod-switch的方法，三种方法既有相同之处又有各自的特点，应该根据参数选取，性能，噪声等等指标来权衡使用哪一种方式。注意：拓展2和拓展3是可以一起使用的。&lt;/p&gt;
-</description>
+&lt;p&gt;补充：在BGV方案中，私钥$s$的系数属于$\{0,1,-1\}$，并且规定了汉明重量h即非零元素个数。我们用$w(s)$表示。显然有:
+&lt;/p&gt;
+$$
+\Vert s\Vert_2=\sqrt{w(s)}
+$$&lt;h2 id=&#34;参考&#34;&gt;参考
+&lt;/h2&gt;&lt;div id=&#34;ref-BGV11&#34;&gt;&lt;/div&gt;
+- [1] [BGV11](https://eprint.iacr.org/2011/277.pdf)
+&lt;div id=&#34;ref-HElib20&#34;&gt;&lt;/div&gt;
+- [2] [HElib20](https://eprint.iacr.org/2020/1481.pdf)
+&lt;div id=&#34;ref-KPZ22&#34;&gt;&lt;/div&gt; 
+- [3] [KPZ22](https://eprint.iacr.org/2021/204.pdf)</description>
         </item>
         <item>
         <title>FHE</title>
