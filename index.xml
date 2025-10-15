@@ -7,7 +7,96 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>范数不等式</title>
+        <link>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</link>
+        <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</guid>
+        <description>&lt;img src="https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.png" alt="Featured image of post 范数不等式" /&gt;&lt;h2 id=&#34;simd不等式&#34;&gt;SIMD不等式
+&lt;/h2&gt;$$
+\mathbf{a}=(a_0,a_1,...,a_{n-1}),\mathbf{b}=(b_0,b_1,...,b_{n-1})\\
+\mathbf{a}+\mathbf{b} = (a_0+b_0,a_1+b_1,...,a_{n-1}+b_{n-1})\\
+\mathbf{a}\circ\mathbf{b} = (a_0\times b_0,a_1\times b_1,...,a_{n-1}\times b_{n-1})\\
+\Vert c\circ\mathbf{a}\Vert=c\times\Vert\mathbf{a}\Vert\\
+\Vert\mathbf{a}+\mathbf{b}\Vert \leq \Vert\mathbf{a}\Vert+ \Vert\mathbf{b}\Vert\\
+\Vert\mathbf{a}\circ\mathbf{b}\Vert \leq \Vert\mathbf{a}\Vert\times \Vert\mathbf{b}\Vert\\
+$$&lt;h2 id=&#34;嵌入不等式&#34;&gt;嵌入不等式
+&lt;/h2&gt;&lt;p&gt;在n维向量和n个系数的多项式之间存在同构关系$\sigma$，不妨设$a(x)=\Sigma a_iX^i$，满足：
+&lt;/p&gt;
+$$
+\sigma(a(x)+_{\sigma}b(x))=\sigma(a(x))+\sigma(b(x))\\
+\sigma(a(x)\cdot_{\sigma}b(x))=\sigma(a(x))\circ\sigma(b(x))
+$$&lt;p&gt;
+则
+&lt;/p&gt;
+$$
+\Vert\sigma(c\cdot a(x))\Vert = \Vert c\circ \sigma(a(x))\Vert =c\times \Vert\sigma(a(x))\Vert\\
+\Vert\sigma(a(x)+_{\sigma}b(x))\Vert \leq \Vert\sigma(a(x))\Vert + \Vert\sigma(b(x))\Vert\\
+\Vert\sigma(a(x)\cdot_{\sigma}b(x))\Vert \leq \Vert\sigma(a(x))\Vert \times \Vert\sigma(b(x))\Vert\\
+$$&lt;p&gt;
+利用这个嵌入不等式就可以很好的分析同态噪声的变化情况，因为密文就是以多项式形式存在，而明文是向量。&lt;/p&gt;
+&lt;h2 id=&#34;赫尔德holder不等式&#34;&gt;赫尔德(Holder)不等式
+&lt;/h2&gt;&lt;p&gt;已知$\frac{1}{p}+\frac{1}{q}=1,1\leq p\leq+\infty,1\leq q\leq+\infty $，对于任意两个复数向量$\mathbf{a},\mathbf{b}\in \mathbb{C}^n$，有
+&lt;/p&gt;
+$$
+\left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_p\Vert\mathbf{b}\Vert_q
+$$&lt;p&gt;
+特别的，当p=1时有，$\left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_1\Vert\mathbf{b}\Vert_{\infty}$&lt;/p&gt;
+&lt;h2 id=&#34;矩阵-向量不等式&#34;&gt;矩阵-向量不等式
+&lt;/h2&gt;&lt;p&gt;对于任意矩阵$\mathbf{M}\in \mathbb{C}^{n\times n}$，任意向量$\mathbf{a}\in\mathbb{R}^n$，令$\mathbf{b}=\mathbf{M}\mathbf{a}$，则
+&lt;/p&gt;
+$$
+b_i=\mathbf{M}_i\mathbf{a}=\sum_{j=0}^{n-1}M_{i,j}a_j\\
+a_j\in \mathbb{R},\bar{a}_j = a_j\\
+\left|b_i\right| = \left|\sum_{j=0}^{n-1}M_{i,j}a_j\right|=\left|\sum_{j=0}^{n-1}M_{i,j}\bar{a}_j\right|\leq
+\Vert\mathbf{M}_i\Vert_p\Vert\mathbf{a}\Vert_q\\
+\Vert \mathbf{b}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_p}\}\Vert\mathbf{a}\Vert_q
+$$&lt;p&gt;
+不妨设$\mathbf{M}$可逆，则$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，&lt;/p&gt;
+$$\Vert \mathbf{a}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_p}\}\Vert\mathbf{b}\Vert_q$$&lt;p&gt;综合可得，
+&lt;/p&gt;
+$$
+\frac{\Vert \mathbf{a}\Vert_\infty}{\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}}\leq\Vert \mathbf{b}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_p}\}\Vert\mathbf{a}\Vert_q
+$$&lt;h2 id=&#34;快速傅里叶变换不等式&#34;&gt;快速傅里叶变换不等式
+&lt;/h2&gt;&lt;p&gt;FFT里面的矩阵满足&lt;/p&gt;
+&lt;p&gt;$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_\infty}\}=1$&lt;/p&gt;
+&lt;p&gt;$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_1}\}=n$&lt;/p&gt;
+&lt;p&gt;所以有
+&lt;/p&gt;
+$$
+\frac{\Vert \mathbf{a}\Vert_\infty}{\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}}\leq\Vert \mathbf{b}\Vert_\infty\leq\Vert\mathbf{a}\Vert_1\leq n\Vert\mathbf{a}\Vert_{\infty}
+$$&lt;p&gt;
+事实上，$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}=1$，所以
+&lt;/p&gt;
+$$
+\Vert \mathbf{a}\Vert_\infty\leq\Vert \mathbf{b}\Vert_\infty \leq n\Vert\mathbf{a}\Vert_\infty
+$$&lt;p&gt;
+这样就使用$\mathbf{a}$来约束$\mathbf{b}$的无穷范数上下界了。&lt;/p&gt;
+&lt;h2 id=&#34;快速傅里叶嵌入不等式&#34;&gt;快速傅里叶嵌入不等式
+&lt;/h2&gt;&lt;p&gt;如果用快速傅里叶变换作为嵌入同构关系，则
+&lt;/p&gt;
+$$
+\Vert a(x)\Vert_\infty \leq \Vert\sigma(a(x))\Vert_\infty \leq \Vert a(x)\Vert_1\leq n\Vert a(x)\Vert_\infty
+$$&lt;p&gt;进一步，有
+&lt;/p&gt;
+$$
+\Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq \Vert \sigma(a(x)\cdot_\sigma b(x))\Vert_\infty \leq \Vert\sigma(a(x))\Vert_\infty \times \Vert\sigma(b(x))\Vert_\infty \leq \Vert a(x)\Vert_1 \times \Vert b(x)\Vert_1 \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty
+$$&lt;p&gt;
+注意$\Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty$这个界不是紧的，应该是
+&lt;/p&gt;
+$$
+\Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq \Vert a(x)\Vert_2 \Vert b(x)\Vert_2\leq n \Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty
+$$&lt;p&gt;
+为什么会出现不紧的界？这是因为虽然不等号具有传递性，但是取得等号的条件不具备传递性，即不同时取得等号。&lt;/p&gt;
+&lt;p&gt;实际应用中我们建议使用下面的不等式
+&lt;/p&gt;
+$$
+\Vert \sigma(a(x)\cdot_\sigma b(x))\Vert_\infty \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty\\
+\Vert \sigma(a(x)+ b(x))\Vert_\infty \leq n(\Vert a(x)\Vert_\infty +\Vert b(x)\Vert_\infty)
+$$</description>
+        </item>
+        <item>
         <title>Key Switch (BGV)</title>
         <link>https://www.wfz521.com/p/key-switch-bgv/</link>
         <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
