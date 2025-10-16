@@ -238,7 +238,7 @@ $$&lt;p&gt;相当于原来的上界增加1/2，这个几乎可以看做没有增
 &lt;p&gt;总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！&lt;/p&gt;
 &lt;p&gt;当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。&lt;/p&gt;
 &lt;h2 id=&#34;拓展2&#34;&gt;拓展2
-&lt;/h2&gt;&lt;p&gt;拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t&#39;}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t&#39;}|Q_t, t&#39;&lt;t$。设$R=Q_t/Q_{t&#39;}$&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t&#39;}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t&#39;}|Q_t, t&#39;\lt t$。设$R=Q_t/Q_{t&#39;}$&lt;/p&gt;
 &lt;p&gt;我们想保证$Q_{t&#39;}c_i\equiv Q_tc_i&#39;(\text{mod}\;P)$，一个想法是：&lt;/p&gt;
 &lt;p&gt;令$Q_tc_i&#39;=Q_{t&#39;}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。&lt;/p&gt;
 &lt;p&gt;显然，此时有$c_i&#39;=\frac{Q_{t&#39;}(c_i+r_iP)}{Q_t}$。&lt;/p&gt;

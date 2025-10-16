@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="模数切换">
-<title>Mod Switch</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="快速傅里叶变换">
+<title>快速傅里叶变换</title>
 
-<link rel='canonical' href='https://www.wfz521.com/p/mod-switch/'>
+<link rel='canonical' href='https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/'>
 
-<link rel="stylesheet" href="/scss/style.min.46161d2c87dd5035c632c33bdb47fd8ce434eb96429e101d253ddd0facde8561.css"><meta property='og:title' content="Mod Switch">
-<meta property='og:description' content="模数切换">
-<meta property='og:url' content='https://www.wfz521.com/p/mod-switch/'>
+<link rel="stylesheet" href="/scss/style.min.46161d2c87dd5035c632c33bdb47fd8ce434eb96429e101d253ddd0facde8561.css"><meta property='og:title' content="快速傅里叶变换">
+<meta property='og:description' content="快速傅里叶变换">
+<meta property='og:url' content='https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/'>
 <meta property='og:site_name' content='wfz的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='BGV' /><meta property='article:tag' content='Scale' /><meta property='article:tag' content='Mod Switch' /><meta property='article:published_time' content='2025-09-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-09-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/mod-switch/pkq.png' />
-<meta name="twitter:title" content="Mod Switch">
-<meta name="twitter:description" content="模数切换"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.wfz521.com/p/mod-switch/pkq.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='FFT' /><meta property='article:tag' content='FHE' /><meta property='article:published_time' content='2025-10-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-10-16T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.png' />
+<meta name="twitter:title" content="快速傅里叶变换">
+<meta name="twitter:description" content="快速傅里叶变换"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.png' />
     </head>
     <body class="
     article-page
@@ -254,12 +254,8 @@
         <div class="widget--toc" id="widget-toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#符号">符号</a></li>
-    <li><a href="#原始">原始</a></li>
-    <li><a href="#拓展1">拓展1</a></li>
-    <li><a href="#拓展2">拓展2</a></li>
-    <li><a href="#总结">总结</a></li>
-    <li><a href="#参考">参考</a></li>
+    <li><a href="#fft">FFT</a></li>
+    <li><a href="#fft的误差">FFT的误差</a></li>
   </ol>
 </nav>
         </div>
@@ -274,13 +270,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/mod-switch/">
-                <img src="/p/mod-switch/pkq_hu_2835ab43f9ecedad.png"
-                        srcset="/p/mod-switch/pkq_hu_2835ab43f9ecedad.png 800w, /p/mod-switch/pkq_hu_8f950791cca56957.png 1600w"
+            <a href="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
+                <img src="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq_hu_2835ab43f9ecedad.png"
+                        srcset="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq_hu_2835ab43f9ecedad.png 800w, /p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq_hu_8f950791cca56957.png 1600w"
                         width="800" 
                         height="500" 
                         loading="lazy"
-                        alt="Featured image of post Mod Switch" />
+                        alt="Featured image of post 快速傅里叶变换" />
                 
             </a>
         </div>
@@ -298,17 +294,21 @@
                 FHE
             </a>
         
+            <a href="/categories/fft/" >
+                FFT
+            </a>
+        
     </header>
     
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/mod-switch/">Mod Switch</a>
+            <a href="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">快速傅里叶变换</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            模数切换
+            快速傅里叶变换
         </h3>
         
     </div>
@@ -329,7 +329,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">09月01日, 2025年</time>
+                <time class="article-time--published">10月16日, 2025年</time>
             </div>
         
 
@@ -344,7 +344,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 9 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -359,260 +359,18 @@
     <section class="article-content">
     
     
-    <h2 id="符号">符号
-</h2><p>$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。</p>
-<p>$\lceil x \rfloor$：表示四舍五入取整即round。</p>
-<h2 id="原始">原始
-</h2><ul>
-<li>
-<p><strong>Scale</strong><a class="link" href="#ref-BGV11" ><sup>1</sup></a>：</p>
-<p><img src="/p/mod-switch/scale.png"
-	width="1392"
-	height="86"
-	srcset="/p/mod-switch/scale_hu_be4c70ae9e118a7f.png 480w, /p/mod-switch/scale_hu_28944b1dc9c52d3e.png 1024w"
-	loading="lazy"
-	
-		alt="scale"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="1618"
-		data-flex-basis="3884px"
-	
-></p>
-</li>
-<li>
-<p><strong>Scale</strong>实现：</p>
-</li>
-</ul>
+    <h2 id="fft">FFT
+</h2><h2 id="fft的误差">FFT的误差
+</h2><p>问题1：已知$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}\in \mathbb{C}^{n}$，这里把$\mathbf{a}$看做多项式系数，$\mathbf{b}$看做n维向量，分析$e=\Vert \mathbf{b}-\mathbf{M}\mathbf{a}\Vert_\infty$的上界？</p>
+<p>问题2：已知$\mathbf{a}_1=\mathbf{M}^{-1}\mathbf{b}_1,\mathbf{a}_2=\mathbf{M}^{-1}\mathbf{b}_2$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}_1,\mathbf{}_2\in \mathbb{C}^{n}$，分析
 $$
-x'=x+\lceil\frac{(p-q)x}{qr}\rfloor r
-$$<p>如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。</p>
-<ul>
-<li>分析</li>
-</ul>
+e_+=\Vert (\mathbf{b}<em>1+</em>{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}<em>1+</em>{poly}\mathbf{a}<em>2)\Vert</em>\infty\</p>
+<p>e_\times=\Vert (\mathbf{b}<em>1\times</em>{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}<em>1\times</em>{poly}\mathbf{a}<em>2)\Vert</em>\infty
 $$
-\begin{aligned}
-\left|\lceil\frac{(p-q)x}{qr}\rfloor-\frac{(p-q)x}{qr}\right|\leq 1/2\\
-\left|\lceil\frac{(p-q)x}{qr}\rfloor r-\frac{(p-q)x}{q}\right|\leq r/2\\
-\left|x'-x-\frac{(p-q)x}{q}\right|\leq r/2\\
-\left|x'-\frac{px}{q}\right|\leq r/2
-\end{aligned}
-$$<p>显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位$=0.5$时成立。</p>
-<p>当然实际使用时，这里$\left|x'-\frac{px}{q}\right|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。</p>
-<ul>
-<li>
-<p>BGV密文模数切换</p>
-<p>设BGV明文模数为$P$，密文初始模数为$Q=Q_L$对于级别$L$，类似级别$t(0\leq t\leq L)$对应$Q_t$，$Q_t=\prod_{i=0}^{t} p_i$</p>
-<p>给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t'}$上的密文$c'=(c_0',c_1')$，其中$t'\lt t$。</p>
-<p>注意：$c_i\in Z_{Q_t}[x]/X^N+1$</p>
-<p>操作如下：</p>
-</li>
-</ul>
-$$
-\begin{aligned}
-c' &= \text{Scale}(c) \\
-c_0' &= \text{Scale}(c_0) \\
-c_1' &= \text{Scale}(c_1) \\
-\left|c_0'[j] - Q_{t'}c_0[j]/Q_t\right| &\lt P/2, \quad (j=0,1,\dots,N-1)
-\end{aligned}
-$$<p>分析：设私钥为$s$，则BGV公钥加密如下，
-</p>
-$$
-b=a\cdot s+P\cdot e_s\\
-c_0=b\cdot v+P\cdot e_0+m\\
-c_1=-a\cdot v+P\cdot e_1
-$$<p>
-其中$a,b,s,e_s,v,e_0,e_1$都需要满足特定的离散概率分布才能保证安全性。</p>
-<p>解密操作为$m=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P$，$c_0+c_1\cdot s=m+P(e_s\cdot v+e_0+s\cdot e_1)$</p>
-<p>令$e=e_s\cdot v+e_0+s\cdot e_1$，则
-</p>
-$$
-\begin{aligned}
-\left|m\right| &\leq P/2\\
-\left(c_0,c_1\right)&\rightarrow c_0+c_1\cdot s = m+Pe\\
-m&=\left[m+Pe\right]_P=\left[c_0+c_1\cdot s\right]_P\\
-\left[\left[c_0\right]_{Q_t}+\left[c_1\cdot s\right]_{Q_t}\right]_{Q_t}&=\left[c_0+c_1\cdot s\right]_{Q_t}=\left[m+Pe\right]_{Q_t}\\
-\end{aligned}
-$$<p>
-我们需要确保$\left[\left[m+Pe\right]_{Q_t}\right]_P=m$，因此需要满足$\left|m+Pe\right|=\left|c_0+c_1\cdot s\right|\lt Q_t/2$</p>
-<p>事实上，这里的$e$可以根据加密参数设置一个上界比如$e_b>0$，需要满足$\left|m+Pe\right|\leq\left|m\right|+P\left|e\right|\lt P/2 +P\left|e\right|\lt Q_t/2$</p>
-<p>即$\left|e\right|\leq e_b\lt \frac{Q_t}{2P}-\frac{1}{2}$</p>
-<p>又$\left|e\right|=\left|e_s\cdot v+e_0+s\cdot e_1\right|$，所以$\Vert e\Vert_{\infty}\leq \Vert e_s\Vert_2 \Vert v\Vert_2+\Vert e_0\Vert_{\infty}+\Vert s\Vert_2 \Vert e_1\Vert_2$</p>
-<p>显然，$e_b$的大小应该和$s,e_s,v,e_0,e_1$的离散概率分布参数有关。</p>
-<p>注意，上面的分析是在解密前没有对密文进行运算的前提下展开的，下面分析如果密文参与运算如何解密分析：</p>
-<p>$(\left[c_0^*\right]_{Q_t},\left[c_1^*\right]_{Q_t})$，</p>
-<p>以加法为例，不妨假设密文$(\left[c_0^0\right]_{Q_t},\left[c_1^0\right]_{Q_t},e_b^0),(\left[c_0^1\right]_{Q_t},\left[c_1^1\right]_{Q_t},e_b^1)$进行加法运算得到
-</p>
-$$
-\left(c_0^*=\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t},c_1^*=\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right)\\
-\left(\left[c_0^*\right]_{Q_t}=\left[\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}\right]_{Q_t},\left[c_1^*\right]_{Q_t}=\left[\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right]_{Q_t}\right)\\
-c_0^0+c_1^0\cdot s = m^0+Pe^0,\left|e^0\right|\leq e_b^0\\
-c_0^1+c_1^1\cdot s = m^1+Pe^1,\left|e^1\right|\leq e_b^1\\
-c_0^*+c_1^*\cdot s = \left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}+\left[c_1^0\right]_{Q_t}\cdot s+\left[c_1^1\right]_{Q_t}\cdot s\\
-\left[c_0^*\right]_{Q_t}+\left[c_1^*\right]_{Q_t}\cdot s = \left[c_0^0+c_0^1\right]_{Q_t}+\left[c_1^0+c_1^1\right]_{Q_t}\cdot s\\
-\left[\left[c_0^*\right]_{Q_t}+\left[c_1^*\right]_{Q_t}\cdot s\right]_{Q_t}=
-\left[\left[c_0^0+c_0^1\right]_{Q_t}+\left[c_1^0+c_1^1\right]_{Q_t}\cdot s\right]_{Q_t}
-=\left[c_0^0+c_0^1+(c_1^0+c_1^1)\cdot s\right]_{Q_t}=\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}
-$$<p>
-我们显然期待$\left[\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}\right]_P=\left[m^0+m^1\right]_P$</p>
-<p>由前面的分析，可知，需要保证$\left|e^0+e^1\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$，只需要$e_b^0+e_b^1\lt \frac{Q_t}{2P}-\frac{1}{2}$即可。</p>
-<p>这也是为什么经常说加法的噪声是累加的。</p>
-<p>推广：</p>
-<p>$\left[\left[f\left(m^0,m^1,\dots,m^k\right)+Pg\left(e^0,e^1,\dots,e^k\right)\right]_{Q_t}\right]_P=\left[f\left(m^0,m^1,\dots,m^k\right)\right]_P$</p>
-<p>成立的条件是$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$</p>
-<p>通过各种不等式放缩，一般可以得到$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\leq h(e_b^0,e_b^1,\dots,e_b^k)\lt \frac{Q_t}{2P}-\frac{1}{2}$</p>
-<p>模数切换成立的条件是解密后对应的明文相同，因此可以对应三个充分条件：</p>
-<ul>
-<li>(1) $c_0'=\text{Scale}(c_0),\;c_1'=\text{Scale}(c_1)$</li>
-<li>(2) $Q_t\equiv Q_{t'}\equiv 1(\text{mod}\; P)$</li>
-<li>(3) $\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</li>
-</ul>
-<p>证明：</p>
-$$
-\begin{aligned}
-c_0[j]+(c_1\cdot s)[j]&=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
-c_0'[j]+(c_1'\cdot s)[j]&=M+k[j]Q_t+r[j]P\\
-c_0'[j]+(c_1'\cdot s)[j]&=M'+k'[j]Q_{t'},\left|M'\right|\lt Q_{t'}/2\\
-M+k[j]Q_t+r[j]P&=M'+k'[j]Q_{t'}\\
-M+k[j]Q_t+r[j]P&=M'+k'[j]Q_{t'}(\text{mod}\;P)\\
-M+k[j]&\equiv M'+k'[j](\text{mod}\;P)\\
-\end{aligned}
-$$<p>显然只需要说明$k[j]=k'[j]$，即可得到$M\equiv M'(\text{mod}\;P)$，因此对应明文相同。</p>
-<p>证明$k=k'$等价于证明当$k=k'$时有$\left|M'\right|\lt Q_{t'/2}$成立即$\left|c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}\right|\lt Q_{t'}/2$</p>
-<p>直接代入验证，令 $M^*[j]=c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}$，则</p>
-$$
-\begin{aligned}
-M^*[j]&=c_0'[j]-Q_{t'}c_0[j]/Q_t+Q_{t'}c_0[j]/Q_t+(c_1'\cdot s)[j]+(Q_{t'}c_1/Q_t\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]-k[j]Q_{t'}\\
-&=(-k[j]Q_{t'}+Q_{t'}c_0[j]/Q_t+(Q_{t'}c_1/Q_t\cdot s)[j])\\
-&+c_0'[j]-Q_{t'}c_0[j]/Q_t\\
-&+(c_1'\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]\\
-&=Q_{t'}M[j]/Q_t\\
-&+c_0'[j]-Q_{t'}c_0[j]/Q_t\\
-&+((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]
-\end{aligned}
-$$<p>只需要说明此时的$\left|M^*[j]\right|\lt Q_{t'}/2 $即$M^*=M'$。</p>
-<p>多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$</p>
-<p>所以$\left|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1'-Q_{t'}c_1/Q_t)\Vert_2\Vert s\Vert_2$</p>
-<p>因为$\left|c_i'[j]-Q_{t'}c_i[j]/Q_t)\right|\leq P/2$，所以$||(c_i'-Q_{t'}c_i/Q_t)||_2\leq P\sqrt{N}/2$</p>
-<p>因此</p>
-$$
-\begin{aligned}
-\left|M^*[j]\right|&\leq \frac{Q_{t'}}{Q_t}\left|M[j]\right|+P/2+P\sqrt{N}\Vert s\Vert_2/2
-\end{aligned}
-$$<p>显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t'}/2$的，此时$M^*=M'$。注意到，如果$\left|M^*[j]\right|\lt Q_{t'}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。</p>
-<p>因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$即可，这就是条件(3)。</p>
-<p>证毕。</p>
-<ul>
-<li>
-<p>噪声</p>
-$$
-  \begin{aligned}
-  e'&=\frac{M'-m}{P}\\&=\frac{Q_{t'}M[j]/Q_t+(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)-m}{P}\\
-  &=\frac{Q_{t'}}{Q_t}\frac{M[j]-m}{P}+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\\
-  &=\frac{Q_{t'}}{Q_t}e+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}
-  \end{aligned}
-  $$$$
-  \begin{aligned}
-  \left|e'\right|&\leq \left|\frac{Q_{t'}}{Q_t}e\right|+\left|\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}\right|+\left|(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\right| \\ 
-  &\leq \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{1}{2}+\frac{\sqrt{N}\Vert s\Vert_2}{2}+1-\frac{Q_{t'}}{Q_t}
-  \\
-  &=\frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}+\frac{3}{2}-\frac{Q_{t'}}{Q_t}
-  \\
-  &\approx \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}
-  \\
-  &\leq \frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}
-  \end{aligned}
-  $$<p>所以$e_b'=\frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}$。</p>
-</li>
-<li>
-<p>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</p>
-</li>
-<li>
-<p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</p>
-</li>
-</ul>
-<h2 id="拓展1">拓展1
-</h2><p>我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。</p>
-<ul>
-<li>
-<p><strong>Scale_1<a class="link" href="#ref-HElib20" ><sup>2</sup></a></strong></p>
-<p>令$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，$Q_td_i\equiv b_i(\text{mod}\;P),\left|d_i\right|\leq P/2$，则
-</p>
-$$
-  c'_i=a_i+d_i
-  $$</li>
-<li>
-<p>新的公钥加解密操作如下：</p>
-</li>
-</ul>
-<p>（1）加密</p>
-<p>令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$</p>
-$$
-b=a\cdot s+P\cdot e_s\\
-c_0=b\cdot v+P\cdot e_0+\hat{m}\cdot Q_t\\
-c_1=-a\cdot v+P\cdot e_1
-$$<p>（2）解密</p>
-$$
-\hat{m}=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P\\
-m=\left[\hat{m}\cdot k_t^{-1}\right]_P
-$$<p>重写上述证明如下：</p>
-$$
-\begin{aligned}
-c_0[j]+(c_1\cdot s)[j]&=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
-c_0'[j]+(c_1'\cdot s)[j]&=M'+k'[j]Q_{t'},\left|M'\right|\lt Q_{t'}/2\\
-\end{aligned}
-$$<p>此时我们不需要证明$M\equiv M'(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M'\cdot Q_{t'}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t'}\equiv M'\cdot Q_t(\text{mod}\;P)$。也就是要验证</p>
-$$
-(c_0[j]+(c_1\cdot s)[j]-k[j]Q_t)Q_{t'}=(c_0'[j]+(c_1'\cdot s)[j]-k'[j]Q_{t'})Q_{t}(\text{mod}\;P)\\
-(c_0[j]+(c_1\cdot s)[j])Q_{t'}-k[j]Q_tQ_{t'}=(c_0'[j]+(c_1'\cdot s)[j])Q_{t}-k'[j]Q_tQ_{t'}(\text{mod}\;P)
-$$<p>由Scale_new操作可得，</p>
-$$
-Q_{t'}c_i=Q_ta_i+b_i\\
-Q_{t'}c_i\equiv Q_ta_i+Q_td_i(\text{mod}\;P)\\
-Q_{t'}c_i\equiv Q_t(a_i+d_i)(\text{mod}\;P)\\
-Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)\\
-$$<p>所以和前面的证明类似，我们只需要说明$k[j]=k'[j]$即可。</p>
-<p>类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。</p>
-$$
-c_0'[j]-Q_{t'}c_0[j]/Q_t=a_0+d_0-Q_{t'}c_0/Q_t=d_0-b_0/Q_t
-$$<p>因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以</p>
-$$
-\left|d_0-b_0/Q_t\right|\leq \left|d_0\right|+\left|b_0/Q_t\right|\leq \frac{P+1}{2}
-$$<p>相当于原来的上界增加1/2，这个几乎可以看做没有增加了。</p>
-<p>条件(3)也可以更新为$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+(P+1)\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</p>
-<p>总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！</p>
-<p>当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。</p>
-<h2 id="拓展2">拓展2
-</h2><p>拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t'}|Q_t, t'\lt t$。设$R=Q_t/Q_{t'}$</p>
-<p>我们想保证$Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)$，一个想法是：</p>
-<p>令$Q_tc_i'=Q_{t'}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。</p>
-<p>显然，此时有$c_i'=\frac{Q_{t'}(c_i+r_iP)}{Q_t}$。</p>
-<p>令$Q_{t'}|Q_t$，则$c_i'=\frac{c_i+r_iP}{R}$</p>
-<p>所以$r_iP\equiv -c_i(\text{mod}\;R)$</p>
-<p>因为$\text{gcd}(P,R)=1$，令$r_i=-c_iP^{-1}(\text{mod}\;R)$。</p>
-<p>所以新的scale是</p>
-<ul>
-<li>
-<p><strong>Scale_2</strong><a class="link" href="#ref-KPZ22" ><sup>3</sup></a></p>
-$$
-  c_i'=\frac{c_i+\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}
-  $$</li>
-</ul>
-<p>类似的，有$\left|c_i'-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$</p>
-<h2 id="总结">总结
-</h2><p>这是目前看到的三种实现BGV mod-switch的方法，三种方法既有相同之处又有各自的特点，应该根据参数选取，性能，噪声等等指标来权衡使用哪一种方式。注意：拓展2和拓展3是可以一起使用的。</p>
-<p>补充：在BGV方案中，私钥$s$的系数属于$\{0,1,-1\}$，并且规定了汉明重量h即非零元素个数。我们用$w(s)$表示。显然有:
-</p>
-$$
-\Vert s\Vert_2=\sqrt{w(s)}
-$$<h2 id="参考">参考
-</h2><div id="ref-BGV11"></div>
-- [1] [BGV11](https://eprint.iacr.org/2011/277.pdf)
-<div id="ref-HElib20"></div>
-- [2] [HElib20](https://eprint.iacr.org/2020/1481.pdf)
-<div id="ref-KPZ22"></div> 
-- [3] [KPZ22](https://eprint.iacr.org/2021/204.pdf)
+两个误差的上界？</p>
+<p>回答：显然，误差不好准确估计，但是维数越高，误差的上界应该越大。</p>
+<p>对于双精度的FHE运算来说，FFT的运算误差应该可以控制在单精度范围内。</p>
+
 </section>
 
 
@@ -620,11 +378,9 @@ $$<h2 id="参考">参考
     
     <section class="article-tags">
         
-            <a href="/tags/bgv/">BGV</a>
+            <a href="/tags/fft/">FFT</a>
         
-            <a href="/tags/scale/">Scale</a>
-        
-            <a href="/tags/mod-switch/">Mod Switch</a>
+            <a href="/tags/fhe/">FHE</a>
         
     </section>
 
@@ -684,6 +440,30 @@ $$<h2 id="参考">参考
             
                 
 <article class="has-image">
+    <a href="/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 范数不等式"
+                        
+                        data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">范数不等式</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
     <a href="/p/key-switch-bgv/">
         
         
@@ -708,15 +488,15 @@ $$<h2 id="参考">参考
             
                 
 <article class="has-image">
-    <a href="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
+    <a href="/p/mod-switch/">
         
         
             <div class="article-image">
-                <img src="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
+                <img src="/p/mod-switch/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 快速傅里叶变换"
+                        alt="Featured image of post Mod Switch"
                         
                         data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA==">
                 
@@ -724,31 +504,7 @@ $$<h2 id="参考">参考
         
 
         <div class="article-details">
-            <h2 class="article-title">快速傅里叶变换</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 范数不等式"
-                        
-                        data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">范数不等式</h2>
+            <h2 class="article-title">Mod Switch</h2>
         </div>
     </a>
 </article>

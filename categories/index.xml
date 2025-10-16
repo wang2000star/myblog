@@ -7,18 +7,26 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Cryptography</title>
         <link>https://www.wfz521.com/categories/cryptography/</link>
-        <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
         
         <guid>https://www.wfz521.com/categories/cryptography/</guid>
         <description></description>
         </item>
         <item>
+        <title>FFT</title>
+        <link>https://www.wfz521.com/categories/fft/</link>
+        <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.wfz521.com/categories/fft/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>FHE</title>
         <link>https://www.wfz521.com/categories/fhe/</link>
-        <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
         
         <guid>https://www.wfz521.com/categories/fhe/</guid>
         <description></description>

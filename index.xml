@@ -7,7 +7,26 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>快速傅里叶变换</title>
+        <link>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</link>
+        <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</guid>
+        <description>&lt;img src="https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.png" alt="Featured image of post 快速傅里叶变换" /&gt;&lt;h2 id=&#34;fft&#34;&gt;FFT
+&lt;/h2&gt;&lt;h2 id=&#34;fft的误差&#34;&gt;FFT的误差
+&lt;/h2&gt;&lt;p&gt;问题1：已知$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}\in \mathbb{C}^{n}$，这里把$\mathbf{a}$看做多项式系数，$\mathbf{b}$看做n维向量，分析$e=\Vert \mathbf{b}-\mathbf{M}\mathbf{a}\Vert_\infty$的上界？&lt;/p&gt;
+&lt;p&gt;问题2：已知$\mathbf{a}_1=\mathbf{M}^{-1}\mathbf{b}_1,\mathbf{a}_2=\mathbf{M}^{-1}\mathbf{b}_2$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}_1,\mathbf{}_2\in \mathbb{C}^{n}$，分析
+$$
+e_+=\Vert (\mathbf{b}&lt;em&gt;1+&lt;/em&gt;{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em&gt;1+&lt;/em&gt;{poly}\mathbf{a}&lt;em&gt;2)\Vert&lt;/em&gt;\infty\&lt;/p&gt;
+&lt;p&gt;e_\times=\Vert (\mathbf{b}&lt;em&gt;1\times&lt;/em&gt;{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em&gt;1\times&lt;/em&gt;{poly}\mathbf{a}&lt;em&gt;2)\Vert&lt;/em&gt;\infty
+$$
+两个误差的上界？&lt;/p&gt;
+&lt;p&gt;回答：显然，误差不好准确估计，但是维数越高，误差的上界应该越大。&lt;/p&gt;
+&lt;p&gt;对于双精度的FHE运算来说，FFT的运算误差应该可以控制在单精度范围内。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>范数不等式</title>
         <link>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</link>
         <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
@@ -420,7 +439,7 @@ $$&lt;p&gt;相当于原来的上界增加1/2，这个几乎可以看做没有增
 &lt;p&gt;总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！&lt;/p&gt;
 &lt;p&gt;当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。&lt;/p&gt;
 &lt;h2 id=&#34;拓展2&#34;&gt;拓展2
-&lt;/h2&gt;&lt;p&gt;拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t&#39;}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t&#39;}|Q_t, t&#39;&lt;t$。设$R=Q_t/Q_{t&#39;}$&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t&#39;}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t&#39;}|Q_t, t&#39;\lt t$。设$R=Q_t/Q_{t&#39;}$&lt;/p&gt;
 &lt;p&gt;我们想保证$Q_{t&#39;}c_i\equiv Q_tc_i&#39;(\text{mod}\;P)$，一个想法是：&lt;/p&gt;
 &lt;p&gt;令$Q_tc_i&#39;=Q_{t&#39;}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。&lt;/p&gt;
 &lt;p&gt;显然，此时有$c_i&#39;=\frac{Q_{t&#39;}(c_i+r_iP)}{Q_t}$。&lt;/p&gt;
