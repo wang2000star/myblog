@@ -7,7 +7,75 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 17 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>个人简历</title>
+        <link>https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/</link>
+        <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/</guid>
+        <description>&lt;img src="https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/pkq.png" alt="Featured image of post 个人简历" /&gt; &lt;center&gt;
+    &lt;div&gt;
+        &lt;img src=&#34;assets/id-photo.jpg&#34; style=&#34;float:right&#34; width=&#34;100&#34; height=&#34;100&#34;/&gt;
+		&lt;b&gt;&lt;font size = 5&gt;王方震&lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+		&lt;span style=&#34;font-size:18px&#34;&gt;&amp;#x1F4DE;&lt;/span&gt;(+86) 15792196036 | &lt;span style=&#34;font-size:18px&#34;&gt;&amp;#x1F4E7;&lt;/span&gt;&lt;a href=&#34;mailto:wwwdream521@163.com&#34;&gt;wwwdream521@163.com&lt;/a&gt; | 北京市&lt;br&gt;
+        &lt;span style=&#34;font-size:18px&#34;&gt;&amp;#x1F5A5;&lt;/span&gt;&lt;a href=&#34;https://www.wfz521.com/&#34;&gt;Blog&lt;/a&gt; | &lt;img src=&#34;assets/github.svg&#34; width=&#34;18px&#34;&gt;&lt;a href=&#34;https://github.com/wang2000star&#34;&gt;Github&lt;/a&gt; &lt;br&gt;
+        25岁 | 男 | 中共党员
+	 &lt;/div&gt;
+&lt;/center&gt;
+&lt;h2 id=&#34;mortar_board-教育经历&#34;&gt;:mortar_board: 教育经历
+&lt;/h2&gt;&lt;div id=&#34;expand-box-header&#34; style=&#34;display: flex; justify-content: space-between; align-items: center; gap: 20px; line-height: 1.6;&#34;&gt;
+    &lt;span style=&#34;font-weight: bold;&#34;&gt;中国石油大学（华东）&lt;/span&gt;
+    &lt;span&gt;数学与应用数学&lt;/span&gt;
+    &lt;span&gt;理学学士&lt;/span&gt;
+    &lt;span&gt;2019年09月 - 2023年06月&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;expand-box-header&#34; style=&#34;display: flex; justify-content: space-between; align-items: center; gap: 20px; line-height: 1.6;&#34;&gt;
+    &lt;span style=&#34;font-weight: bold;&#34;&gt;中国科学院大学&lt;/span&gt;
+    &lt;span&gt;网络空间安全&lt;/span&gt;
+    &lt;span&gt;学硕在读&lt;/span&gt;
+    &lt;span&gt;2023年09月 - 至今&lt;/span&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;GPA: 3.84 / 4.00&lt;/li&gt;
+&lt;li&gt;主修课程: 信息安全数学基础(96)，对称密码的自动化分析(99)，格密码(92)，密码应用技术实践(90)&lt;/li&gt;
+&lt;li&gt;研究方向: 同态友好的对称密码设计和优化实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;briefcase-项目经历&#34;&gt;:briefcase: 项目经历
+&lt;/h2&gt;&lt;div id=&#34;expand-box-header1&#34;&gt;
+    &lt;span style=&#34;float: left; font-weight: bold&#34;&gt;美国大学生数学建模竞赛&lt;/span&gt; 
+    &lt;span style=&#34;float: right;&#34;&gt;2022年2月(本科)&lt;/span&gt;&lt;br&gt;
+&lt;/div&gt;
+- 内容简述：根据黄金和比特币的每日价格表，建立数学模型来提供最佳的交易策略
+- 获得成绩：**Meritorious Winner**
+&lt;div id=&#34;expand-box-header2&#34;&gt;
+    &lt;span style=&#34;float: left; font-weight: bold&#34;&gt;一类伪随机序列的设计和分析&lt;/span&gt; 
+    &lt;span style=&#34;float: right;&#34;&gt;2023年3月-5月(本科)&lt;/span&gt;&lt;br&gt;
+&lt;/div&gt;
+- 内容简述：基于勒让德公式设计了一类性质良好的伪随机序列并分析其非线性复杂度的下界
+- 获得成绩：**优秀毕业论文**
+&lt;div id=&#34;expand-box-header3&#34;&gt;
+    &lt;span style=&#34;float: left; font-weight: bold&#34;&gt;xxx项目的算法库实现&lt;/span&gt; 
+    &lt;span style=&#34;float: right;&#34;&gt;2025年2月-至今(研究生)&lt;/span&gt;&lt;br&gt;
+&lt;/div&gt;
+- 内容简述：面向windows、mac、android和harmony的分组算法、哈希算法和公钥算法的c/c++实现
+- 获得成绩：实现了分组算法和椭圆曲线的参数生成工具；实现并优化了分组算法、哈希算法和基于椭圆曲线的数字签名、公钥加密和密钥交换等算法；编写了完整的算法库使用文档
+&lt;div id=&#34;expand-box-header4&#34;&gt;
+    &lt;span style=&#34;float: left; font-weight: bold&#34;&gt;同态友好的对称密码设计和优化实现&lt;/span&gt; 
+    &lt;span style=&#34;float: right;&#34;&gt;2024年9月-至今(研究生)&lt;/span&gt;&lt;br&gt;
+&lt;/div&gt;
+- 内容简述：设计出一种面向BGV/BFV同态方案的对称密码算法并进行同态优化实现
+- 获得成绩：实现了相关算法并作为第2作者编写了一篇学术论文，投稿到[IEEE Transactions on Information Theory](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=18)，已被录用
+## :wrench: 荣誉、技能和证书
+&lt;ul&gt;
+&lt;li&gt;荣誉: 荣誉学士学位、学习优秀奖学金、全国大学生数学竞赛二等奖&lt;/li&gt;
+&lt;li&gt;技能: c/c++, python&lt;/li&gt;
+&lt;li&gt;证书: 英语六级、计算机二级网络技术、普通话二级&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;memo-自我评价&#34;&gt;:memo: 自我评价
+&lt;/h2&gt;&lt;p&gt;本人具备良好的心态和责任感，吃苦耐劳，善于管理时间，勇于面对变化和挑战。拥有良好的学习能力，习惯制定切实可行的学习计划，勤于学习能不断提高。擅长数学推导，喜欢将理论与实践相结合。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>快速傅里叶变换</title>
         <link>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</link>
         <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
