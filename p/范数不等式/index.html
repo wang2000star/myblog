@@ -260,6 +260,7 @@
     <li><a href="#矩阵-向量不等式">矩阵-向量不等式</a></li>
     <li><a href="#快速傅里叶变换不等式">快速傅里叶变换不等式</a></li>
     <li><a href="#快速傅里叶嵌入不等式">快速傅里叶嵌入不等式</a></li>
+    <li><a href="#fhe中噪声">FHE中噪声</a></li>
   </ol>
 </nav>
         </div>
@@ -344,7 +345,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -440,7 +441,20 @@ $$<p>
 $$
 \Vert \sigma(a(x)\cdot_\sigma b(x))\Vert_\infty \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty\\
 \Vert \sigma(a(x)+ b(x))\Vert_\infty \leq n(\Vert a(x)\Vert_\infty +\Vert b(x)\Vert_\infty)
-$$
+$$<h2 id="fhe中噪声">FHE中噪声
+</h2><p>n维向量$m_i$看做多项式$m_i(x)$的系数，然后FFT编码成多项式即$M_i(x)=\sigma^{-1}(m_i(x))$，对$M_i(x)$进行同态加密，得到$C_i(x)$，不妨设对应噪声为$E_i(x)$，</p>
+<p>（1）加法运算：$\Vert E_i(x)+E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)+E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$</p>
+<p>（2）乘法运算：$\Vert E_i(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\times E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$</p>
+<p>（3）数乘运算：$\Vert c\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c\times E_j(x)\right)\Vert_\infty \leq c \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$</p>
+<p>（4）多项式乘：$\Vert c(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x)\times E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$</p>
+<p>（5）数加运算：$\Vert c + E_j(x)\Vert_\infty \leq \Vert \sigma\left(c + E_j(x)\right)\Vert_\infty \leq c + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$</p>
+<p>（6）多项式加：$\Vert c(x)+ E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x) + E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$</p>
+<p>（7）伽罗瓦自同构：$\Vert \theta_t(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_t(E_j(x))\right)\Vert_\infty \leq \Vert \theta_t(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$</p>
+<p>（8）弗罗比尼斯自同构：$\Vert \theta_{p^t}(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_{p^t}(E_j(x))\right)\Vert_\infty \leq \Vert \theta_{p^t}(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$</p>
+<p>有论文表明：伽罗瓦自同构几乎不改变噪声，准确的说是因为伽罗瓦自同构在模$X^m+1$下相当于系数重排且符号可能改变。因此绝对值不变，无穷范数自然不变。</p>
+<p>利用上述8个公式，当给定初始噪声的$\Vert \sigma\left(E_i(x)\right)\Vert_\infty$上界时，就能估计后面所有使用这8中运算后的噪声界。</p>
+<p>补充：证明分圆多项式环上的伽罗瓦变换是自同构。关键是证明双射。</p>
+
 </section>
 
 
@@ -612,7 +626,9 @@ $$
     <section class="copyright">
         &copy; 
         
-        2025 2025-皮卡丘的守护神
+            2025 - 
+        
+        2026 2025-皮卡丘的守护神
     </section>
     
     <section class="powerby">

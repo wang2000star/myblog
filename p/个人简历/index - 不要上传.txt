@@ -1,0 +1,85 @@
++++
+author = "wfz"
+title = "个人简历"
+date = "2025-10-17"
+description = "简历"
+categories = [
+    "resume",
+    "简历"
+]
+tags = [
+    "resume",
+    "简历"
+]
+image = "pkq.png"
+math = true
+toc = true
++++
+
+ <center>
+    <div>
+        <img src="assets/id-photo.jpg" style="float:right" width="100" height="100"/>
+		<b><font size = 5>王方震</font></b><br>
+		<span style="font-size:18px">&#x1F4DE;</span>(+86) 15792196036 | <span style="font-size:18px">&#x1F4E7;</span><a href="mailto:wwwdream521@163.com">wwwdream521@163.com</a> | 北京市<br>
+        <span style="font-size:18px">&#x1F5A5;</span><a href="https://www.wfz521.com/">Blog</a> | <img src="assets/github.svg" width="18px"><a href="https://github.com/wang2000star">Github</a> <br>
+        25岁 | 男 | 中共党员
+	 </div>
+</center>
+
+## :mortar_board: 教育经历
+
+<div id="expand-box-header" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; line-height: 1.6;">
+    <span style="font-weight: bold;">中国石油大学（华东）</span>
+    <span>数学与应用数学</span>
+    <span>理学学士</span>
+    <span>2019年09月 - 2023年06月</span>
+</div>
+
+<div id="expand-box-header" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; line-height: 1.6;">
+    <span style="font-weight: bold;">中国科学院大学</span>
+    <span>网络空间安全</span>
+    <span>学硕在读</span>
+    <span>2023年09月 - 至今</span>
+</div>
+
+- GPA: 3.84 / 4.00
+- 主修课程: 信息安全数学基础(96)，对称密码的自动化分析(99)，格密码(92)，密码应用技术实践(90)
+- 研究方向: 同态友好的对称密码设计和优化实现
+
+## :briefcase: 项目经历
+
+<div id="expand-box-header1">
+    <span style="float: left; font-weight: bold">美国大学生数学建模竞赛</span> 
+    <span style="float: right;">2022年2月(本科)</span><br>
+</div>
+- 内容简述：根据黄金和比特币的每日价格表，建立数学模型来提供最佳的交易策略
+- 获得成绩：**Meritorious Winner**
+
+<div id="expand-box-header2">
+    <span style="float: left; font-weight: bold">一类伪随机序列的设计和分析</span> 
+    <span style="float: right;">2023年3月-5月(本科)</span><br>
+</div>
+- 内容简述：基于勒让德公式设计了一类性质良好的伪随机序列并分析其非线性复杂度的下界
+- 获得成绩：**优秀毕业论文**
+
+<div id="expand-box-header3">
+    <span style="float: left; font-weight: bold">xxx项目的算法库实现</span> 
+    <span style="float: right;">2025年2月-至今(研究生)</span><br>
+</div>
+- 内容简述：面向windows、mac、android和harmony的分组算法、哈希算法和公钥算法的c/c++实现
+- 获得成绩：实现了分组算法和椭圆曲线的参数生成工具；实现并优化了分组算法、哈希算法和基于椭圆曲线的数字签名、公钥加密和密钥交换等算法；编写了完整的算法库使用文档
+
+<div id="expand-box-header4">
+    <span style="float: left; font-weight: bold">同态友好的对称密码设计和优化实现</span> 
+    <span style="float: right;">2024年9月-至今(研究生)</span><br>
+</div>
+- 内容简述：设计出一种面向BGV/BFV同态方案的对称密码算法并进行同态优化实现
+- 获得成绩：实现了相关算法并作为第2作者编写了一篇学术论文，投稿到[IEEE Transactions on Information Theory](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=18)，已被录用：[YuS: A FHE-friendly Stream Cipher Based on New Quadratic Permutations | IEEE Journals & Magazine | IEEE Xplore](https://ieeexplore.ieee.org/document/11185168)
+## :wrench: 荣誉、技能和证书
+
+- 荣誉: 荣誉学士学位、学习优秀奖学金、全国大学生数学竞赛二等奖
+- 技能: c/c++, python
+- 证书: 英语六级、计算机二级网络技术、普通话二级
+
+## :memo: 自我评价
+本人具备良好的心态和责任感，吃苦耐劳，善于管理时间，勇于面对变化和挑战。拥有良好的学习能力，习惯制定切实可行的学习计划，勤于学习能不断提高。擅长数学推导，喜欢将理论与实践相结合。
