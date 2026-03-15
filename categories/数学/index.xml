@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>数学 on wfz的博客</title>
+        <link>https://www.wfz521.com/categories/%E6%95%B0%E5%AD%A6/</link>
+        <description>Recent content in 数学 on wfz的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>2025-皮卡丘的守护神</copyright>
+        <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>有限域学习</title>
+        <link>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</guid>
+        <description>&lt;img src="https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png" alt="Featured image of post 有限域学习" /&gt;&lt;p&gt;设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p&gt;
+&lt;p&gt;$\text{Res}(f,g)=0$当且仅当存在不为0的多项式$p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d$，使得$fp+gq=0$。&lt;/p&gt;
+&lt;p&gt;进一步，如果$g$的最高次项系数$c_g^e$是整环里的可逆元，则设$g_1(x)=g/c_g^e$，显然$g_1(x)$是首一多项式，再令$f_1(x)=f/c_g^e$&lt;/p&gt;
+&lt;p&gt;此时$fp+gq=0$等价于$f_1p+g_1q=0$等价于$f_1p\equiv 0(\text{mod}\;g_1)$&lt;/p&gt;
+&lt;p&gt;设$\mathcal{R}_g[x]=\mathcal{R}[x](\text{mod}\;g_1)$，显然$R_g$是$\mathcal{R}$上秩等于$e$的有限生成自由模，则$f_1$诱导出$R_g$上的一个线性变换
+&lt;/p&gt;
+$$
+x\in R_g,f_1x\in R_g
+$$&lt;p&gt;
+因为有$p\neq 0(\text{mod}\;g_1),f_1p\equiv 0(\text{mod}\;g_1)$，所以$\text{rank}(\text{ker}(f_1))\gt 0$，即$\text{rank}(f_1)\lt e$。(秩-零化度定理)&lt;/p&gt;
+&lt;p&gt;给定$R_g$上的一组基比如多项式基$\{1,x,...,x^{e-1}\}$，则$f_1$在这组基上的表示矩阵为$M$
+&lt;/p&gt;
+$$
+\text{rank}(f_1)\lt e \iff \text{det}(M)=0
+$$&lt;p&gt;
+注意：交换环上矩阵不满秩与矩阵不可逆不等价，应该是矩阵可逆一定满秩，满秩不一定可逆，不满秩一定不可逆，不可逆不一定不满秩。这是因为矩阵可逆等价于行列式是单位元即乘法可逆元。0一定是非单位元。&lt;/p&gt;
+&lt;p&gt;如果$\mathcal{R}$是整环，则$f$和$g$有公因子的必要条件是$\text{Res}(f,g)=0$。&lt;/p&gt;
+&lt;p&gt;如果$\mathcal{R}$是唯一分解整环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
