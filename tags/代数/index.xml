@@ -29,8 +29,35 @@ $$
 \text{rank}(f_1)\lt e \iff \text{det}(M)=0
 $$&lt;p&gt;
 注意：交换环上矩阵不满秩与矩阵不可逆不等价，应该是矩阵可逆一定满秩，满秩不一定可逆，不满秩一定不可逆，不可逆不一定不满秩。这是因为矩阵可逆等价于行列式是单位元即乘法可逆元。0一定是非单位元。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;p&gt;如果$\mathcal{R}$是整环，则$f$和$g$有公因子的必要条件是$\text{Res}(f,g)=0$。&lt;/p&gt;
-&lt;p&gt;如果$\mathcal{R}$是唯一分解整环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果$\mathcal{R}$是唯一分解环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果$\mathcal{R}[x]$是欧几里得环ED，则$f$和$g$有公因子当且仅当$\text{det}(M)=0$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\mathcal{R}[x]$是欧几里得环当且仅当$\mathcal{R}$是除环。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有限域上的一元多项式环是欧几里得环ED，多元多项式环是唯一分解环UFD。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$f$和$g$有公因子是$f$和$g$有公共根的必要条件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意：唯一分解环UFD一定是整环，主理想整环PID一定是UFD，欧几里得环ED一定是PID，域一定是ED。&lt;/p&gt;
+&lt;h2 id=&#34;整环&#34;&gt;整环
+&lt;/h2&gt;&lt;h2 id=&#34;戴德金环&#34;&gt;戴德金环
+&lt;/h2&gt;&lt;h2 id=&#34;模&#34;&gt;模
+&lt;/h2&gt;&lt;p&gt;参考链接：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://math.bembew.com/zh/article/commutative-algebra/basic-modular-structures-on-dedekind-rings.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;戴德金环上的模结构初步 - Bembew 数学&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/191411259&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【抽象代数】10. 几类重要的整环 - 知乎&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         

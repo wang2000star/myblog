@@ -224,7 +224,48 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title toc-title">
+            目录
+            
+            <button id="toc-toggle" class="toc-toggle-btn" aria-label="Toggle table of contents">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6,9 12,15 18,9"></polyline>
+                </svg>
+            </button>
+        </h2>
+        
+        <div class="widget--toc" id="widget-toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#整环">整环</a></li>
+    <li><a href="#戴德金环">戴德金环</a></li>
+    <li><a href="#模">模</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="has-image main-article">
@@ -300,7 +341,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -331,8 +372,35 @@ $$
 \text{rank}(f_1)\lt e \iff \text{det}(M)=0
 $$<p>
 注意：交换环上矩阵不满秩与矩阵不可逆不等价，应该是矩阵可逆一定满秩，满秩不一定可逆，不满秩一定不可逆，不可逆不一定不满秩。这是因为矩阵可逆等价于行列式是单位元即乘法可逆元。0一定是非单位元。</p>
+<ul>
+<li>
 <p>如果$\mathcal{R}$是整环，则$f$和$g$有公因子的必要条件是$\text{Res}(f,g)=0$。</p>
-<p>如果$\mathcal{R}$是唯一分解整环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。</p>
+</li>
+<li>
+<p>如果$\mathcal{R}$是唯一分解环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。</p>
+</li>
+<li>
+<p>如果$\mathcal{R}[x]$是欧几里得环ED，则$f$和$g$有公因子当且仅当$\text{det}(M)=0$。</p>
+</li>
+<li>
+<p>$\mathcal{R}[x]$是欧几里得环当且仅当$\mathcal{R}$是除环。</p>
+</li>
+<li>
+<p>有限域上的一元多项式环是欧几里得环ED，多元多项式环是唯一分解环UFD。</p>
+</li>
+<li>
+<p>$f$和$g$有公因子是$f$和$g$有公共根的必要条件。</p>
+</li>
+</ul>
+<p>注意：唯一分解环UFD一定是整环，主理想整环PID一定是UFD，欧几里得环ED一定是PID，域一定是ED。</p>
+<h2 id="整环">整环
+</h2><h2 id="戴德金环">戴德金环
+</h2><h2 id="模">模
+</h2><p>参考链接：</p>
+<p><a class="link" href="https://math.bembew.com/zh/article/commutative-algebra/basic-modular-structures-on-dedekind-rings.html"  target="_blank" rel="noopener"
+    >戴德金环上的模结构初步 - Bembew 数学</a></p>
+<p><a class="link" href="https://zhuanlan.zhihu.com/p/191411259"  target="_blank" rel="noopener"
+    >【抽象代数】10. 几类重要的整环 - 知乎</a></p>
 
 </section>
 
