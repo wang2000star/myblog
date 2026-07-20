@@ -6,14 +6,17 @@
 
 <link rel='canonical' href='https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/'>
 
-<link rel="stylesheet" href="/scss/style.min.46161d2c87dd5035c632c33bdb47fd8ce434eb96429e101d253ddd0facde8561.css"><meta property='og:title' content="有限域学习">
+<link rel="stylesheet" href="/scss/style.min.f668d274cc69d7fc932ccd47694ee48e20e84392f3e5acacc45746e109d2dfc9.css"><meta property='og:title' content="有限域学习">
 <meta property='og:description' content="有限域">
 <meta property='og:url' content='https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/'>
 <meta property='og:site_name' content='wfz的博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='有限域' /><meta property='article:tag' content='代数' /><meta property='article:published_time' content='2026-03-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png' />
 <meta name="twitter:title" content="有限域学习">
 <meta name="twitter:description" content="有限域"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png' />
+    <meta name="twitter:image" content='https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png' /><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     </head>
     <body class="
     article-page
@@ -54,7 +57,7 @@
                 <a href="/">
                 
                     
-                    
+
                     
                         
                         <img src="/img/avatar_hu_ad769d231db0056a.png" width="300"
@@ -68,15 +71,15 @@
             </figure>
             
         
-        
+
         <div class="site-meta">
             <h1 class="site-name"><a href="/">wfz的博客</a></h1>
-            <h2 class="site-description">关于密码学、编程、生活等。</h2>
+            <h2 class="site-description">密码学 · 数学 · 编程 · 生活</h2>
         </div>
     </header><ol class="menu-social">
             
                 <li>
-                    <a 
+                    <a
                         href='https://github.com/wang2000star/'
                         target="_blank"
                         title="GitHub"
@@ -254,6 +257,7 @@
         <div class="widget--toc" id="widget-toc">
             <nav id="TableOfContents">
   <ol>
+    <li><a href="#贝祖定理的存在条件">贝祖定理的存在条件</a></li>
     <li><a href="#整环">整环</a></li>
     <li><a href="#戴德金环">戴德金环</a></li>
     <li><a href="#模">模</a></li>
@@ -341,7 +345,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -357,7 +361,8 @@
     
     
     <p>设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则</p>
-<p>$\text{Res}(f,g)=0$当且仅当存在不为0的多项式$p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d$，使得$fp+gq=0$。</p>
+<blockquote>
+<p>$\text{Res}(f,g)=0$当且仅当存在不为0的多项式$p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d$，使得$fp+gq=0$。</p></blockquote>
 <p>进一步，如果$g$的最高次项系数$c_g^e$是整环里的可逆元，则设$g_1(x)=g/c_g^e$，显然$g_1(x)$是首一多项式，再令$f_1(x)=f/c_g^e$</p>
 <p>此时$fp+gq=0$等价于$f_1p+g_1q=0$等价于$f_1p\equiv 0(\text{mod}\;g_1)$</p>
 <p>设$\mathcal{R}_g[x]=\mathcal{R}[x](\text{mod}\;g_1)$，显然$R_g$是$\mathcal{R}$上秩等于$e$的有限生成自由模，则$f_1$诱导出$R_g$上的一个线性变换
@@ -393,14 +398,32 @@ $$<p>
 </li>
 </ul>
 <p>注意：唯一分解环UFD一定是整环，主理想整环PID一定是UFD，欧几里得环ED一定是PID，域一定是ED。</p>
+<p>设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则</p>
+$$
+f 和 g 不互素的必要条件是存在不为 0 的多项式 p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d，使得 fp+gq=0。
+$$<p>
+如果$\mathcal{R}$是唯一分解整环即UFD，则变成了充要条件。</p>
+<p>关于唯一分解整环有如下高斯定理：
+</p>
+$$
+\mathcal{R}是唯一分解整环当且仅当\mathcal{R}[x]是唯一分解整环
+$$<p>
+因此，如果$\mathcal{R}$是唯一分解整环，则$\mathcal{R}$上的任意数量变元的多项式环也是唯一分解整环。</p>
+<p>常见的唯一分解整环就是整数环、域、和定义在它们上面的一元和多元多项式环。</p>
+<h2 id="贝祖定理的存在条件">贝祖定理的存在条件
+</h2><p>主理想整环（PID）上成立贝祖定理：若 $f$ 与 $g$ 互素，则存在 $u,v \in \mathcal{R}[x]$ 使得 $uf+vg=1$。<br>
+对于非 PID 的 UFD（如 $\mathbb{Z}[x]$），互素不一定能组合出 $1$。例如 $2$ 与 $x$ 在 $\mathbb{Z}[x]$ 中互素，但不存在整系数多项式 $u,v$ 使 $2u + xv = 1$（常数项矛盾）。因此，在更一般的环上，互素只能用公因子的不存在来刻画，而无法通过线性组合的形式体现。</p>
 <h2 id="整环">整环
 </h2><h2 id="戴德金环">戴德金环
 </h2><h2 id="模">模
 </h2><p>参考链接：</p>
 <p><a class="link" href="https://math.bembew.com/zh/article/commutative-algebra/basic-modular-structures-on-dedekind-rings.html"  target="_blank" rel="noopener"
     >戴德金环上的模结构初步 - Bembew 数学</a></p>
-<p><a class="link" href="https://zhuanlan.zhihu.com/p/191411259"  target="_blank" rel="noopener"
-    >【抽象代数】10. 几类重要的整环 - 知乎</a></p>
+<p>[【抽象代数】10. 几类重要的整环 - 知乎][(https://zhuanlan.zhihu.com/p/191411259)]</p>
+<p><a class="link" href="https://juejin.cn/post/7425910507352571958"  target="_blank" rel="noopener"
+    >9.3 多项式环是唯一分解整环9.3 POLYNOMIAL RINGS THAT ARE UNIQUE FACTORIZ - 掘金</a></p>
+<p><a class="link" href="https://mathmu.github.io/MTCAS/doc/PolyFacZp.html"  target="_blank" rel="noopener"
+    >有限域上多项式因子分解 - maTHμ - 计算机代数系统</a></p>
 
 </section>
 
@@ -490,16 +513,11 @@ $$<p>
 
     <footer class="site-footer">
     <section class="copyright">
-        &copy; 
+        &copy;
         
-            2025 - 
+            2025 -
         
         2026 2025-皮卡丘的守护神
-    </section>
-    
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
 
@@ -588,7 +606,7 @@ $$<p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.38fc777524febcd98fc30c5c7330fda1e205905370b11c0989aa187800f23411.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.38fc777524febcd98fc30c5c7330fda1e205905370b11c0989aa187800f23411.js" defer></script><script type="text/javascript" src="/ts/custom.f4a304e4017c51f671eaa6f0134d22e8c756366acf113a4f7d9eb11b296990b9.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
