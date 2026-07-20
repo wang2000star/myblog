@@ -1,84 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>代数 on wfz的博客</title>
-        <link>https://www.wfz521.com/tags/%E4%BB%A3%E6%95%B0/</link>
-        <description>Recent content in 代数 on wfz的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/tags/%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>有限域学习</title>
-        <link>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</link>
-        <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png" alt="Featured image of post 有限域学习" /&gt;&lt;p&gt;设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$\text{Res}(f,g)=0$当且仅当存在不为0的多项式$p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d$，使得$fp+gq=0$。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;进一步，如果$g$的最高次项系数$c_g^e$是整环里的可逆元，则设$g_1(x)=g/c_g^e$，显然$g_1(x)$是首一多项式，再令$f_1(x)=f/c_g^e$&lt;/p&gt;
-&lt;p&gt;此时$fp+gq=0$等价于$f_1p+g_1q=0$等价于$f_1p\equiv 0(\text{mod}\;g_1)$&lt;/p&gt;
-&lt;p&gt;设$\mathcal{R}_g[x]=\mathcal{R}[x](\text{mod}\;g_1)$，显然$R_g$是$\mathcal{R}$上秩等于$e$的有限生成自由模，则$f_1$诱导出$R_g$上的一个线性变换
-&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>代数 on wfz的博客</title><link>https://www.wfz521.com/tags/%E4%BB%A3%E6%95%B0/</link><description>Recent content in 代数 on wfz的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>2025-皮卡丘的守护神</copyright><lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/tags/%E4%BB%A3%E6%95%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>有限域学习</title><link>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</link><pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</guid><description>&lt;img src="https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png" alt="Featured image of post 有限域学习" />&lt;p>设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p>
+&lt;blockquote>
+&lt;p>$\text{Res}(f,g)=0$当且仅当存在不为0的多项式$p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d$，使得$fp+gq=0$。&lt;/p>&lt;/blockquote>
+&lt;p>进一步，如果$g$的最高次项系数$c_g^e$是整环里的可逆元，则设$g_1(x)=g/c_g^e$，显然$g_1(x)$是首一多项式，再令$f_1(x)=f/c_g^e$&lt;/p>
+&lt;p>此时$fp+gq=0$等价于$f_1p+g_1q=0$等价于$f_1p\equiv 0(\text{mod}\;g_1)$&lt;/p>
+&lt;p>设$\mathcal{R}_g[x]=\mathcal{R}[x](\text{mod}\;g_1)$，显然$R_g$是$\mathcal{R}$上秩等于$e$的有限生成自由模，则$f_1$诱导出$R_g$上的一个线性变换
+&lt;/p>
 $$
 x\in R_g,f_1x\in R_g
-$$&lt;p&gt;
-因为有$p\neq 0(\text{mod}\;g_1),f_1p\equiv 0(\text{mod}\;g_1)$，所以$\text{rank}(\text{ker}(f_1))\gt 0$，即$\text{rank}(f_1)\lt e$。(秩-零化度定理)&lt;/p&gt;
-&lt;p&gt;给定$R_g$上的一组基比如多项式基$\{1,x,...,x^{e-1}\}$，则$f_1$在这组基上的表示矩阵为$M$
-&lt;/p&gt;
+$$&lt;p>
+因为有$p\neq 0(\text{mod}\;g_1),f_1p\equiv 0(\text{mod}\;g_1)$，所以$\text{rank}(\text{ker}(f_1))\gt 0$，即$\text{rank}(f_1)\lt e$。(秩-零化度定理)&lt;/p>
+&lt;p>给定$R_g$上的一组基比如多项式基$\{1,x,...,x^{e-1}\}$，则$f_1$在这组基上的表示矩阵为$M$
+&lt;/p>
 $$
 \text{rank}(f_1)\lt e \iff \text{det}(M)=0
-$$&lt;p&gt;
-注意：交换环上矩阵不满秩与矩阵不可逆不等价，应该是矩阵可逆一定满秩，满秩不一定可逆，不满秩一定不可逆，不可逆不一定不满秩。这是因为矩阵可逆等价于行列式是单位元即乘法可逆元。0一定是非单位元。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如果$\mathcal{R}$是整环，则$f$和$g$有公因子的必要条件是$\text{Res}(f,g)=0$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果$\mathcal{R}$是唯一分解环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果$\mathcal{R}[x]$是欧几里得环ED，则$f$和$g$有公因子当且仅当$\text{det}(M)=0$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;$\mathcal{R}[x]$是欧几里得环当且仅当$\mathcal{R}$是除环。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;有限域上的一元多项式环是欧几里得环ED，多元多项式环是唯一分解环UFD。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;$f$和$g$有公因子是$f$和$g$有公共根的必要条件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;注意：唯一分解环UFD一定是整环，主理想整环PID一定是UFD，欧几里得环ED一定是PID，域一定是ED。&lt;/p&gt;
-&lt;p&gt;设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p&gt;
+$$&lt;p>
+注意：交换环上矩阵不满秩与矩阵不可逆不等价，应该是矩阵可逆一定满秩，满秩不一定可逆，不满秩一定不可逆，不可逆不一定不满秩。这是因为矩阵可逆等价于行列式是单位元即乘法可逆元。0一定是非单位元。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如果$\mathcal{R}$是整环，则$f$和$g$有公因子的必要条件是$\text{Res}(f,g)=0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果$\mathcal{R}$是唯一分解环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果$\mathcal{R}[x]$是欧几里得环ED，则$f$和$g$有公因子当且仅当$\text{det}(M)=0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\mathcal{R}[x]$是欧几里得环当且仅当$\mathcal{R}$是除环。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有限域上的一元多项式环是欧几里得环ED，多元多项式环是唯一分解环UFD。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$f$和$g$有公因子是$f$和$g$有公共根的必要条件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>注意：唯一分解环UFD一定是整环，主理想整环PID一定是UFD，欧几里得环ED一定是PID，域一定是ED。&lt;/p>
+&lt;p>设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p>
 $$
 f 和 g 不互素的必要条件是存在不为 0 的多项式 p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d，使得 fp+gq=0。
-$$&lt;p&gt;
-如果$\mathcal{R}$是唯一分解整环即UFD，则变成了充要条件。&lt;/p&gt;
-&lt;p&gt;关于唯一分解整环有如下高斯定理：
-&lt;/p&gt;
+$$&lt;p>
+如果$\mathcal{R}$是唯一分解整环即UFD，则变成了充要条件。&lt;/p>
+&lt;p>关于唯一分解整环有如下高斯定理：
+&lt;/p>
 $$
 \mathcal{R}是唯一分解整环当且仅当\mathcal{R}[x]是唯一分解整环
-$$&lt;p&gt;
-因此，如果$\mathcal{R}$是唯一分解整环，则$\mathcal{R}$上的任意数量变元的多项式环也是唯一分解整环。&lt;/p&gt;
-&lt;p&gt;常见的唯一分解整环就是整数环、域、和定义在它们上面的一元和多元多项式环。&lt;/p&gt;
-&lt;h2 id=&#34;贝祖定理的存在条件&#34;&gt;贝祖定理的存在条件
-&lt;/h2&gt;&lt;p&gt;主理想整环（PID）上成立贝祖定理：若 $f$ 与 $g$ 互素，则存在 $u,v \in \mathcal{R}[x]$ 使得 $uf+vg=1$。&lt;br&gt;
-对于非 PID 的 UFD（如 $\mathbb{Z}[x]$），互素不一定能组合出 $1$。例如 $2$ 与 $x$ 在 $\mathbb{Z}[x]$ 中互素，但不存在整系数多项式 $u,v$ 使 $2u + xv = 1$（常数项矛盾）。因此，在更一般的环上，互素只能用公因子的不存在来刻画，而无法通过线性组合的形式体现。&lt;/p&gt;
-&lt;h2 id=&#34;整环&#34;&gt;整环
-&lt;/h2&gt;&lt;h2 id=&#34;戴德金环&#34;&gt;戴德金环
-&lt;/h2&gt;&lt;h2 id=&#34;模&#34;&gt;模
-&lt;/h2&gt;&lt;p&gt;参考链接：&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://math.bembew.com/zh/article/commutative-algebra/basic-modular-structures-on-dedekind-rings.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;戴德金环上的模结构初步 - Bembew 数学&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[【抽象代数】10. 几类重要的整环 - 知乎][(https://zhuanlan.zhihu.com/p/191411259)]&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7425910507352571958&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;9.3 多项式环是唯一分解整环9.3 POLYNOMIAL RINGS THAT ARE UNIQUE FACTORIZ - 掘金&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://mathmu.github.io/MTCAS/doc/PolyFacZp.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;有限域上多项式因子分解 - maTHμ - 计算机代数系统&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+$$&lt;p>
+因此，如果$\mathcal{R}$是唯一分解整环，则$\mathcal{R}$上的任意数量变元的多项式环也是唯一分解整环。&lt;/p>
+&lt;p>常见的唯一分解整环就是整数环、域、和定义在它们上面的一元和多元多项式环。&lt;/p>
+&lt;h2 id="贝祖定理的存在条件">贝祖定理的存在条件
+&lt;/h2>&lt;p>主理想整环（PID）上成立贝祖定理：若 $f$ 与 $g$ 互素，则存在 $u,v \in \mathcal{R}[x]$ 使得 $uf+vg=1$。&lt;br>
+对于非 PID 的 UFD（如 $\mathbb{Z}[x]$），互素不一定能组合出 $1$。例如 $2$ 与 $x$ 在 $\mathbb{Z}[x]$ 中互素，但不存在整系数多项式 $u,v$ 使 $2u + xv = 1$（常数项矛盾）。因此，在更一般的环上，互素只能用公因子的不存在来刻画，而无法通过线性组合的形式体现。&lt;/p>
+&lt;h2 id="整环">整环
+&lt;/h2>&lt;h2 id="戴德金环">戴德金环
+&lt;/h2>&lt;h2 id="模">模
+&lt;/h2>&lt;p>参考链接：&lt;/p>
+&lt;p>&lt;a class="link" href="https://math.bembew.com/zh/article/commutative-algebra/basic-modular-structures-on-dedekind-rings.html" target="_blank" rel="noopener"
+>戴德金环上的模结构初步 - Bembew 数学&lt;/a>&lt;/p>
+&lt;p>[【抽象代数】10. 几类重要的整环 - 知乎][(https://zhuanlan.zhihu.com/p/191411259)]&lt;/p>
+&lt;p>&lt;a class="link" href="https://juejin.cn/post/7425910507352571958" target="_blank" rel="noopener"
+>9.3 多项式环是唯一分解整环9.3 POLYNOMIAL RINGS THAT ARE UNIQUE FACTORIZ - 掘金&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://mathmu.github.io/MTCAS/doc/PolyFacZp.html" target="_blank" rel="noopener"
+>有限域上多项式因子分解 - maTHμ - 计算机代数系统&lt;/a>&lt;/p></description></item></channel></rss>

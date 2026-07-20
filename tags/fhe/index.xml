@@ -1,133 +1,104 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>FHE on wfz的博客</title>
-        <link>https://www.wfz521.com/tags/fhe/</link>
-        <description>Recent content in FHE on wfz的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/tags/fhe/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>快速傅里叶变换</title>
-        <link>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</link>
-        <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.png" alt="Featured image of post 快速傅里叶变换" /&gt;&lt;h2 id=&#34;fft&#34;&gt;FFT
-&lt;/h2&gt;&lt;h2 id=&#34;fft的误差&#34;&gt;FFT的误差
-&lt;/h2&gt;&lt;p&gt;问题1：已知$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}\in \mathbb{C}^{n}$，这里把$\mathbf{a}$看做多项式系数，$\mathbf{b}$看做n维向量，分析$e=\Vert \mathbf{b}-\mathbf{M}\mathbf{a}\Vert_\infty$的上界？&lt;/p&gt;
-&lt;p&gt;问题2：已知$\mathbf{a}_1=\mathbf{M}^{-1}\mathbf{b}_1,\mathbf{a}_2=\mathbf{M}^{-1}\mathbf{b}_2$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}_1,\mathbf{}_2\in \mathbb{C}^{n}$，分析
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FHE on wfz的博客</title><link>https://www.wfz521.com/tags/fhe/</link><description>Recent content in FHE on wfz的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>2025-皮卡丘的守护神</copyright><lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/tags/fhe/index.xml" rel="self" type="application/rss+xml"/><item><title>快速傅里叶变换</title><link>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</guid><description>&lt;img src="https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.png" alt="Featured image of post 快速傅里叶变换" />&lt;h2 id="fft">FFT
+&lt;/h2>&lt;h2 id="fft的误差">FFT的误差
+&lt;/h2>&lt;p>问题1：已知$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}\in \mathbb{C}^{n}$，这里把$\mathbf{a}$看做多项式系数，$\mathbf{b}$看做n维向量，分析$e=\Vert \mathbf{b}-\mathbf{M}\mathbf{a}\Vert_\infty$的上界？&lt;/p>
+&lt;p>问题2：已知$\mathbf{a}_1=\mathbf{M}^{-1}\mathbf{b}_1,\mathbf{a}_2=\mathbf{M}^{-1}\mathbf{b}_2$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}_1,\mathbf{}_2\in \mathbb{C}^{n}$，分析
 $$
-e_+=\Vert (\mathbf{b}&lt;em&gt;1+&lt;/em&gt;{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em&gt;1+&lt;/em&gt;{poly}\mathbf{a}&lt;em&gt;2)\Vert&lt;/em&gt;\infty\&lt;/p&gt;
-&lt;p&gt;e_\times=\Vert (\mathbf{b}&lt;em&gt;1\times&lt;/em&gt;{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em&gt;1\times&lt;/em&gt;{poly}\mathbf{a}&lt;em&gt;2)\Vert&lt;/em&gt;\infty
+e_+=\Vert (\mathbf{b}&lt;em>1+&lt;/em>{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em>1+&lt;/em>{poly}\mathbf{a}&lt;em>2)\Vert&lt;/em>\infty\&lt;/p>
+&lt;p>e_\times=\Vert (\mathbf{b}&lt;em>1\times&lt;/em>{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em>1\times&lt;/em>{poly}\mathbf{a}&lt;em>2)\Vert&lt;/em>\infty
 $$
-两个误差的上界？&lt;/p&gt;
-&lt;p&gt;回答：显然，误差不好准确估计，但是维数越高，误差的上界应该越大。&lt;/p&gt;
-&lt;p&gt;对于双精度的FHE运算来说，FFT的运算误差应该可以控制在单精度范围内。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>范数不等式</title>
-        <link>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</link>
-        <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.png" alt="Featured image of post 范数不等式" /&gt;&lt;h2 id=&#34;simd不等式&#34;&gt;SIMD不等式
-&lt;/h2&gt;$$
+两个误差的上界？&lt;/p>
+&lt;p>回答：显然，误差不好准确估计，但是维数越高，误差的上界应该越大。&lt;/p>
+&lt;p>对于双精度的FHE运算来说，FFT的运算误差应该可以控制在单精度范围内。&lt;/p></description></item><item><title>范数不等式</title><link>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</link><pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</guid><description>&lt;img src="https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.png" alt="Featured image of post 范数不等式" />&lt;h2 id="simd不等式">SIMD不等式
+&lt;/h2>$$
 \mathbf{a}=(a_0,a_1,...,a_{n-1}),\mathbf{b}=(b_0,b_1,...,b_{n-1})\\
 \mathbf{a}+\mathbf{b} = (a_0+b_0,a_1+b_1,...,a_{n-1}+b_{n-1})\\
 \mathbf{a}\circ\mathbf{b} = (a_0\times b_0,a_1\times b_1,...,a_{n-1}\times b_{n-1})\\
 \Vert c\circ\mathbf{a}\Vert=c\times\Vert\mathbf{a}\Vert\\
 \Vert\mathbf{a}+\mathbf{b}\Vert \leq \Vert\mathbf{a}\Vert+ \Vert\mathbf{b}\Vert\\
 \Vert\mathbf{a}\circ\mathbf{b}\Vert \leq \Vert\mathbf{a}\Vert\times \Vert\mathbf{b}\Vert\\
-$$&lt;h2 id=&#34;嵌入不等式&#34;&gt;嵌入不等式
-&lt;/h2&gt;&lt;p&gt;在n维向量和n个系数的多项式之间存在同构关系$\sigma$，不妨设$a(x)=\Sigma a_iX^i$，满足：
-&lt;/p&gt;
+$$&lt;h2 id="嵌入不等式">嵌入不等式
+&lt;/h2>&lt;p>在n维向量和n个系数的多项式之间存在同构关系$\sigma$，不妨设$a(x)=\Sigma a_iX^i$，满足：
+&lt;/p>
 $$
 \sigma(a(x)+_{\sigma}b(x))=\sigma(a(x))+\sigma(b(x))\\
 \sigma(a(x)\cdot_{\sigma}b(x))=\sigma(a(x))\circ\sigma(b(x))
-$$&lt;p&gt;
+$$&lt;p>
 则
-&lt;/p&gt;
+&lt;/p>
 $$
 \Vert\sigma(c\cdot a(x))\Vert = \Vert c\circ \sigma(a(x))\Vert =c\times \Vert\sigma(a(x))\Vert\\
 \Vert\sigma(a(x)+_{\sigma}b(x))\Vert \leq \Vert\sigma(a(x))\Vert + \Vert\sigma(b(x))\Vert\\
 \Vert\sigma(a(x)\cdot_{\sigma}b(x))\Vert \leq \Vert\sigma(a(x))\Vert \times \Vert\sigma(b(x))\Vert\\
-$$&lt;p&gt;
-利用这个嵌入不等式就可以很好的分析同态噪声的变化情况，因为密文就是以多项式形式存在，而明文是向量。&lt;/p&gt;
-&lt;h2 id=&#34;赫尔德holder不等式&#34;&gt;赫尔德(Holder)不等式
-&lt;/h2&gt;&lt;p&gt;已知$\frac{1}{p}+\frac{1}{q}=1,1\leq p\leq+\infty,1\leq q\leq+\infty $，对于任意两个复数向量$\mathbf{a},\mathbf{b}\in \mathbb{C}^n$，有
-&lt;/p&gt;
+$$&lt;p>
+利用这个嵌入不等式就可以很好的分析同态噪声的变化情况，因为密文就是以多项式形式存在，而明文是向量。&lt;/p>
+&lt;h2 id="赫尔德holder不等式">赫尔德(Holder)不等式
+&lt;/h2>&lt;p>已知$\frac{1}{p}+\frac{1}{q}=1,1\leq p\leq+\infty,1\leq q\leq+\infty $，对于任意两个复数向量$\mathbf{a},\mathbf{b}\in \mathbb{C}^n$，有
+&lt;/p>
 $$
 \left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_p\Vert\mathbf{b}\Vert_q
-$$&lt;p&gt;
-特别的，当p=1时有，$\left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_1\Vert\mathbf{b}\Vert_{\infty}$&lt;/p&gt;
-&lt;h2 id=&#34;矩阵-向量不等式&#34;&gt;矩阵-向量不等式
-&lt;/h2&gt;&lt;p&gt;对于任意矩阵$\mathbf{M}\in \mathbb{C}^{n\times n}$，任意向量$\mathbf{a}\in\mathbb{R}^n$，令$\mathbf{b}=\mathbf{M}\mathbf{a}$，则
-&lt;/p&gt;
+$$&lt;p>
+特别的，当p=1时有，$\left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_1\Vert\mathbf{b}\Vert_{\infty}$&lt;/p>
+&lt;h2 id="矩阵-向量不等式">矩阵-向量不等式
+&lt;/h2>&lt;p>对于任意矩阵$\mathbf{M}\in \mathbb{C}^{n\times n}$，任意向量$\mathbf{a}\in\mathbb{R}^n$，令$\mathbf{b}=\mathbf{M}\mathbf{a}$，则
+&lt;/p>
 $$
 b_i=\mathbf{M}_i\mathbf{a}=\sum_{j=0}^{n-1}M_{i,j}a_j\\
 a_j\in \mathbb{R},\bar{a}_j = a_j\\
 \left|b_i\right| = \left|\sum_{j=0}^{n-1}M_{i,j}a_j\right|=\left|\sum_{j=0}^{n-1}M_{i,j}\bar{a}_j\right|\leq
 \Vert\mathbf{M}_i\Vert_p\Vert\mathbf{a}\Vert_q\\
 \Vert \mathbf{b}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_p}\}\Vert\mathbf{a}\Vert_q
-$$&lt;p&gt;
-不妨设$\mathbf{M}$可逆，则$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，&lt;/p&gt;
-$$\Vert \mathbf{a}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_p}\}\Vert\mathbf{b}\Vert_q$$&lt;p&gt;综合可得，
-&lt;/p&gt;
+$$&lt;p>
+不妨设$\mathbf{M}$可逆，则$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，&lt;/p>
+$$\Vert \mathbf{a}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_p}\}\Vert\mathbf{b}\Vert_q$$&lt;p>综合可得，
+&lt;/p>
 $$
 \frac{\Vert \mathbf{a}\Vert_\infty}{\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}}\leq\Vert \mathbf{b}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_p}\}\Vert\mathbf{a}\Vert_q
-$$&lt;h2 id=&#34;快速傅里叶变换不等式&#34;&gt;快速傅里叶变换不等式
-&lt;/h2&gt;&lt;p&gt;FFT里面的矩阵满足&lt;/p&gt;
-&lt;p&gt;$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_\infty}\}=1$&lt;/p&gt;
-&lt;p&gt;$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_1}\}=n$&lt;/p&gt;
-&lt;p&gt;所以有
-&lt;/p&gt;
+$$&lt;h2 id="快速傅里叶变换不等式">快速傅里叶变换不等式
+&lt;/h2>&lt;p>FFT里面的矩阵满足&lt;/p>
+&lt;p>$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_\infty}\}=1$&lt;/p>
+&lt;p>$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_1}\}=n$&lt;/p>
+&lt;p>所以有
+&lt;/p>
 $$
 \frac{\Vert \mathbf{a}\Vert_\infty}{\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}}\leq\Vert \mathbf{b}\Vert_\infty\leq\Vert\mathbf{a}\Vert_1\leq n\Vert\mathbf{a}\Vert_{\infty}
-$$&lt;p&gt;
+$$&lt;p>
 事实上，$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}=1$，所以
-&lt;/p&gt;
+&lt;/p>
 $$
 \Vert \mathbf{a}\Vert_\infty\leq\Vert \mathbf{b}\Vert_\infty \leq n\Vert\mathbf{a}\Vert_\infty
-$$&lt;p&gt;
-这样就使用$\mathbf{a}$来约束$\mathbf{b}$的无穷范数上下界了。&lt;/p&gt;
-&lt;h2 id=&#34;快速傅里叶嵌入不等式&#34;&gt;快速傅里叶嵌入不等式
-&lt;/h2&gt;&lt;p&gt;如果用快速傅里叶变换作为嵌入同构关系，则
-&lt;/p&gt;
+$$&lt;p>
+这样就使用$\mathbf{a}$来约束$\mathbf{b}$的无穷范数上下界了。&lt;/p>
+&lt;h2 id="快速傅里叶嵌入不等式">快速傅里叶嵌入不等式
+&lt;/h2>&lt;p>如果用快速傅里叶变换作为嵌入同构关系，则
+&lt;/p>
 $$
 \Vert a(x)\Vert_\infty \leq \Vert\sigma(a(x))\Vert_\infty \leq \Vert a(x)\Vert_1\leq n\Vert a(x)\Vert_\infty
-$$&lt;p&gt;进一步，有
-&lt;/p&gt;
+$$&lt;p>进一步，有
+&lt;/p>
 $$
 \Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq \Vert \sigma(a(x)\cdot_\sigma b(x))\Vert_\infty \leq \Vert\sigma(a(x))\Vert_\infty \times \Vert\sigma(b(x))\Vert_\infty \leq \Vert a(x)\Vert_1 \times \Vert b(x)\Vert_1 \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty
-$$&lt;p&gt;
+$$&lt;p>
 注意$\Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty$这个界不是紧的，应该是
-&lt;/p&gt;
+&lt;/p>
 $$
 \Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq \Vert a(x)\Vert_2 \Vert b(x)\Vert_2\leq n \Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty
-$$&lt;p&gt;
-为什么会出现不紧的界？这是因为虽然不等号具有传递性，但是取得等号的条件不具备传递性，即不同时取得等号。&lt;/p&gt;
-&lt;p&gt;实际应用中我们建议使用下面的不等式
-&lt;/p&gt;
+$$&lt;p>
+为什么会出现不紧的界？这是因为虽然不等号具有传递性，但是取得等号的条件不具备传递性，即不同时取得等号。&lt;/p>
+&lt;p>实际应用中我们建议使用下面的不等式
+&lt;/p>
 $$
 \Vert \sigma(a(x)\cdot_\sigma b(x))\Vert_\infty \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty\\
 \Vert \sigma(a(x)+ b(x))\Vert_\infty \leq n(\Vert a(x)\Vert_\infty +\Vert b(x)\Vert_\infty)
-$$&lt;h2 id=&#34;fhe中噪声&#34;&gt;FHE中噪声
-&lt;/h2&gt;&lt;p&gt;n维向量$m_i$看做多项式$m_i(x)$的系数，然后FFT编码成多项式即$M_i(x)=\sigma^{-1}(m_i(x))$，对$M_i(x)$进行同态加密，得到$C_i(x)$，不妨设对应噪声为$E_i(x)$，&lt;/p&gt;
-&lt;p&gt;（1）加法运算：$\Vert E_i(x)+E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)+E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（2）乘法运算：$\Vert E_i(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\times E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（3）数乘运算：$\Vert c\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c\times E_j(x)\right)\Vert_\infty \leq c \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（4）多项式乘：$\Vert c(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x)\times E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（5）数加运算：$\Vert c + E_j(x)\Vert_\infty \leq \Vert \sigma\left(c + E_j(x)\right)\Vert_\infty \leq c + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（6）多项式加：$\Vert c(x)+ E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x) + E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（7）伽罗瓦自同构：$\Vert \theta_t(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_t(E_j(x))\right)\Vert_\infty \leq \Vert \theta_t(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（8）弗罗比尼斯自同构：$\Vert \theta_{p^t}(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_{p^t}(E_j(x))\right)\Vert_\infty \leq \Vert \theta_{p^t}(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;有论文表明：伽罗瓦自同构几乎不改变噪声，准确的说是因为伽罗瓦自同构在模$X^m+1$下相当于系数重排且符号可能改变。因此绝对值不变，无穷范数自然不变。&lt;/p&gt;
-&lt;p&gt;利用上述8个公式，当给定初始噪声的$\Vert \sigma\left(E_i(x)\right)\Vert_\infty$上界时，就能估计后面所有使用这8中运算后的噪声界。&lt;/p&gt;
-&lt;p&gt;补充：证明分圆多项式环上的伽罗瓦变换是自同构。关键是证明双射。&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+$$&lt;h2 id="fhe中噪声">FHE中噪声
+&lt;/h2>&lt;p>n维向量$m_i$看做多项式$m_i(x)$的系数，然后FFT编码成多项式即$M_i(x)=\sigma^{-1}(m_i(x))$，对$M_i(x)$进行同态加密，得到$C_i(x)$，不妨设对应噪声为$E_i(x)$，&lt;/p>
+&lt;p>（1）加法运算：$\Vert E_i(x)+E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)+E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（2）乘法运算：$\Vert E_i(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\times E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（3）数乘运算：$\Vert c\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c\times E_j(x)\right)\Vert_\infty \leq c \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（4）多项式乘：$\Vert c(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x)\times E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（5）数加运算：$\Vert c + E_j(x)\Vert_\infty \leq \Vert \sigma\left(c + E_j(x)\right)\Vert_\infty \leq c + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（6）多项式加：$\Vert c(x)+ E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x) + E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（7）伽罗瓦自同构：$\Vert \theta_t(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_t(E_j(x))\right)\Vert_\infty \leq \Vert \theta_t(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p>
+&lt;p>（8）弗罗比尼斯自同构：$\Vert \theta_{p^t}(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_{p^t}(E_j(x))\right)\Vert_\infty \leq \Vert \theta_{p^t}(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p>
+&lt;p>有论文表明：伽罗瓦自同构几乎不改变噪声，准确的说是因为伽罗瓦自同构在模$X^m+1$下相当于系数重排且符号可能改变。因此绝对值不变，无穷范数自然不变。&lt;/p>
+&lt;p>利用上述8个公式，当给定初始噪声的$\Vert \sigma\left(E_i(x)\right)\Vert_\infty$上界时，就能估计后面所有使用这8中运算后的噪声界。&lt;/p>
+&lt;p>补充：证明分圆多项式环上的伽罗瓦变换是自同构。关键是证明双射。&lt;/p></description></item></channel></rss>

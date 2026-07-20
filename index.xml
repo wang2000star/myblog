@@ -1,381 +1,318 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>wfz的博客</title>
-        <link>https://www.wfz521.com/</link>
-        <description>Recent content on wfz的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>有限域学习</title>
-        <link>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</link>
-        <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png" alt="Featured image of post 有限域学习" /&gt;&lt;p&gt;设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$\text{Res}(f,g)=0$当且仅当存在不为0的多项式$p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d$，使得$fp+gq=0$。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;进一步，如果$g$的最高次项系数$c_g^e$是整环里的可逆元，则设$g_1(x)=g/c_g^e$，显然$g_1(x)$是首一多项式，再令$f_1(x)=f/c_g^e$&lt;/p&gt;
-&lt;p&gt;此时$fp+gq=0$等价于$f_1p+g_1q=0$等价于$f_1p\equiv 0(\text{mod}\;g_1)$&lt;/p&gt;
-&lt;p&gt;设$\mathcal{R}_g[x]=\mathcal{R}[x](\text{mod}\;g_1)$，显然$R_g$是$\mathcal{R}$上秩等于$e$的有限生成自由模，则$f_1$诱导出$R_g$上的一个线性变换
-&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wfz的博客</title><link>https://www.wfz521.com/</link><description>Recent content on wfz的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>2025-皮卡丘的守护神</copyright><lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/index.xml" rel="self" type="application/rss+xml"/><item><title>有限域学习</title><link>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</link><pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/</guid><description>&lt;img src="https://www.wfz521.com/p/%E6%9C%89%E9%99%90%E5%9F%9F%E5%AD%A6%E4%B9%A0/pkq.png" alt="Featured image of post 有限域学习" />&lt;p>设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p>
+&lt;blockquote>
+&lt;p>$\text{Res}(f,g)=0$当且仅当存在不为0的多项式$p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d$，使得$fp+gq=0$。&lt;/p>&lt;/blockquote>
+&lt;p>进一步，如果$g$的最高次项系数$c_g^e$是整环里的可逆元，则设$g_1(x)=g/c_g^e$，显然$g_1(x)$是首一多项式，再令$f_1(x)=f/c_g^e$&lt;/p>
+&lt;p>此时$fp+gq=0$等价于$f_1p+g_1q=0$等价于$f_1p\equiv 0(\text{mod}\;g_1)$&lt;/p>
+&lt;p>设$\mathcal{R}_g[x]=\mathcal{R}[x](\text{mod}\;g_1)$，显然$R_g$是$\mathcal{R}$上秩等于$e$的有限生成自由模，则$f_1$诱导出$R_g$上的一个线性变换
+&lt;/p>
 $$
 x\in R_g,f_1x\in R_g
-$$&lt;p&gt;
-因为有$p\neq 0(\text{mod}\;g_1),f_1p\equiv 0(\text{mod}\;g_1)$，所以$\text{rank}(\text{ker}(f_1))\gt 0$，即$\text{rank}(f_1)\lt e$。(秩-零化度定理)&lt;/p&gt;
-&lt;p&gt;给定$R_g$上的一组基比如多项式基$\{1,x,...,x^{e-1}\}$，则$f_1$在这组基上的表示矩阵为$M$
-&lt;/p&gt;
+$$&lt;p>
+因为有$p\neq 0(\text{mod}\;g_1),f_1p\equiv 0(\text{mod}\;g_1)$，所以$\text{rank}(\text{ker}(f_1))\gt 0$，即$\text{rank}(f_1)\lt e$。(秩-零化度定理)&lt;/p>
+&lt;p>给定$R_g$上的一组基比如多项式基$\{1,x,...,x^{e-1}\}$，则$f_1$在这组基上的表示矩阵为$M$
+&lt;/p>
 $$
 \text{rank}(f_1)\lt e \iff \text{det}(M)=0
-$$&lt;p&gt;
-注意：交换环上矩阵不满秩与矩阵不可逆不等价，应该是矩阵可逆一定满秩，满秩不一定可逆，不满秩一定不可逆，不可逆不一定不满秩。这是因为矩阵可逆等价于行列式是单位元即乘法可逆元。0一定是非单位元。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如果$\mathcal{R}$是整环，则$f$和$g$有公因子的必要条件是$\text{Res}(f,g)=0$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果$\mathcal{R}$是唯一分解环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果$\mathcal{R}[x]$是欧几里得环ED，则$f$和$g$有公因子当且仅当$\text{det}(M)=0$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;$\mathcal{R}[x]$是欧几里得环当且仅当$\mathcal{R}$是除环。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;有限域上的一元多项式环是欧几里得环ED，多元多项式环是唯一分解环UFD。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;$f$和$g$有公因子是$f$和$g$有公共根的必要条件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;注意：唯一分解环UFD一定是整环，主理想整环PID一定是UFD，欧几里得环ED一定是PID，域一定是ED。&lt;/p&gt;
-&lt;p&gt;设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p&gt;
+$$&lt;p>
+注意：交换环上矩阵不满秩与矩阵不可逆不等价，应该是矩阵可逆一定满秩，满秩不一定可逆，不满秩一定不可逆，不可逆不一定不满秩。这是因为矩阵可逆等价于行列式是单位元即乘法可逆元。0一定是非单位元。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如果$\mathcal{R}$是整环，则$f$和$g$有公因子的必要条件是$\text{Res}(f,g)=0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果$\mathcal{R}$是唯一分解环即UFD，则$f$和$g$有公因子当且仅当$\text{Res}(f,g)=0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果$\mathcal{R}[x]$是欧几里得环ED，则$f$和$g$有公因子当且仅当$\text{det}(M)=0$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$\mathcal{R}[x]$是欧几里得环当且仅当$\mathcal{R}$是除环。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有限域上的一元多项式环是欧几里得环ED，多元多项式环是唯一分解环UFD。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$f$和$g$有公因子是$f$和$g$有公共根的必要条件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>注意：唯一分解环UFD一定是整环，主理想整环PID一定是UFD，欧几里得环ED一定是PID，域一定是ED。&lt;/p>
+&lt;p>设$\mathcal{R}$是整环，$f(x),g(x)\in \mathcal{R}[x]$为正次数多项式，$\text{deg}(f)=d,\text{deg}(g)=e$，则&lt;/p>
 $$
 f 和 g 不互素的必要条件是存在不为 0 的多项式 p(x),q(x)\in \mathcal{R}[x],\text{deg}(p)\lt e,\text{deg}(g)\lt d，使得 fp+gq=0。
-$$&lt;p&gt;
-如果$\mathcal{R}$是唯一分解整环即UFD，则变成了充要条件。&lt;/p&gt;
-&lt;p&gt;关于唯一分解整环有如下高斯定理：
-&lt;/p&gt;
+$$&lt;p>
+如果$\mathcal{R}$是唯一分解整环即UFD，则变成了充要条件。&lt;/p>
+&lt;p>关于唯一分解整环有如下高斯定理：
+&lt;/p>
 $$
 \mathcal{R}是唯一分解整环当且仅当\mathcal{R}[x]是唯一分解整环
-$$&lt;p&gt;
-因此，如果$\mathcal{R}$是唯一分解整环，则$\mathcal{R}$上的任意数量变元的多项式环也是唯一分解整环。&lt;/p&gt;
-&lt;p&gt;常见的唯一分解整环就是整数环、域、和定义在它们上面的一元和多元多项式环。&lt;/p&gt;
-&lt;h2 id=&#34;贝祖定理的存在条件&#34;&gt;贝祖定理的存在条件
-&lt;/h2&gt;&lt;p&gt;主理想整环（PID）上成立贝祖定理：若 $f$ 与 $g$ 互素，则存在 $u,v \in \mathcal{R}[x]$ 使得 $uf+vg=1$。&lt;br&gt;
-对于非 PID 的 UFD（如 $\mathbb{Z}[x]$），互素不一定能组合出 $1$。例如 $2$ 与 $x$ 在 $\mathbb{Z}[x]$ 中互素，但不存在整系数多项式 $u,v$ 使 $2u + xv = 1$（常数项矛盾）。因此，在更一般的环上，互素只能用公因子的不存在来刻画，而无法通过线性组合的形式体现。&lt;/p&gt;
-&lt;h2 id=&#34;整环&#34;&gt;整环
-&lt;/h2&gt;&lt;h2 id=&#34;戴德金环&#34;&gt;戴德金环
-&lt;/h2&gt;&lt;h2 id=&#34;模&#34;&gt;模
-&lt;/h2&gt;&lt;p&gt;参考链接：&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://math.bembew.com/zh/article/commutative-algebra/basic-modular-structures-on-dedekind-rings.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;戴德金环上的模结构初步 - Bembew 数学&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[【抽象代数】10. 几类重要的整环 - 知乎][(https://zhuanlan.zhihu.com/p/191411259)]&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7425910507352571958&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;9.3 多项式环是唯一分解整环9.3 POLYNOMIAL RINGS THAT ARE UNIQUE FACTORIZ - 掘金&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://mathmu.github.io/MTCAS/doc/PolyFacZp.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;有限域上多项式因子分解 - maTHμ - 计算机代数系统&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>个人简历</title>
-        <link>https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/</link>
-        <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/pkq.png" alt="Featured image of post 个人简历" /&gt;&lt;p&gt;我叫皮卡丘，爱好是放电，哈哈哈哈哈&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>快速傅里叶变换</title>
-        <link>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</link>
-        <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.png" alt="Featured image of post 快速傅里叶变换" /&gt;&lt;h2 id=&#34;fft&#34;&gt;FFT
-&lt;/h2&gt;&lt;h2 id=&#34;fft的误差&#34;&gt;FFT的误差
-&lt;/h2&gt;&lt;p&gt;问题1：已知$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}\in \mathbb{C}^{n}$，这里把$\mathbf{a}$看做多项式系数，$\mathbf{b}$看做n维向量，分析$e=\Vert \mathbf{b}-\mathbf{M}\mathbf{a}\Vert_\infty$的上界？&lt;/p&gt;
-&lt;p&gt;问题2：已知$\mathbf{a}_1=\mathbf{M}^{-1}\mathbf{b}_1,\mathbf{a}_2=\mathbf{M}^{-1}\mathbf{b}_2$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}_1,\mathbf{}_2\in \mathbb{C}^{n}$，分析
+$$&lt;p>
+因此，如果$\mathcal{R}$是唯一分解整环，则$\mathcal{R}$上的任意数量变元的多项式环也是唯一分解整环。&lt;/p>
+&lt;p>常见的唯一分解整环就是整数环、域、和定义在它们上面的一元和多元多项式环。&lt;/p>
+&lt;h2 id="贝祖定理的存在条件">贝祖定理的存在条件
+&lt;/h2>&lt;p>主理想整环（PID）上成立贝祖定理：若 $f$ 与 $g$ 互素，则存在 $u,v \in \mathcal{R}[x]$ 使得 $uf+vg=1$。&lt;br>
+对于非 PID 的 UFD（如 $\mathbb{Z}[x]$），互素不一定能组合出 $1$。例如 $2$ 与 $x$ 在 $\mathbb{Z}[x]$ 中互素，但不存在整系数多项式 $u,v$ 使 $2u + xv = 1$（常数项矛盾）。因此，在更一般的环上，互素只能用公因子的不存在来刻画，而无法通过线性组合的形式体现。&lt;/p>
+&lt;h2 id="整环">整环
+&lt;/h2>&lt;h2 id="戴德金环">戴德金环
+&lt;/h2>&lt;h2 id="模">模
+&lt;/h2>&lt;p>参考链接：&lt;/p>
+&lt;p>&lt;a class="link" href="https://math.bembew.com/zh/article/commutative-algebra/basic-modular-structures-on-dedekind-rings.html" target="_blank" rel="noopener"
+>戴德金环上的模结构初步 - Bembew 数学&lt;/a>&lt;/p>
+&lt;p>[【抽象代数】10. 几类重要的整环 - 知乎][(https://zhuanlan.zhihu.com/p/191411259)]&lt;/p>
+&lt;p>&lt;a class="link" href="https://juejin.cn/post/7425910507352571958" target="_blank" rel="noopener"
+>9.3 多项式环是唯一分解整环9.3 POLYNOMIAL RINGS THAT ARE UNIQUE FACTORIZ - 掘金&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://mathmu.github.io/MTCAS/doc/PolyFacZp.html" target="_blank" rel="noopener"
+>有限域上多项式因子分解 - maTHμ - 计算机代数系统&lt;/a>&lt;/p></description></item><item><title>个人简历</title><link>https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/</link><pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/</guid><description>&lt;img src="https://www.wfz521.com/p/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/pkq.png" alt="Featured image of post 个人简历" />&lt;p>我叫皮卡丘，爱好是放电，哈哈哈哈哈&lt;/p></description></item><item><title>快速傅里叶变换</title><link>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</guid><description>&lt;img src="https://www.wfz521.com/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.png" alt="Featured image of post 快速傅里叶变换" />&lt;h2 id="fft">FFT
+&lt;/h2>&lt;h2 id="fft的误差">FFT的误差
+&lt;/h2>&lt;p>问题1：已知$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}\in \mathbb{C}^{n}$，这里把$\mathbf{a}$看做多项式系数，$\mathbf{b}$看做n维向量，分析$e=\Vert \mathbf{b}-\mathbf{M}\mathbf{a}\Vert_\infty$的上界？&lt;/p>
+&lt;p>问题2：已知$\mathbf{a}_1=\mathbf{M}^{-1}\mathbf{b}_1,\mathbf{a}_2=\mathbf{M}^{-1}\mathbf{b}_2$，其中$\mathbf{M}\in \mathbb{C}^{n\times n},\mathbf{b}_1,\mathbf{}_2\in \mathbb{C}^{n}$，分析
 $$
-e_+=\Vert (\mathbf{b}&lt;em&gt;1+&lt;/em&gt;{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em&gt;1+&lt;/em&gt;{poly}\mathbf{a}&lt;em&gt;2)\Vert&lt;/em&gt;\infty\&lt;/p&gt;
-&lt;p&gt;e_\times=\Vert (\mathbf{b}&lt;em&gt;1\times&lt;/em&gt;{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em&gt;1\times&lt;/em&gt;{poly}\mathbf{a}&lt;em&gt;2)\Vert&lt;/em&gt;\infty
+e_+=\Vert (\mathbf{b}&lt;em>1+&lt;/em>{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em>1+&lt;/em>{poly}\mathbf{a}&lt;em>2)\Vert&lt;/em>\infty\&lt;/p>
+&lt;p>e_\times=\Vert (\mathbf{b}&lt;em>1\times&lt;/em>{simd}\mathbf{b}_2)-\mathbf{M}(\mathbf{a}&lt;em>1\times&lt;/em>{poly}\mathbf{a}&lt;em>2)\Vert&lt;/em>\infty
 $$
-两个误差的上界？&lt;/p&gt;
-&lt;p&gt;回答：显然，误差不好准确估计，但是维数越高，误差的上界应该越大。&lt;/p&gt;
-&lt;p&gt;对于双精度的FHE运算来说，FFT的运算误差应该可以控制在单精度范围内。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>范数不等式</title>
-        <link>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</link>
-        <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.png" alt="Featured image of post 范数不等式" /&gt;&lt;h2 id=&#34;simd不等式&#34;&gt;SIMD不等式
-&lt;/h2&gt;$$
+两个误差的上界？&lt;/p>
+&lt;p>回答：显然，误差不好准确估计，但是维数越高，误差的上界应该越大。&lt;/p>
+&lt;p>对于双精度的FHE运算来说，FFT的运算误差应该可以控制在单精度范围内。&lt;/p></description></item><item><title>范数不等式</title><link>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</link><pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/</guid><description>&lt;img src="https://www.wfz521.com/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.png" alt="Featured image of post 范数不等式" />&lt;h2 id="simd不等式">SIMD不等式
+&lt;/h2>$$
 \mathbf{a}=(a_0,a_1,...,a_{n-1}),\mathbf{b}=(b_0,b_1,...,b_{n-1})\\
 \mathbf{a}+\mathbf{b} = (a_0+b_0,a_1+b_1,...,a_{n-1}+b_{n-1})\\
 \mathbf{a}\circ\mathbf{b} = (a_0\times b_0,a_1\times b_1,...,a_{n-1}\times b_{n-1})\\
 \Vert c\circ\mathbf{a}\Vert=c\times\Vert\mathbf{a}\Vert\\
 \Vert\mathbf{a}+\mathbf{b}\Vert \leq \Vert\mathbf{a}\Vert+ \Vert\mathbf{b}\Vert\\
 \Vert\mathbf{a}\circ\mathbf{b}\Vert \leq \Vert\mathbf{a}\Vert\times \Vert\mathbf{b}\Vert\\
-$$&lt;h2 id=&#34;嵌入不等式&#34;&gt;嵌入不等式
-&lt;/h2&gt;&lt;p&gt;在n维向量和n个系数的多项式之间存在同构关系$\sigma$，不妨设$a(x)=\Sigma a_iX^i$，满足：
-&lt;/p&gt;
+$$&lt;h2 id="嵌入不等式">嵌入不等式
+&lt;/h2>&lt;p>在n维向量和n个系数的多项式之间存在同构关系$\sigma$，不妨设$a(x)=\Sigma a_iX^i$，满足：
+&lt;/p>
 $$
 \sigma(a(x)+_{\sigma}b(x))=\sigma(a(x))+\sigma(b(x))\\
 \sigma(a(x)\cdot_{\sigma}b(x))=\sigma(a(x))\circ\sigma(b(x))
-$$&lt;p&gt;
+$$&lt;p>
 则
-&lt;/p&gt;
+&lt;/p>
 $$
 \Vert\sigma(c\cdot a(x))\Vert = \Vert c\circ \sigma(a(x))\Vert =c\times \Vert\sigma(a(x))\Vert\\
 \Vert\sigma(a(x)+_{\sigma}b(x))\Vert \leq \Vert\sigma(a(x))\Vert + \Vert\sigma(b(x))\Vert\\
 \Vert\sigma(a(x)\cdot_{\sigma}b(x))\Vert \leq \Vert\sigma(a(x))\Vert \times \Vert\sigma(b(x))\Vert\\
-$$&lt;p&gt;
-利用这个嵌入不等式就可以很好的分析同态噪声的变化情况，因为密文就是以多项式形式存在，而明文是向量。&lt;/p&gt;
-&lt;h2 id=&#34;赫尔德holder不等式&#34;&gt;赫尔德(Holder)不等式
-&lt;/h2&gt;&lt;p&gt;已知$\frac{1}{p}+\frac{1}{q}=1,1\leq p\leq+\infty,1\leq q\leq+\infty $，对于任意两个复数向量$\mathbf{a},\mathbf{b}\in \mathbb{C}^n$，有
-&lt;/p&gt;
+$$&lt;p>
+利用这个嵌入不等式就可以很好的分析同态噪声的变化情况，因为密文就是以多项式形式存在，而明文是向量。&lt;/p>
+&lt;h2 id="赫尔德holder不等式">赫尔德(Holder)不等式
+&lt;/h2>&lt;p>已知$\frac{1}{p}+\frac{1}{q}=1,1\leq p\leq+\infty,1\leq q\leq+\infty $，对于任意两个复数向量$\mathbf{a},\mathbf{b}\in \mathbb{C}^n$，有
+&lt;/p>
 $$
 \left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_p\Vert\mathbf{b}\Vert_q
-$$&lt;p&gt;
-特别的，当p=1时有，$\left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_1\Vert\mathbf{b}\Vert_{\infty}$&lt;/p&gt;
-&lt;h2 id=&#34;矩阵-向量不等式&#34;&gt;矩阵-向量不等式
-&lt;/h2&gt;&lt;p&gt;对于任意矩阵$\mathbf{M}\in \mathbb{C}^{n\times n}$，任意向量$\mathbf{a}\in\mathbb{R}^n$，令$\mathbf{b}=\mathbf{M}\mathbf{a}$，则
-&lt;/p&gt;
+$$&lt;p>
+特别的，当p=1时有，$\left|\sum_{i=0}^{n-1}a_i\bar{b}_i\right|\leq \sum_{i=0}^{n-1} \left|a_i\right|\left|b_i\right|\leq\Vert\mathbf{a}\Vert_1\Vert\mathbf{b}\Vert_{\infty}$&lt;/p>
+&lt;h2 id="矩阵-向量不等式">矩阵-向量不等式
+&lt;/h2>&lt;p>对于任意矩阵$\mathbf{M}\in \mathbb{C}^{n\times n}$，任意向量$\mathbf{a}\in\mathbb{R}^n$，令$\mathbf{b}=\mathbf{M}\mathbf{a}$，则
+&lt;/p>
 $$
 b_i=\mathbf{M}_i\mathbf{a}=\sum_{j=0}^{n-1}M_{i,j}a_j\\
 a_j\in \mathbb{R},\bar{a}_j = a_j\\
 \left|b_i\right| = \left|\sum_{j=0}^{n-1}M_{i,j}a_j\right|=\left|\sum_{j=0}^{n-1}M_{i,j}\bar{a}_j\right|\leq
 \Vert\mathbf{M}_i\Vert_p\Vert\mathbf{a}\Vert_q\\
 \Vert \mathbf{b}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_p}\}\Vert\mathbf{a}\Vert_q
-$$&lt;p&gt;
-不妨设$\mathbf{M}$可逆，则$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，&lt;/p&gt;
-$$\Vert \mathbf{a}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_p}\}\Vert\mathbf{b}\Vert_q$$&lt;p&gt;综合可得，
-&lt;/p&gt;
+$$&lt;p>
+不妨设$\mathbf{M}$可逆，则$\mathbf{a}=\mathbf{M}^{-1}\mathbf{b}$，&lt;/p>
+$$\Vert \mathbf{a}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_p}\}\Vert\mathbf{b}\Vert_q$$&lt;p>综合可得，
+&lt;/p>
 $$
 \frac{\Vert \mathbf{a}\Vert_\infty}{\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}}\leq\Vert \mathbf{b}\Vert_\infty\leq \text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_p}\}\Vert\mathbf{a}\Vert_q
-$$&lt;h2 id=&#34;快速傅里叶变换不等式&#34;&gt;快速傅里叶变换不等式
-&lt;/h2&gt;&lt;p&gt;FFT里面的矩阵满足&lt;/p&gt;
-&lt;p&gt;$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_\infty}\}=1$&lt;/p&gt;
-&lt;p&gt;$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_1}\}=n$&lt;/p&gt;
-&lt;p&gt;所以有
-&lt;/p&gt;
+$$&lt;h2 id="快速傅里叶变换不等式">快速傅里叶变换不等式
+&lt;/h2>&lt;p>FFT里面的矩阵满足&lt;/p>
+&lt;p>$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_\infty}\}=1$&lt;/p>
+&lt;p>$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}_i\Vert_1}\}=n$&lt;/p>
+&lt;p>所以有
+&lt;/p>
 $$
 \frac{\Vert \mathbf{a}\Vert_\infty}{\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}}\leq\Vert \mathbf{b}\Vert_\infty\leq\Vert\mathbf{a}\Vert_1\leq n\Vert\mathbf{a}\Vert_{\infty}
-$$&lt;p&gt;
+$$&lt;p>
 事实上，$\text{max}_{0\leq i\leq n-1}\{{\Vert\mathbf{M}^{-1}_i\Vert_1}\}=1$，所以
-&lt;/p&gt;
+&lt;/p>
 $$
 \Vert \mathbf{a}\Vert_\infty\leq\Vert \mathbf{b}\Vert_\infty \leq n\Vert\mathbf{a}\Vert_\infty
-$$&lt;p&gt;
-这样就使用$\mathbf{a}$来约束$\mathbf{b}$的无穷范数上下界了。&lt;/p&gt;
-&lt;h2 id=&#34;快速傅里叶嵌入不等式&#34;&gt;快速傅里叶嵌入不等式
-&lt;/h2&gt;&lt;p&gt;如果用快速傅里叶变换作为嵌入同构关系，则
-&lt;/p&gt;
+$$&lt;p>
+这样就使用$\mathbf{a}$来约束$\mathbf{b}$的无穷范数上下界了。&lt;/p>
+&lt;h2 id="快速傅里叶嵌入不等式">快速傅里叶嵌入不等式
+&lt;/h2>&lt;p>如果用快速傅里叶变换作为嵌入同构关系，则
+&lt;/p>
 $$
 \Vert a(x)\Vert_\infty \leq \Vert\sigma(a(x))\Vert_\infty \leq \Vert a(x)\Vert_1\leq n\Vert a(x)\Vert_\infty
-$$&lt;p&gt;进一步，有
-&lt;/p&gt;
+$$&lt;p>进一步，有
+&lt;/p>
 $$
 \Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq \Vert \sigma(a(x)\cdot_\sigma b(x))\Vert_\infty \leq \Vert\sigma(a(x))\Vert_\infty \times \Vert\sigma(b(x))\Vert_\infty \leq \Vert a(x)\Vert_1 \times \Vert b(x)\Vert_1 \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty
-$$&lt;p&gt;
+$$&lt;p>
 注意$\Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty$这个界不是紧的，应该是
-&lt;/p&gt;
+&lt;/p>
 $$
 \Vert a(x)\cdot_\sigma b(x)\Vert_\infty \leq \Vert a(x)\Vert_2 \Vert b(x)\Vert_2\leq n \Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty
-$$&lt;p&gt;
-为什么会出现不紧的界？这是因为虽然不等号具有传递性，但是取得等号的条件不具备传递性，即不同时取得等号。&lt;/p&gt;
-&lt;p&gt;实际应用中我们建议使用下面的不等式
-&lt;/p&gt;
+$$&lt;p>
+为什么会出现不紧的界？这是因为虽然不等号具有传递性，但是取得等号的条件不具备传递性，即不同时取得等号。&lt;/p>
+&lt;p>实际应用中我们建议使用下面的不等式
+&lt;/p>
 $$
 \Vert \sigma(a(x)\cdot_\sigma b(x))\Vert_\infty \leq n^2\Vert a(x)\Vert_\infty \Vert b(x)\Vert_\infty\\
 \Vert \sigma(a(x)+ b(x))\Vert_\infty \leq n(\Vert a(x)\Vert_\infty +\Vert b(x)\Vert_\infty)
-$$&lt;h2 id=&#34;fhe中噪声&#34;&gt;FHE中噪声
-&lt;/h2&gt;&lt;p&gt;n维向量$m_i$看做多项式$m_i(x)$的系数，然后FFT编码成多项式即$M_i(x)=\sigma^{-1}(m_i(x))$，对$M_i(x)$进行同态加密，得到$C_i(x)$，不妨设对应噪声为$E_i(x)$，&lt;/p&gt;
-&lt;p&gt;（1）加法运算：$\Vert E_i(x)+E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)+E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（2）乘法运算：$\Vert E_i(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\times E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（3）数乘运算：$\Vert c\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c\times E_j(x)\right)\Vert_\infty \leq c \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（4）多项式乘：$\Vert c(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x)\times E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（5）数加运算：$\Vert c + E_j(x)\Vert_\infty \leq \Vert \sigma\left(c + E_j(x)\right)\Vert_\infty \leq c + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（6）多项式加：$\Vert c(x)+ E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x) + E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（7）伽罗瓦自同构：$\Vert \theta_t(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_t(E_j(x))\right)\Vert_\infty \leq \Vert \theta_t(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;（8）弗罗比尼斯自同构：$\Vert \theta_{p^t}(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_{p^t}(E_j(x))\right)\Vert_\infty \leq \Vert \theta_{p^t}(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p&gt;
-&lt;p&gt;有论文表明：伽罗瓦自同构几乎不改变噪声，准确的说是因为伽罗瓦自同构在模$X^m+1$下相当于系数重排且符号可能改变。因此绝对值不变，无穷范数自然不变。&lt;/p&gt;
-&lt;p&gt;利用上述8个公式，当给定初始噪声的$\Vert \sigma\left(E_i(x)\right)\Vert_\infty$上界时，就能估计后面所有使用这8中运算后的噪声界。&lt;/p&gt;
-&lt;p&gt;补充：证明分圆多项式环上的伽罗瓦变换是自同构。关键是证明双射。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Key Switch (BGV)</title>
-        <link>https://www.wfz521.com/p/key-switch-bgv/</link>
-        <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/key-switch-bgv/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/key-switch-bgv/pkq.png" alt="Featured image of post Key Switch (BGV)" /&gt;&lt;h2 id=&#34;本质&#34;&gt;本质
-&lt;/h2&gt;&lt;p&gt;BGV方案里面的key-swith的本质是在已有$s_A, s_B, (c_0^A,c_1^A)$并且$s_A,s_B$保密的基础上，构造出$(c_0^B,c_1^B)$，使其满足：
-&lt;/p&gt;
+$$&lt;h2 id="fhe中噪声">FHE中噪声
+&lt;/h2>&lt;p>n维向量$m_i$看做多项式$m_i(x)$的系数，然后FFT编码成多项式即$M_i(x)=\sigma^{-1}(m_i(x))$，对$M_i(x)$进行同态加密，得到$C_i(x)$，不妨设对应噪声为$E_i(x)$，&lt;/p>
+&lt;p>（1）加法运算：$\Vert E_i(x)+E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)+E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（2）乘法运算：$\Vert E_i(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\times E_j(x)\right)\Vert_\infty \leq \Vert \sigma\left(E_i(x)\right)\Vert_\infty \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（3）数乘运算：$\Vert c\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c\times E_j(x)\right)\Vert_\infty \leq c \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（4）多项式乘：$\Vert c(x)\times E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x)\times E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 \times \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（5）数加运算：$\Vert c + E_j(x)\Vert_\infty \leq \Vert \sigma\left(c + E_j(x)\right)\Vert_\infty \leq c + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（6）多项式加：$\Vert c(x)+ E_j(x)\Vert_\infty \leq \Vert \sigma\left(c(x) + E_j(x)\right)\Vert_\infty \leq \Vert c(x)\Vert_1 + \Vert \sigma\left(E_j(x)\right)\Vert_\infty$&lt;/p>
+&lt;p>（7）伽罗瓦自同构：$\Vert \theta_t(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_t(E_j(x))\right)\Vert_\infty \leq \Vert \theta_t(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p>
+&lt;p>（8）弗罗比尼斯自同构：$\Vert \theta_{p^t}(E_j(x))\Vert_\infty \leq \Vert \sigma\left(\theta_{p^t}(E_j(x))\right)\Vert_\infty \leq \Vert \theta_{p^t}(\sigma(E_j(x)))\Vert_\infty = \Vert \sigma(E_j(x))\Vert_\infty$&lt;/p>
+&lt;p>有论文表明：伽罗瓦自同构几乎不改变噪声，准确的说是因为伽罗瓦自同构在模$X^m+1$下相当于系数重排且符号可能改变。因此绝对值不变，无穷范数自然不变。&lt;/p>
+&lt;p>利用上述8个公式，当给定初始噪声的$\Vert \sigma\left(E_i(x)\right)\Vert_\infty$上界时，就能估计后面所有使用这8中运算后的噪声界。&lt;/p>
+&lt;p>补充：证明分圆多项式环上的伽罗瓦变换是自同构。关键是证明双射。&lt;/p></description></item><item><title>Key Switch (BGV)</title><link>https://www.wfz521.com/p/key-switch-bgv/</link><pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/key-switch-bgv/</guid><description>&lt;img src="https://www.wfz521.com/p/key-switch-bgv/pkq.png" alt="Featured image of post Key Switch (BGV)" />&lt;h2 id="本质">本质
+&lt;/h2>&lt;p>BGV方案里面的key-swith的本质是在已有$s_A, s_B, (c_0^A,c_1^A)$并且$s_A,s_B$保密的基础上，构造出$(c_0^B,c_1^B)$，使其满足：
+&lt;/p>
 $$
 \left[\left[c_0^A+s_A\cdot c_1^A\right]_Q\right]_P=\left[\left[c_0^B+s_B\cdot c_1^B\right]_Q\right]_P
-$$&lt;p&gt;
-充分条件是：&lt;/p&gt;
-&lt;p&gt;（1）$c_0^B+s_B\cdot c_1^B\equiv c_0^A+s_A\cdot c_1^A+Pv(\text{mod}\;Q)$&lt;/p&gt;
-&lt;p&gt;（2）$\left|v\right|\leq \frac{Q-P}{2P}-\left|e_A\right|$&lt;/p&gt;
-&lt;p&gt;key-switch的几种构造方式本质都是在不断缩小$\left|v\right|$的上界，&lt;/p&gt;
-&lt;h2 id=&#34;high-level&#34;&gt;high level
-&lt;/h2&gt;&lt;p&gt;用$s_B$加密$s_A$即$ks_{A\rightarrow B}=(\left[s_A+a\cdot s_B+Pe_{ks}\right]_Q,-a)\in \mathcal{R}_Q^2$，称$ks_{A\rightarrow B}$是从$s_A$到$s_B$的切换密钥（公钥）。&lt;/p&gt;
-&lt;p&gt;令$c^B=(\left[ c_0^A+c_1^A\cdot ks^{A\rightarrow B}_0\right]_Q,\left[c_1^A\cdot ks^{A\rightarrow B}_1\right]_Q)$，则
-&lt;/p&gt;
+$$&lt;p>
+充分条件是：&lt;/p>
+&lt;p>（1）$c_0^B+s_B\cdot c_1^B\equiv c_0^A+s_A\cdot c_1^A+Pv(\text{mod}\;Q)$&lt;/p>
+&lt;p>（2）$\left|v\right|\leq \frac{Q-P}{2P}-\left|e_A\right|$&lt;/p>
+&lt;p>key-switch的几种构造方式本质都是在不断缩小$\left|v\right|$的上界，&lt;/p>
+&lt;h2 id="high-level">high level
+&lt;/h2>&lt;p>用$s_B$加密$s_A$即$ks_{A\rightarrow B}=(\left[s_A+a\cdot s_B+Pe_{ks}\right]_Q,-a)\in \mathcal{R}_Q^2$，称$ks_{A\rightarrow B}$是从$s_A$到$s_B$的切换密钥（公钥）。&lt;/p>
+&lt;p>令$c^B=(\left[ c_0^A+c_1^A\cdot ks^{A\rightarrow B}_0\right]_Q,\left[c_1^A\cdot ks^{A\rightarrow B}_1\right]_Q)$，则
+&lt;/p>
 $$
 \begin{aligned}
 c_0^B+c_1^B\cdot s_B&amp; = c_0^A+c_1^A\cdot ks^{A\rightarrow B}_0+c_1^A\cdot ks^{A\rightarrow B}_1\cdot s_B\\
 &amp;=c_0^A+c_1^A\cdot s_A+Pc_1^A\cdot e_{ks}\\
 &amp;\equiv m+P(e_A+c_1^A\cdot e_{ks})(\text{mod}\;Q)
 \end{aligned}
-$$&lt;p&gt;
-只要保证$\Vert e_A+c_1^A\cdot e_{ks} \Vert_{\infty}\leq\Vert e_A\Vert_{\infty}+\Vert c_1^A\cdot e_{ks} \Vert_{\infty} \leq \frac{Q-P}{2P}$，则密钥切换成功。&lt;/p&gt;
-&lt;p&gt;但是$\Vert c_1^A\cdot e_{ks}\Vert_{\infty}\leq N \Vert c_1^A\Vert_{\infty}\Vert e_{ks}\Vert_{\infty}\leq \frac{NQB_{ks}}{2}$，因此有很大概率超出界，所以我们需要想办法降低$\Vert c_1^A\cdot e_{ks}\Vert_{\infty}$。&lt;/p&gt;
-&lt;p&gt;下面介绍几种key-switch的具体构造方式，均参考自&lt;a class=&#34;link&#34; href=&#34;#ref-KPZ22&#34; &gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;bv11&#34;&gt;BV11
-&lt;/h2&gt;&lt;h2 id=&#34;ghs&#34;&gt;GHS
-&lt;/h2&gt;&lt;h2 id=&#34;hybrid&#34;&gt;HYBRID
-&lt;/h2&gt;&lt;h2 id=&#34;重线性化&#34;&gt;重线性化
-&lt;/h2&gt;&lt;p&gt;重线性化技术是在处理密文乘法时提到的，对于密文乘法我们有
-&lt;/p&gt;
+$$&lt;p>
+只要保证$\Vert e_A+c_1^A\cdot e_{ks} \Vert_{\infty}\leq\Vert e_A\Vert_{\infty}+\Vert c_1^A\cdot e_{ks} \Vert_{\infty} \leq \frac{Q-P}{2P}$，则密钥切换成功。&lt;/p>
+&lt;p>但是$\Vert c_1^A\cdot e_{ks}\Vert_{\infty}\leq N \Vert c_1^A\Vert_{\infty}\Vert e_{ks}\Vert_{\infty}\leq \frac{NQB_{ks}}{2}$，因此有很大概率超出界，所以我们需要想办法降低$\Vert c_1^A\cdot e_{ks}\Vert_{\infty}$。&lt;/p>
+&lt;p>下面介绍几种key-switch的具体构造方式，均参考自&lt;a class="link" href="#ref-KPZ22" >&lt;sup>1&lt;/sup>&lt;/a>。&lt;/p>
+&lt;h2 id="bv11">BV11
+&lt;/h2>&lt;h2 id="ghs">GHS
+&lt;/h2>&lt;h2 id="hybrid">HYBRID
+&lt;/h2>&lt;h2 id="重线性化">重线性化
+&lt;/h2>&lt;p>重线性化技术是在处理密文乘法时提到的，对于密文乘法我们有
+&lt;/p>
 $$
 c^1\cdot c^2=(c_0^1+s\cdot c_1^1)\cdot(c_0^2+s\cdot c_1^2)=c_0^1\cdot c_0^2+(c_0^1\cdot c_1^2+c_1^1\cdot c_0^2)\cdot s+(c_1^1\cdot c_1^2)\cdot s^2\\
 \left[c^1\cdot c^2\right]_Q=\left[(m_1+Pe_1)(m_2+Pe_2)\right]_Q=\left[m_1m_2+P(m_1e_2+m_2e_1+Pe_1e_2)\right]_Q
-$$&lt;p&gt;
+$$&lt;p>
 令$d_0=c_0^1\cdot c_0^2,d_1=c_0^1\cdot c_1^2+c_1^1\cdot c_0^2,d_2=c_1^1\cdot c_1^2$，则
-&lt;/p&gt;
+&lt;/p>
 $$
 \left[d_0+d_1\cdot s+d_2\cdot s^2\right]_Q=\left[m_1m_2+P(m_1e_2+m_2e_1+Pe_1e_2)\right]_Q
-$$&lt;p&gt;
+$$&lt;p>
 如果$\left|m_1e_2+m_2e_1+Pe_1e_2\right|\leq \frac{Q-P}{2P}$，则
-&lt;/p&gt;
+&lt;/p>
 $$
 \left[\left[d_0+d_1\cdot s+d_2\cdot s^2\right]_Q\right]_P=\left[m_1m_2\right]_P
-$$&lt;p&gt;
-这样就可以把$(d_0,d_1,d_2)$看做是$\left[m_1m_2\right]_P$的密文。&lt;/p&gt;
-&lt;p&gt;噪声上界估计：
-&lt;/p&gt;
+$$&lt;p>
+这样就可以把$(d_0,d_1,d_2)$看做是$\left[m_1m_2\right]_P$的密文。&lt;/p>
+&lt;p>噪声上界估计：
+&lt;/p>
 $$
 \Vert m_1e_2+m_2e_1+Pe_1e_2\Vert_{\infty}\leq \frac{P}{2}(e^1_b+e^2_b)+ne^1_be^2_b
-$$&lt;p&gt;
+$$&lt;p>
 重线性化的本质是在已有$s_B,(d_0^A,d_1^A,d_2^A)$并且$s_B$保密的基础上，构造出$(c_0^B,c_1^B)$，使其满足：
-&lt;/p&gt;
+&lt;/p>
 $$
 c_0^B+s_B\cdot c_1^B \equiv d_0^A+s_B\cdot d_1^A+s_B^2\cdot d_2^A+Pv(\text{mod}\;Q)\\
 \left|v\right|\leq \frac{Q-P}{2P}-\left|e_A\right|
-$$&lt;p&gt;
-令$c_1^B=c_1^{B&#39;}+d_1^A,s_A=s_B^2$，则只需要构造出$(c_0^B,c_1^{B&#39;})$，使其满足：
-&lt;/p&gt;
+$$&lt;p>
+令$c_1^B=c_1^{B'}+d_1^A,s_A=s_B^2$，则只需要构造出$(c_0^B,c_1^{B'})$，使其满足：
+&lt;/p>
 $$
-c_0^B+s_B\cdot c_1^{B&#39;} \equiv d_0^A+s_A\cdot d_2^A+Pv(\text{mod}\;Q)\\
+c_0^B+s_B\cdot c_1^{B'} \equiv d_0^A+s_A\cdot d_2^A+Pv(\text{mod}\;Q)\\
 \left|v\right|\leq \frac{Q-P}{2P}-\left|e_A\right|
-$$&lt;p&gt;
-此时就可以看做正常的key-switch操作了，唯一的区别在于噪声上界由上面的三者确定而不是下面的两者确定，这是因为上面的三者有确定的明文形式，而下面的两者没有实际明文对应。&lt;/p&gt;
-&lt;p&gt;噪声上界估计：
-&lt;/p&gt;
+$$&lt;p>
+此时就可以看做正常的key-switch操作了，唯一的区别在于噪声上界由上面的三者确定而不是下面的两者确定，这是因为上面的三者有确定的明文形式，而下面的两者没有实际明文对应。&lt;/p>
+&lt;p>噪声上界估计：
+&lt;/p>
 $$
 \Vert e_B\Vert_{\infty}=\Vert v+e_A\Vert_{\infty}\leq \Vert v\Vert_{\infty}+\frac{P}{2}(e^1_b+e^2_b)+ne^1_be^2_b
-$$&lt;p&gt;
-因此密钥切换后的噪声会有所增加，且增加项为$\left|v\right|$。&lt;/p&gt;
-&lt;p&gt;进行乘法的两个密文的噪声上界分别为$e_b^1,e_b^2$，但是重线性化的乘积密文噪声上界增大到$\Vert v\Vert_{\infty}+\frac{P}{2}(e^1_b+e^2_b)+ne^1_be^2_b$。&lt;/p&gt;
-&lt;p&gt;显然，这个噪声上界有很大的概率接近解密上界即$\frac{Q-P}{2P}$，因此需要降噪，这里BGV使用了Mod Switch的方法来进行处理，可以参考上一篇博客内容。&lt;/p&gt;
-&lt;p&gt;此时有两种思路，（1）先分别进行Mod Switch，再进行重线性化；（2）先进行重线性化再进行Mod Switch。&lt;/p&gt;
-&lt;p&gt;如果是把模qR的密文通过Mod Switch变成模q的密文，那么噪声上界将从$e_b$变为$\frac{e_b}{R}+\frac{\sqrt{Nw(s)}}{2}$，其中$w(s)$是私钥的非零元素个数。&lt;/p&gt;
-&lt;p&gt;单纯从噪声角度看，（1）的噪声近似为$\frac{Ne^1_be^2_b}{R^2}+\frac{N^2w(s)}{4}$，（2）的噪声近似为$\frac{Ne^1_be^2_b}{R}$。这里不确定$N,R,e$三者取值，不好比较。&lt;/p&gt;
-&lt;p&gt;从计算角度看，（1）似乎比（2）增加了一个Mod Switch操作，前者的重线性化操作处理的模数要比后者低，并且重线性化的时间要显著高于Mod Switch操作，因此（1）的计算性能不会显著低于（2）。&lt;/p&gt;
-&lt;p&gt;因为，没有具体数值，所以目前无法得到哪种方法更好。但是看到很多开源库里面似乎都使用了第二种方法。&lt;/p&gt;
-&lt;p&gt;此外，重线性化技术本身可以看做key-switch的一个推广特例。&lt;/p&gt;
-&lt;h2 id=&#34;未来计划&#34;&gt;未来计划
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;结合安全性、噪声和性能分析参数设计方法&lt;/li&gt;
-&lt;li&gt;分析simd下的旋转操作如何加速&lt;/li&gt;
-&lt;li&gt;分析自举操作&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;参考&#34;&gt;参考
-&lt;/h2&gt;&lt;div id=&#34;ref-KPZ22&#34;&gt;&lt;/div&gt; 
-- [1] [KPZ22](https://eprint.iacr.org/2021/204.pdf)</description>
-        </item>
-        <item>
-        <title>Mod Switch</title>
-        <link>https://www.wfz521.com/p/mod-switch/</link>
-        <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/mod-switch/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" /&gt;&lt;h2 id=&#34;符号&#34;&gt;符号
-&lt;/h2&gt;&lt;p&gt;$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。&lt;/p&gt;
-&lt;p&gt;$\lceil x \rfloor$：表示四舍五入取整即round。&lt;/p&gt;
-&lt;h2 id=&#34;原始&#34;&gt;原始
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;&lt;a class=&#34;link&#34; href=&#34;#ref-BGV11&#34; &gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.wfz521.com/p/mod-switch/scale.png&#34;
-	width=&#34;1392&#34;
-	height=&#34;86&#34;
-	srcset=&#34;https://www.wfz521.com/p/mod-switch/scale_hu_be4c70ae9e118a7f.png 480w, https://www.wfz521.com/p/mod-switch/scale_hu_28944b1dc9c52d3e.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;scale&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;1618&#34;
-		data-flex-basis=&#34;3884px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Scale&lt;/strong&gt;实现：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+$$&lt;p>
+因此密钥切换后的噪声会有所增加，且增加项为$\left|v\right|$。&lt;/p>
+&lt;p>进行乘法的两个密文的噪声上界分别为$e_b^1,e_b^2$，但是重线性化的乘积密文噪声上界增大到$\Vert v\Vert_{\infty}+\frac{P}{2}(e^1_b+e^2_b)+ne^1_be^2_b$。&lt;/p>
+&lt;p>显然，这个噪声上界有很大的概率接近解密上界即$\frac{Q-P}{2P}$，因此需要降噪，这里BGV使用了Mod Switch的方法来进行处理，可以参考上一篇博客内容。&lt;/p>
+&lt;p>此时有两种思路，（1）先分别进行Mod Switch，再进行重线性化；（2）先进行重线性化再进行Mod Switch。&lt;/p>
+&lt;p>如果是把模qR的密文通过Mod Switch变成模q的密文，那么噪声上界将从$e_b$变为$\frac{e_b}{R}+\frac{\sqrt{Nw(s)}}{2}$，其中$w(s)$是私钥的非零元素个数。&lt;/p>
+&lt;p>单纯从噪声角度看，（1）的噪声近似为$\frac{Ne^1_be^2_b}{R^2}+\frac{N^2w(s)}{4}$，（2）的噪声近似为$\frac{Ne^1_be^2_b}{R}$。这里不确定$N,R,e$三者取值，不好比较。&lt;/p>
+&lt;p>从计算角度看，（1）似乎比（2）增加了一个Mod Switch操作，前者的重线性化操作处理的模数要比后者低，并且重线性化的时间要显著高于Mod Switch操作，因此（1）的计算性能不会显著低于（2）。&lt;/p>
+&lt;p>因为，没有具体数值，所以目前无法得到哪种方法更好。但是看到很多开源库里面似乎都使用了第二种方法。&lt;/p>
+&lt;p>此外，重线性化技术本身可以看做key-switch的一个推广特例。&lt;/p>
+&lt;h2 id="未来计划">未来计划
+&lt;/h2>&lt;ul>
+&lt;li>结合安全性、噪声和性能分析参数设计方法&lt;/li>
+&lt;li>分析simd下的旋转操作如何加速&lt;/li>
+&lt;li>分析自举操作&lt;/li>
+&lt;/ul>
+&lt;h2 id="参考">参考
+&lt;/h2>&lt;div id="ref-KPZ22">&lt;/div>
+- [1] [KPZ22](https://eprint.iacr.org/2021/204.pdf)</description></item><item><title>Mod Switch</title><link>https://www.wfz521.com/p/mod-switch/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/mod-switch/</guid><description>&lt;img src="https://www.wfz521.com/p/mod-switch/pkq.png" alt="Featured image of post Mod Switch" />&lt;h2 id="符号">符号
+&lt;/h2>&lt;p>$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。&lt;/p>
+&lt;p>$\lceil x \rfloor$：表示四舍五入取整即round。&lt;/p>
+&lt;h2 id="原始">原始
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Scale&lt;/strong>&lt;a class="link" href="#ref-BGV11" >&lt;sup>1&lt;/sup>&lt;/a>：&lt;/p>
+&lt;p>&lt;img src="https://www.wfz521.com/p/mod-switch/scale.png"
+width="1392"
+height="86"
+srcset="https://www.wfz521.com/p/mod-switch/scale_hu_be4c70ae9e118a7f.png 480w, https://www.wfz521.com/p/mod-switch/scale_hu_28944b1dc9c52d3e.png 1024w"
+loading="lazy"
+alt="scale"
+class="gallery-image"
+data-flex-grow="1618"
+data-flex-basis="3884px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Scale&lt;/strong>实现：&lt;/p>
+&lt;/li>
+&lt;/ul>
 $$
-x&#39;=x+\lceil\frac{(p-q)x}{qr}\rfloor r
-$$&lt;p&gt;如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;分析&lt;/li&gt;
-&lt;/ul&gt;
+x'=x+\lceil\frac{(p-q)x}{qr}\rfloor r
+$$&lt;p>如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。&lt;/p>
+&lt;ul>
+&lt;li>分析&lt;/li>
+&lt;/ul>
 $$
 \begin{aligned}
 \left|\lceil\frac{(p-q)x}{qr}\rfloor-\frac{(p-q)x}{qr}\right|\leq 1/2\\
 \left|\lceil\frac{(p-q)x}{qr}\rfloor r-\frac{(p-q)x}{q}\right|\leq r/2\\
-\left|x&#39;-x-\frac{(p-q)x}{q}\right|\leq r/2\\
-\left|x&#39;-\frac{px}{q}\right|\leq r/2
+\left|x'-x-\frac{(p-q)x}{q}\right|\leq r/2\\
+\left|x'-\frac{px}{q}\right|\leq r/2
 \end{aligned}
-$$&lt;p&gt;显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位$=0.5$时成立。&lt;/p&gt;
-&lt;p&gt;当然实际使用时，这里$\left|x&#39;-\frac{px}{q}\right|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;BGV密文模数切换&lt;/p&gt;
-&lt;p&gt;设BGV明文模数为$P$，密文初始模数为$Q=Q_L$对于级别$L$，类似级别$t(0\leq t\leq L)$对应$Q_t$，$Q_t=\prod_{i=0}^{t} p_i$&lt;/p&gt;
-&lt;p&gt;给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t&#39;}$上的密文$c&#39;=(c_0&#39;,c_1&#39;)$，其中$t&#39;\lt t$。&lt;/p&gt;
-&lt;p&gt;注意：$c_i\in Z_{Q_t}[x]/X^N+1$&lt;/p&gt;
-&lt;p&gt;操作如下：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+$$&lt;p>显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位$=0.5$时成立。&lt;/p>
+&lt;p>当然实际使用时，这里$\left|x'-\frac{px}{q}\right|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>BGV密文模数切换&lt;/p>
+&lt;p>设BGV明文模数为$P$，密文初始模数为$Q=Q_L$对于级别$L$，类似级别$t(0\leq t\leq L)$对应$Q_t$，$Q_t=\prod_{i=0}^{t} p_i$&lt;/p>
+&lt;p>给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t'}$上的密文$c'=(c_0',c_1')$，其中$t'\lt t$。&lt;/p>
+&lt;p>注意：$c_i\in Z_{Q_t}[x]/X^N+1$&lt;/p>
+&lt;p>操作如下：&lt;/p>
+&lt;/li>
+&lt;/ul>
 $$
 \begin{aligned}
-c&#39; &amp;= \text{Scale}(c) \\
-c_0&#39; &amp;= \text{Scale}(c_0) \\
-c_1&#39; &amp;= \text{Scale}(c_1) \\
-\left|c_0&#39;[j] - Q_{t&#39;}c_0[j]/Q_t\right| &amp;\lt P/2, \quad (j=0,1,\dots,N-1)
+c' &amp;= \text{Scale}(c) \\
+c_0' &amp;= \text{Scale}(c_0) \\
+c_1' &amp;= \text{Scale}(c_1) \\
+\left|c_0'[j] - Q_{t'}c_0[j]/Q_t\right| &amp;\lt P/2, \quad (j=0,1,\dots,N-1)
 \end{aligned}
-$$&lt;p&gt;分析：设私钥为$s$，则BGV公钥加密如下，
-&lt;/p&gt;
+$$&lt;p>分析：设私钥为$s$，则BGV公钥加密如下，
+&lt;/p>
 $$
 b=a\cdot s+P\cdot e_s\\
 c_0=b\cdot v+P\cdot e_0+m\\
 c_1=-a\cdot v+P\cdot e_1
-$$&lt;p&gt;
-其中$a,b,s,e_s,v,e_0,e_1$都需要满足特定的离散概率分布才能保证安全性。&lt;/p&gt;
-&lt;p&gt;解密操作为$m=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P$，$c_0+c_1\cdot s=m+P(e_s\cdot v+e_0+s\cdot e_1)$&lt;/p&gt;
-&lt;p&gt;令$e=e_s\cdot v+e_0+s\cdot e_1$，则
-&lt;/p&gt;
+$$&lt;p>
+其中$a,b,s,e_s,v,e_0,e_1$都需要满足特定的离散概率分布才能保证安全性。&lt;/p>
+&lt;p>解密操作为$m=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P$，$c_0+c_1\cdot s=m+P(e_s\cdot v+e_0+s\cdot e_1)$&lt;/p>
+&lt;p>令$e=e_s\cdot v+e_0+s\cdot e_1$，则
+&lt;/p>
 $$
 \begin{aligned}
 \left|m\right| &amp;\leq P/2\\
@@ -383,16 +320,16 @@ $$
 m&amp;=\left[m+Pe\right]_P=\left[c_0+c_1\cdot s\right]_P\\
 \left[\left[c_0\right]_{Q_t}+\left[c_1\cdot s\right]_{Q_t}\right]_{Q_t}&amp;=\left[c_0+c_1\cdot s\right]_{Q_t}=\left[m+Pe\right]_{Q_t}\\
 \end{aligned}
-$$&lt;p&gt;
-我们需要确保$\left[\left[m+Pe\right]_{Q_t}\right]_P=m$，因此需要满足$\left|m+Pe\right|=\left|c_0+c_1\cdot s\right|\lt Q_t/2$&lt;/p&gt;
-&lt;p&gt;事实上，这里的$e$可以根据加密参数设置一个上界比如$e_b&gt;0$，需要满足$\left|m+Pe\right|\leq\left|m\right|+P\left|e\right|\lt P/2 +P\left|e\right|\lt Q_t/2$&lt;/p&gt;
-&lt;p&gt;即$\left|e\right|\leq e_b\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p&gt;
-&lt;p&gt;又$\left|e\right|=\left|e_s\cdot v+e_0+s\cdot e_1\right|$，所以$\Vert e\Vert_{\infty}\leq \Vert e_s\Vert_2 \Vert v\Vert_2+\Vert e_0\Vert_{\infty}+\Vert s\Vert_2 \Vert e_1\Vert_2$&lt;/p&gt;
-&lt;p&gt;显然，$e_b$的大小应该和$s,e_s,v,e_0,e_1$的离散概率分布参数有关。&lt;/p&gt;
-&lt;p&gt;注意，上面的分析是在解密前没有对密文进行运算的前提下展开的，下面分析如果密文参与运算如何解密分析：&lt;/p&gt;
-&lt;p&gt;$(\left[c_0^*\right]_{Q_t},\left[c_1^*\right]_{Q_t})$，&lt;/p&gt;
-&lt;p&gt;以加法为例，不妨假设密文$(\left[c_0^0\right]_{Q_t},\left[c_1^0\right]_{Q_t},e_b^0),(\left[c_0^1\right]_{Q_t},\left[c_1^1\right]_{Q_t},e_b^1)$进行加法运算得到
-&lt;/p&gt;
+$$&lt;p>
+我们需要确保$\left[\left[m+Pe\right]_{Q_t}\right]_P=m$，因此需要满足$\left|m+Pe\right|=\left|c_0+c_1\cdot s\right|\lt Q_t/2$&lt;/p>
+&lt;p>事实上，这里的$e$可以根据加密参数设置一个上界比如$e_b>0$，需要满足$\left|m+Pe\right|\leq\left|m\right|+P\left|e\right|\lt P/2 +P\left|e\right|\lt Q_t/2$&lt;/p>
+&lt;p>即$\left|e\right|\leq e_b\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p>
+&lt;p>又$\left|e\right|=\left|e_s\cdot v+e_0+s\cdot e_1\right|$，所以$\Vert e\Vert_{\infty}\leq \Vert e_s\Vert_2 \Vert v\Vert_2+\Vert e_0\Vert_{\infty}+\Vert s\Vert_2 \Vert e_1\Vert_2$&lt;/p>
+&lt;p>显然，$e_b$的大小应该和$s,e_s,v,e_0,e_1$的离散概率分布参数有关。&lt;/p>
+&lt;p>注意，上面的分析是在解密前没有对密文进行运算的前提下展开的，下面分析如果密文参与运算如何解密分析：&lt;/p>
+&lt;p>$(\left[c_0^*\right]_{Q_t},\left[c_1^*\right]_{Q_t})$，&lt;/p>
+&lt;p>以加法为例，不妨假设密文$(\left[c_0^0\right]_{Q_t},\left[c_1^0\right]_{Q_t},e_b^0),(\left[c_0^1\right]_{Q_t},\left[c_1^1\right]_{Q_t},e_b^1)$进行加法运算得到
+&lt;/p>
 $$
 \left(c_0^*=\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t},c_1^*=\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right)\\
 \left(\left[c_0^*\right]_{Q_t}=\left[\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}\right]_{Q_t},\left[c_1^*\right]_{Q_t}=\left[\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right]_{Q_t}\right)\\
@@ -403,747 +340,637 @@ c_0^*+c_1^*\cdot s = \left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}+\left[c_1
 \left[\left[c_0^*\right]_{Q_t}+\left[c_1^*\right]_{Q_t}\cdot s\right]_{Q_t}=
 \left[\left[c_0^0+c_0^1\right]_{Q_t}+\left[c_1^0+c_1^1\right]_{Q_t}\cdot s\right]_{Q_t}
 =\left[c_0^0+c_0^1+(c_1^0+c_1^1)\cdot s\right]_{Q_t}=\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}
-$$&lt;p&gt;
-我们显然期待$\left[\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}\right]_P=\left[m^0+m^1\right]_P$&lt;/p&gt;
-&lt;p&gt;由前面的分析，可知，需要保证$\left|e^0+e^1\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$，只需要$e_b^0+e_b^1\lt \frac{Q_t}{2P}-\frac{1}{2}$即可。&lt;/p&gt;
-&lt;p&gt;这也是为什么经常说加法的噪声是累加的。&lt;/p&gt;
-&lt;p&gt;推广：&lt;/p&gt;
-&lt;p&gt;$\left[\left[f\left(m^0,m^1,\dots,m^k\right)+Pg\left(e^0,e^1,\dots,e^k\right)\right]_{Q_t}\right]_P=\left[f\left(m^0,m^1,\dots,m^k\right)\right]_P$&lt;/p&gt;
-&lt;p&gt;成立的条件是$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p&gt;
-&lt;p&gt;通过各种不等式放缩，一般可以得到$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\leq h(e_b^0,e_b^1,\dots,e_b^k)\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p&gt;
-&lt;p&gt;模数切换成立的条件是解密后对应的明文相同，因此可以对应三个充分条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;(1) $c_0&#39;=\text{Scale}(c_0),\;c_1&#39;=\text{Scale}(c_1)$&lt;/li&gt;
-&lt;li&gt;(2) $Q_t\equiv Q_{t&#39;}\equiv 1(\text{mod}\; P)$&lt;/li&gt;
-&lt;li&gt;(3) $\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;证明：&lt;/p&gt;
+$$&lt;p>
+我们显然期待$\left[\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}\right]_P=\left[m^0+m^1\right]_P$&lt;/p>
+&lt;p>由前面的分析，可知，需要保证$\left|e^0+e^1\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$，只需要$e_b^0+e_b^1\lt \frac{Q_t}{2P}-\frac{1}{2}$即可。&lt;/p>
+&lt;p>这也是为什么经常说加法的噪声是累加的。&lt;/p>
+&lt;p>推广：&lt;/p>
+&lt;p>$\left[\left[f\left(m^0,m^1,\dots,m^k\right)+Pg\left(e^0,e^1,\dots,e^k\right)\right]_{Q_t}\right]_P=\left[f\left(m^0,m^1,\dots,m^k\right)\right]_P$&lt;/p>
+&lt;p>成立的条件是$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p>
+&lt;p>通过各种不等式放缩，一般可以得到$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\leq h(e_b^0,e_b^1,\dots,e_b^k)\lt \frac{Q_t}{2P}-\frac{1}{2}$&lt;/p>
+&lt;p>模数切换成立的条件是解密后对应的明文相同，因此可以对应三个充分条件：&lt;/p>
+&lt;ul>
+&lt;li>(1) $c_0'=\text{Scale}(c_0),\;c_1'=\text{Scale}(c_1)$&lt;/li>
+&lt;li>(2) $Q_t\equiv Q_{t'}\equiv 1(\text{mod}\; P)$&lt;/li>
+&lt;li>(3) $\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$&lt;/li>
+&lt;/ul>
+&lt;p>证明：&lt;/p>
 $$
 \begin{aligned}
 c_0[j]+(c_1\cdot s)[j]&amp;=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
-c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M+k[j]Q_t+r[j]P\\
-c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M&#39;+k&#39;[j]Q_{t&#39;},\left|M&#39;\right|\lt Q_{t&#39;}/2\\
-M+k[j]Q_t+r[j]P&amp;=M&#39;+k&#39;[j]Q_{t&#39;}\\
-M+k[j]Q_t+r[j]P&amp;=M&#39;+k&#39;[j]Q_{t&#39;}(\text{mod}\;P)\\
-M+k[j]&amp;\equiv M&#39;+k&#39;[j](\text{mod}\;P)\\
+c_0'[j]+(c_1'\cdot s)[j]&amp;=M+k[j]Q_t+r[j]P\\
+c_0'[j]+(c_1'\cdot s)[j]&amp;=M'+k'[j]Q_{t'},\left|M'\right|\lt Q_{t'}/2\\
+M+k[j]Q_t+r[j]P&amp;=M'+k'[j]Q_{t'}\\
+M+k[j]Q_t+r[j]P&amp;=M'+k'[j]Q_{t'}(\text{mod}\;P)\\
+M+k[j]&amp;\equiv M'+k'[j](\text{mod}\;P)\\
 \end{aligned}
-$$&lt;p&gt;显然只需要说明$k[j]=k&#39;[j]$，即可得到$M\equiv M&#39;(\text{mod}\;P)$，因此对应明文相同。&lt;/p&gt;
-&lt;p&gt;证明$k=k&#39;$等价于证明当$k=k&#39;$时有$\left|M&#39;\right|\lt Q_{t&#39;/2}$成立即$\left|c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}\right|\lt Q_{t&#39;}/2$&lt;/p&gt;
-&lt;p&gt;直接代入验证，令 $M^*[j]=c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k[j]Q_{t&#39;}$，则&lt;/p&gt;
+$$&lt;p>显然只需要说明$k[j]=k'[j]$，即可得到$M\equiv M'(\text{mod}\;P)$，因此对应明文相同。&lt;/p>
+&lt;p>证明$k=k'$等价于证明当$k=k'$时有$\left|M'\right|\lt Q_{t'/2}$成立即$\left|c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}\right|\lt Q_{t'}/2$&lt;/p>
+&lt;p>直接代入验证，令 $M^*[j]=c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}$，则&lt;/p>
 $$
 \begin{aligned}
-M^*[j]&amp;=c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t+Q_{t&#39;}c_0[j]/Q_t+(c_1&#39;\cdot s)[j]+(Q_{t&#39;}c_1/Q_t\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]-k[j]Q_{t&#39;}\\
-&amp;=(-k[j]Q_{t&#39;}+Q_{t&#39;}c_0[j]/Q_t+(Q_{t&#39;}c_1/Q_t\cdot s)[j])\\
-&amp;+c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
-&amp;+(c_1&#39;\cdot s)[j]-(Q_{t&#39;}c_1/Q_t\cdot s)[j]\\
-&amp;=Q_{t&#39;}M[j]/Q_t\\
-&amp;+c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t\\
-&amp;+((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]
+M^*[j]&amp;=c_0'[j]-Q_{t'}c_0[j]/Q_t+Q_{t'}c_0[j]/Q_t+(c_1'\cdot s)[j]+(Q_{t'}c_1/Q_t\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]-k[j]Q_{t'}\\
+&amp;=(-k[j]Q_{t'}+Q_{t'}c_0[j]/Q_t+(Q_{t'}c_1/Q_t\cdot s)[j])\\
+&amp;+c_0'[j]-Q_{t'}c_0[j]/Q_t\\
+&amp;+(c_1'\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]\\
+&amp;=Q_{t'}M[j]/Q_t\\
+&amp;+c_0'[j]-Q_{t'}c_0[j]/Q_t\\
+&amp;+((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]
 \end{aligned}
-$$&lt;p&gt;只需要说明此时的$\left|M^*[j]\right|\lt Q_{t&#39;}/2 $即$M^*=M&#39;$。&lt;/p&gt;
-&lt;p&gt;多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$&lt;/p&gt;
-&lt;p&gt;所以$\left|((c_1&#39;-Q_{t&#39;}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1&#39;-Q_{t&#39;}c_1/Q_t)\Vert_2\Vert s\Vert_2$&lt;/p&gt;
-&lt;p&gt;因为$\left|c_i&#39;[j]-Q_{t&#39;}c_i[j]/Q_t)\right|\leq P/2$，所以$||(c_i&#39;-Q_{t&#39;}c_i/Q_t)||_2\leq P\sqrt{N}/2$&lt;/p&gt;
-&lt;p&gt;因此&lt;/p&gt;
+$$&lt;p>只需要说明此时的$\left|M^*[j]\right|\lt Q_{t'}/2 $即$M^*=M'$。&lt;/p>
+&lt;p>多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$&lt;/p>
+&lt;p>所以$\left|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1'-Q_{t'}c_1/Q_t)\Vert_2\Vert s\Vert_2$&lt;/p>
+&lt;p>因为$\left|c_i'[j]-Q_{t'}c_i[j]/Q_t)\right|\leq P/2$，所以$||(c_i'-Q_{t'}c_i/Q_t)||_2\leq P\sqrt{N}/2$&lt;/p>
+&lt;p>因此&lt;/p>
 $$
 \begin{aligned}
-\left|M^*[j]\right|&amp;\leq \frac{Q_{t&#39;}}{Q_t}\left|M[j]\right|+P/2+P\sqrt{N}\Vert s\Vert_2/2
+\left|M^*[j]\right|&amp;\leq \frac{Q_{t'}}{Q_t}\left|M[j]\right|+P/2+P\sqrt{N}\Vert s\Vert_2/2
 \end{aligned}
-$$&lt;p&gt;显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t&#39;}/2$的，此时$M^*=M&#39;$。注意到，如果$\left|M^*[j]\right|\lt Q_{t&#39;}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。&lt;/p&gt;
-&lt;p&gt;因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$即可，这就是条件(3)。&lt;/p&gt;
-&lt;p&gt;证毕。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;噪声&lt;/p&gt;
+$$&lt;p>显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t'}/2$的，此时$M^*=M'$。注意到，如果$\left|M^*[j]\right|\lt Q_{t'}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。&lt;/p>
+&lt;p>因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$即可，这就是条件(3)。&lt;/p>
+&lt;p>证毕。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>噪声&lt;/p>
 $$
-  \begin{aligned}
-  e&#39;&amp;=\frac{M&#39;-m}{P}\\&amp;=\frac{Q_{t&#39;}M[j]/Q_t+(c_0&#39;-Q_{t&#39;}c_0/Q_t)+\left(\left(c_1&#39;-Q_{t&#39;}c_1/Q_t\right)\cdot s\right)-m}{P}\\
-  &amp;=\frac{Q_{t&#39;}}{Q_t}\frac{M[j]-m}{P}+\frac{(c_0&#39;-Q_{t&#39;}c_0/Q_t)+\left(\left(c_1&#39;-Q_{t&#39;}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t&#39;}}{Q_t}-1)\frac{m}{P}\\
-  &amp;=\frac{Q_{t&#39;}}{Q_t}e+\frac{(c_0&#39;-Q_{t&#39;}c_0/Q_t)+\left(\left(c_1&#39;-Q_{t&#39;}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t&#39;}}{Q_t}-1)\frac{m}{P}
-  \end{aligned}
-  $$$$
-  \begin{aligned}
-  \left|e&#39;\right|&amp;\leq \left|\frac{Q_{t&#39;}}{Q_t}e\right|+\left|\frac{(c_0&#39;-Q_{t&#39;}c_0/Q_t)+\left(\left(c_1&#39;-Q_{t&#39;}c_1/Q_t\right)\cdot s\right)}{P}\right|+\left|(\frac{Q_{t&#39;}}{Q_t}-1)\frac{m}{P}\right| \\ 
-  &amp;\leq \frac{Q_{t&#39;}}{Q_t}\left|e\right|+\frac{1}{2}+\frac{\sqrt{N}\Vert s\Vert_2}{2}+1-\frac{Q_{t&#39;}}{Q_t}
-  \\
-  &amp;=\frac{Q_{t&#39;}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}+\frac{3}{2}-\frac{Q_{t&#39;}}{Q_t}
-  \\
-  &amp;\approx \frac{Q_{t&#39;}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}
-  \\
-  &amp;\leq \frac{Q_{t&#39;}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}
-  \end{aligned}
-  $$&lt;p&gt;所以$e_b&#39;=\frac{Q_{t&#39;}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;拓展1&#34;&gt;拓展1
-&lt;/h2&gt;&lt;p&gt;我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Scale_1&lt;a class=&#34;link&#34; href=&#34;#ref-HElib20&#34; &gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;令$Q_{t&#39;}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，$Q_td_i\equiv b_i(\text{mod}\;P),\left|d_i\right|\leq P/2$，则
-&lt;/p&gt;
+\begin{aligned}
+e'&amp;=\frac{M'-m}{P}\\&amp;=\frac{Q_{t'}M[j]/Q_t+(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)-m}{P}\\
+&amp;=\frac{Q_{t'}}{Q_t}\frac{M[j]-m}{P}+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\\
+&amp;=\frac{Q_{t'}}{Q_t}e+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}
+\end{aligned}
+$$$$
+\begin{aligned}
+\left|e'\right|&amp;\leq \left|\frac{Q_{t'}}{Q_t}e\right|+\left|\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}\right|+\left|(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\right| \\
+&amp;\leq \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{1}{2}+\frac{\sqrt{N}\Vert s\Vert_2}{2}+1-\frac{Q_{t'}}{Q_t}
+\\
+&amp;=\frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}+\frac{3}{2}-\frac{Q_{t'}}{Q_t}
+\\
+&amp;\approx \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}
+\\
+&amp;\leq \frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}
+\end{aligned}
+$$&lt;p>所以$e_b'=\frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}$。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="拓展1">拓展1
+&lt;/h2>&lt;p>我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Scale_1&lt;a class="link" href="#ref-HElib20" >&lt;sup>2&lt;/sup>&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>令$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，$Q_td_i\equiv b_i(\text{mod}\;P),\left|d_i\right|\leq P/2$，则
+&lt;/p>
 $$
-  c&#39;_i=a_i+d_i
-  $$&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;新的公钥加解密操作如下：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;（1）加密&lt;/p&gt;
-&lt;p&gt;令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$&lt;/p&gt;
+c'_i=a_i+d_i
+$$&lt;/li>
+&lt;li>
+&lt;p>新的公钥加解密操作如下：&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>（1）加密&lt;/p>
+&lt;p>令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$&lt;/p>
 $$
 b=a\cdot s+P\cdot e_s\\
 c_0=b\cdot v+P\cdot e_0+\hat{m}\cdot Q_t\\
 c_1=-a\cdot v+P\cdot e_1
-$$&lt;p&gt;（2）解密&lt;/p&gt;
+$$&lt;p>（2）解密&lt;/p>
 $$
 \hat{m}=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P\\
 m=\left[\hat{m}\cdot k_t^{-1}\right]_P
-$$&lt;p&gt;重写上述证明如下：&lt;/p&gt;
+$$&lt;p>重写上述证明如下：&lt;/p>
 $$
 \begin{aligned}
 c_0[j]+(c_1\cdot s)[j]&amp;=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
-c_0&#39;[j]+(c_1&#39;\cdot s)[j]&amp;=M&#39;+k&#39;[j]Q_{t&#39;},\left|M&#39;\right|\lt Q_{t&#39;}/2\\
+c_0'[j]+(c_1'\cdot s)[j]&amp;=M'+k'[j]Q_{t'},\left|M'\right|\lt Q_{t'}/2\\
 \end{aligned}
-$$&lt;p&gt;此时我们不需要证明$M\equiv M&#39;(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M&#39;\cdot Q_{t&#39;}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t&#39;}\equiv M&#39;\cdot Q_t(\text{mod}\;P)$。也就是要验证&lt;/p&gt;
+$$&lt;p>此时我们不需要证明$M\equiv M'(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M'\cdot Q_{t'}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t'}\equiv M'\cdot Q_t(\text{mod}\;P)$。也就是要验证&lt;/p>
 $$
-(c_0[j]+(c_1\cdot s)[j]-k[j]Q_t)Q_{t&#39;}=(c_0&#39;[j]+(c_1&#39;\cdot s)[j]-k&#39;[j]Q_{t&#39;})Q_{t}(\text{mod}\;P)\\
-(c_0[j]+(c_1\cdot s)[j])Q_{t&#39;}-k[j]Q_tQ_{t&#39;}=(c_0&#39;[j]+(c_1&#39;\cdot s)[j])Q_{t}-k&#39;[j]Q_tQ_{t&#39;}(\text{mod}\;P)
-$$&lt;p&gt;由Scale_new操作可得，&lt;/p&gt;
+(c_0[j]+(c_1\cdot s)[j]-k[j]Q_t)Q_{t'}=(c_0'[j]+(c_1'\cdot s)[j]-k'[j]Q_{t'})Q_{t}(\text{mod}\;P)\\
+(c_0[j]+(c_1\cdot s)[j])Q_{t'}-k[j]Q_tQ_{t'}=(c_0'[j]+(c_1'\cdot s)[j])Q_{t}-k'[j]Q_tQ_{t'}(\text{mod}\;P)
+$$&lt;p>由Scale_new操作可得，&lt;/p>
 $$
-Q_{t&#39;}c_i=Q_ta_i+b_i\\
-Q_{t&#39;}c_i\equiv Q_ta_i+Q_td_i(\text{mod}\;P)\\
-Q_{t&#39;}c_i\equiv Q_t(a_i+d_i)(\text{mod}\;P)\\
-Q_{t&#39;}c_i\equiv Q_tc_i&#39;(\text{mod}\;P)\\
-$$&lt;p&gt;所以和前面的证明类似，我们只需要说明$k[j]=k&#39;[j]$即可。&lt;/p&gt;
-&lt;p&gt;类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。&lt;/p&gt;
+Q_{t'}c_i=Q_ta_i+b_i\\
+Q_{t'}c_i\equiv Q_ta_i+Q_td_i(\text{mod}\;P)\\
+Q_{t'}c_i\equiv Q_t(a_i+d_i)(\text{mod}\;P)\\
+Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)\\
+$$&lt;p>所以和前面的证明类似，我们只需要说明$k[j]=k'[j]$即可。&lt;/p>
+&lt;p>类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。&lt;/p>
 $$
-c_0&#39;[j]-Q_{t&#39;}c_0[j]/Q_t=a_0+d_0-Q_{t&#39;}c_0/Q_t=d_0-b_0/Q_t
-$$&lt;p&gt;因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以&lt;/p&gt;
+c_0'[j]-Q_{t'}c_0[j]/Q_t=a_0+d_0-Q_{t'}c_0/Q_t=d_0-b_0/Q_t
+$$&lt;p>因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以&lt;/p>
 $$
 \left|d_0-b_0/Q_t\right|\leq \left|d_0\right|+\left|b_0/Q_t\right|\leq \frac{P+1}{2}
-$$&lt;p&gt;相当于原来的上界增加1/2，这个几乎可以看做没有增加了。&lt;/p&gt;
-&lt;p&gt;条件(3)也可以更新为$\frac{Q_{t&#39;}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+(P+1)\sqrt{N}\Vert s\Vert_2/2\leq Q_{t&#39;}/2$&lt;/p&gt;
-&lt;p&gt;总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！&lt;/p&gt;
-&lt;p&gt;当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。&lt;/p&gt;
-&lt;h2 id=&#34;拓展2&#34;&gt;拓展2
-&lt;/h2&gt;&lt;p&gt;拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t&#39;}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t&#39;}|Q_t, t&#39;\lt t$。设$R=Q_t/Q_{t&#39;}$&lt;/p&gt;
-&lt;p&gt;我们想保证$Q_{t&#39;}c_i\equiv Q_tc_i&#39;(\text{mod}\;P)$，一个想法是：&lt;/p&gt;
-&lt;p&gt;令$Q_tc_i&#39;=Q_{t&#39;}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。&lt;/p&gt;
-&lt;p&gt;显然，此时有$c_i&#39;=\frac{Q_{t&#39;}(c_i+r_iP)}{Q_t}$。&lt;/p&gt;
-&lt;p&gt;令$Q_{t&#39;}|Q_t$，则$c_i&#39;=\frac{c_i+r_iP}{R}$&lt;/p&gt;
-&lt;p&gt;所以$r_iP\equiv -c_i(\text{mod}\;R)$&lt;/p&gt;
-&lt;p&gt;因为$\text{gcd}(P,R)=1$，令$r_i=-c_iP^{-1}(\text{mod}\;R)$。&lt;/p&gt;
-&lt;p&gt;所以新的scale是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Scale_2&lt;/strong&gt;&lt;a class=&#34;link&#34; href=&#34;#ref-KPZ22&#34; &gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+$$&lt;p>相当于原来的上界增加1/2，这个几乎可以看做没有增加了。&lt;/p>
+&lt;p>条件(3)也可以更新为$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+(P+1)\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$&lt;/p>
+&lt;p>总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！&lt;/p>
+&lt;p>当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。&lt;/p>
+&lt;h2 id="拓展2">拓展2
+&lt;/h2>&lt;p>拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t'}|Q_t, t'\lt t$。设$R=Q_t/Q_{t'}$&lt;/p>
+&lt;p>我们想保证$Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)$，一个想法是：&lt;/p>
+&lt;p>令$Q_tc_i'=Q_{t'}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。&lt;/p>
+&lt;p>显然，此时有$c_i'=\frac{Q_{t'}(c_i+r_iP)}{Q_t}$。&lt;/p>
+&lt;p>令$Q_{t'}|Q_t$，则$c_i'=\frac{c_i+r_iP}{R}$&lt;/p>
+&lt;p>所以$r_iP\equiv -c_i(\text{mod}\;R)$&lt;/p>
+&lt;p>因为$\text{gcd}(P,R)=1$，令$r_i=-c_iP^{-1}(\text{mod}\;R)$。&lt;/p>
+&lt;p>所以新的scale是&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Scale_2&lt;/strong>&lt;a class="link" href="#ref-KPZ22" >&lt;sup>3&lt;/sup>&lt;/a>&lt;/p>
 $$
-  c_i&#39;=\frac{c_i+\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}
-  $$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;类似的，有$\left|c_i&#39;-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结
-&lt;/h2&gt;&lt;p&gt;这是目前看到的三种实现BGV mod-switch的方法，三种方法既有相同之处又有各自的特点，应该根据参数选取，性能，噪声等等指标来权衡使用哪一种方式。注意：拓展2和拓展3是可以一起使用的。&lt;/p&gt;
-&lt;p&gt;补充：在BGV方案中，私钥$s$的系数属于$\{0,1,-1\}$，并且规定了汉明重量h即非零元素个数。我们用$w(s)$表示。显然有:
-&lt;/p&gt;
+c_i'=\frac{c_i+\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}
+$$&lt;/li>
+&lt;/ul>
+&lt;p>类似的，有$\left|c_i'-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$&lt;/p>
+&lt;h2 id="总结">总结
+&lt;/h2>&lt;p>这是目前看到的三种实现BGV mod-switch的方法，三种方法既有相同之处又有各自的特点，应该根据参数选取，性能，噪声等等指标来权衡使用哪一种方式。注意：拓展2和拓展3是可以一起使用的。&lt;/p>
+&lt;p>补充：在BGV方案中，私钥$s$的系数属于$\{0,1,-1\}$，并且规定了汉明重量h即非零元素个数。我们用$w(s)$表示。显然有:
+&lt;/p>
 $$
 \Vert s\Vert_2=\sqrt{w(s)}
-$$&lt;h2 id=&#34;参考&#34;&gt;参考
-&lt;/h2&gt;&lt;div id=&#34;ref-BGV11&#34;&gt;&lt;/div&gt;
+$$&lt;h2 id="参考">参考
+&lt;/h2>&lt;div id="ref-BGV11">&lt;/div>
 - [1] [BGV11](https://eprint.iacr.org/2011/277.pdf)
-&lt;div id=&#34;ref-HElib20&#34;&gt;&lt;/div&gt;
+&lt;div id="ref-HElib20">&lt;/div>
 - [2] [HElib20](https://eprint.iacr.org/2020/1481.pdf)
-&lt;div id=&#34;ref-KPZ22&#34;&gt;&lt;/div&gt; 
-- [3] [KPZ22](https://eprint.iacr.org/2021/204.pdf)</description>
-        </item>
-        <item>
-        <title>FHE</title>
-        <link>https://www.wfz521.com/p/fhe/</link>
-        <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/fhe/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/fhe/pkq.png" alt="Featured image of post FHE" /&gt;&lt;h1 id=&#34;全同态加密对称密码隐私计算学习记录&#34;&gt;全同态加密+对称密码+隐私计算学习记录
-&lt;/h1&gt;&lt;h2 id=&#34;全同态加密&#34;&gt;全同态加密
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;全同态加密目前都指的是环同态&lt;/p&gt;
-&lt;p&gt;给定两个环结构A和B，各自定义了两种运算$(+_A,\times_A)$和$(+_B,\times_B)$，&lt;/p&gt;
-&lt;p&gt;如果存在一个映射f: A-&amp;gt;B，满足&lt;/p&gt;
-&lt;p&gt;$f(a_0 +_A a_1)=f(a_0) +_B f(a_1)$&lt;/p&gt;
-&lt;p&gt;$f(a_0 \times_A a_1)=f(a_0) \times_B f(a_1)$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;​	则称f是A到B的同态映射。&lt;/p&gt;
-&lt;p&gt;​	对于密码方案来说，可以理解为&lt;/p&gt;
-&lt;p&gt;$a_0 +_A a_1=Dec(Enc(a_0) +_B Enc(a_1))$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如何构造全同态？&lt;/p&gt;
-&lt;p&gt;有两个难点，一是如何找到两种环结构，二是如何如何针对两种环结构设计出同态映射。&lt;/p&gt;
-&lt;p&gt;2009年，MIT的博士生Gentry基于格构造出了首个全同态方案，这个方案的实际性能很差，但是它其中的思想却一直贯彻未来的全同态方案设计当中。直接点说，Gentry基于格的方案是含有噪声的，因此必须要保证最终解密时噪声控制在某个界内，因为同态本质是针对运算做出限制，所以只需要保证每次运算后都能控制噪声在界内即可。Gentry提出了一种叫做“自举”的方法，对运算后的密文进行“同态地解密”，事实上，我觉得这个同态解密的说法不合适。下面想讲一下我个人的理解：&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;理解“自举”&lt;/p&gt;
-&lt;p&gt;一般来说，全同态加密会有一对密钥：pk、sk，也就是公钥和私钥。&lt;/p&gt;
-&lt;p&gt;$c=Enc_{pk}(m),m=Dec_{sk}(c)$&lt;/p&gt;
-&lt;p&gt;现在如果再构造一对密钥：$\overline{bsk},\overline{pk}$，满足$\overline{bsk}=\overline{Enc}_{\overline{pk}}(sk)$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;自举最关键的步骤是需要把$c=Enc_{pk}(m),m=Dec_{sk}(c)$变为$\overline{c}=\overline{Enc}_{\overline{pk}}(m)$，这一步也被称作重加密，这个称呼是比较贴切的，相当于换个公钥重新加密，解密后的密文可以通过参数的调整保证噪声以“极大概率”落在界内。之后还需要进行一步密钥切换，就是从$\overline{c}=Enc_{\overline{pk}}(m)$变成$\hat{c}=Enc_{pk}(m)$，此时也可以通过调整参数使得噪声以“极大概率”落在界内。这里需要注意一点，自举都是概率性的，无法保证100%成功。&lt;/p&gt;
-&lt;p&gt;$\overline{Enc}_{\overline{pk}}(m)=\overline{Enc}_{\overline{pk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$&lt;/p&gt;
-&lt;p&gt;通过这个公式，可以看出同态解密这个说法有点不合适，准确的理解应该是先对自举前的密文进行加密再同态地解密。
-&lt;/p&gt;
+&lt;div id="ref-KPZ22">&lt;/div>
+- [3] [KPZ22](https://eprint.iacr.org/2021/204.pdf)</description></item><item><title>FHE</title><link>https://www.wfz521.com/p/fhe/</link><pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/fhe/</guid><description>&lt;img src="https://www.wfz521.com/p/fhe/pkq.png" alt="Featured image of post FHE" />&lt;h1 id="全同态加密对称密码隐私计算学习记录">全同态加密+对称密码+隐私计算学习记录
+&lt;/h1>&lt;h2 id="全同态加密">全同态加密
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>全同态加密目前都指的是环同态&lt;/p>
+&lt;p>给定两个环结构A和B，各自定义了两种运算$(+_A,\times_A)$和$(+_B,\times_B)$，&lt;/p>
+&lt;p>如果存在一个映射f: A-&amp;gt;B，满足&lt;/p>
+&lt;p>$f(a_0 +_A a_1)=f(a_0) +_B f(a_1)$&lt;/p>
+&lt;p>$f(a_0 \times_A a_1)=f(a_0) \times_B f(a_1)$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>​ 则称f是A到B的同态映射。&lt;/p>
+&lt;p>​ 对于密码方案来说，可以理解为&lt;/p>
+&lt;p>$a_0 +_A a_1=Dec(Enc(a_0) +_B Enc(a_1))$&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如何构造全同态？&lt;/p>
+&lt;p>有两个难点，一是如何找到两种环结构，二是如何如何针对两种环结构设计出同态映射。&lt;/p>
+&lt;p>2009年，MIT的博士生Gentry基于格构造出了首个全同态方案，这个方案的实际性能很差，但是它其中的思想却一直贯彻未来的全同态方案设计当中。直接点说，Gentry基于格的方案是含有噪声的，因此必须要保证最终解密时噪声控制在某个界内，因为同态本质是针对运算做出限制，所以只需要保证每次运算后都能控制噪声在界内即可。Gentry提出了一种叫做“自举”的方法，对运算后的密文进行“同态地解密”，事实上，我觉得这个同态解密的说法不合适。下面想讲一下我个人的理解：&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>理解“自举”&lt;/p>
+&lt;p>一般来说，全同态加密会有一对密钥：pk、sk，也就是公钥和私钥。&lt;/p>
+&lt;p>$c=Enc_{pk}(m),m=Dec_{sk}(c)$&lt;/p>
+&lt;p>现在如果再构造一对密钥：$\overline{bsk},\overline{pk}$，满足$\overline{bsk}=\overline{Enc}_{\overline{pk}}(sk)$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>自举最关键的步骤是需要把$c=Enc_{pk}(m),m=Dec_{sk}(c)$变为$\overline{c}=\overline{Enc}_{\overline{pk}}(m)$，这一步也被称作重加密，这个称呼是比较贴切的，相当于换个公钥重新加密，解密后的密文可以通过参数的调整保证噪声以“极大概率”落在界内。之后还需要进行一步密钥切换，就是从$\overline{c}=Enc_{\overline{pk}}(m)$变成$\hat{c}=Enc_{pk}(m)$，此时也可以通过调整参数使得噪声以“极大概率”落在界内。这里需要注意一点，自举都是概率性的，无法保证100%成功。&lt;/p>
+&lt;p>$\overline{Enc}_{\overline{pk}}(m)=\overline{Enc}_{\overline{pk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$&lt;/p>
+&lt;p>通过这个公式，可以看出同态解密这个说法有点不合适，准确的理解应该是先对自举前的密文进行加密再同态地解密。
+&lt;/p>
 $$
 c=Enc_{pk}(m),m=Dec_{sk}(c)\\
 \overline{bsk}=\overline{Enc}_{\overline{pk}}(sk)\\
 \overline{Enc}_{\overline{pk}}(m)=\overline{Enc}_{\overline{pk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))
-$$&lt;p&gt;
+$$&lt;p>
 当然，也有对称形式的：
-&lt;/p&gt;
+&lt;/p>
 $$
 c=Enc_{sk}(m),m=Dec_{sk}(c)\\
 \overline{bsk}=Enc_{\overline{sk}}(sk)\\
 Enc_{\overline{sk}}(m)=Enc_{\overline{sk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(Enc_{\overline{sk}}(c))
-$$&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;注意到，在RLWE中似乎都使用非对称形式的全同态加密，在LWE中更倾向于使用对称形式的，这里应该有一些原因，需要我仔细分析一下。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;自举难点&lt;/p&gt;
-&lt;p&gt;$Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$，这里很显然有一个问题：$c$本身就是密文，如果对密文进行加密呢？这需要对$\overline{Enc}$进行特别设计，既要和原来的$Enc$能够转换又要满足可以对密文进行同态加密。这是一个非常值得讨论的问题，可以通过这个切入点来看BGV/BFV/CKKS/TFHE等全同态方案的自举是如何设计的？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;自举的设计&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;全同态编码&#34;&gt;全同态编码
-&lt;/h2&gt;&lt;p&gt;seal库里面直接系数编码&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Plaintext&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pt_bfv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;pt_bfv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Plaintext&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gsl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;span&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;uint64_t&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;coeffs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;批处理编码CRT&lt;/p&gt;
-&lt;h2 id=&#34;混合同态加密&#34;&gt;混合同态加密
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;比较不同同态算法下一些国产对称密码的使用效果&lt;/li&gt;
-&lt;li&gt;比较不同同态算法下一些统计或机器学习的算法实现效果&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;rtf框架&#34;&gt;RtF框架
-&lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>Chinese Test</title>
-        <link>https://www.wfz521.com/p/test-chinese/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/test-chinese/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试
-&lt;/h2&gt;&lt;p&gt;而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p&gt;
-&lt;p&gt;奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p&gt;
-&lt;h2 id=&#34;引用&#34;&gt;引用
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;思念是最暖的忧伤像一双翅膀&lt;br&gt;
-让我停不了飞不远在过往游荡&lt;br&gt;
-不告而别的你 就算为了我着想&lt;br&gt;
-这么沉痛的呵护 我怎么能翱翔&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=3aypp_YlBzI&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;最暖的憂傷 - 田馥甄&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;图片&#34;&gt;图片
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://www.wfz521.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34;
-	width=&#34;667&#34;
-	height=&#34;1000&#34;
-	srcset=&#34;https://www.wfz521.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e98fca2b4272416e.jpg 480w, https://www.wfz521.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e3d37c9ded115b12.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Florian Klauer on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;66&#34;
-		data-flex-basis=&#34;160px&#34;
-	
-&gt;  &lt;img src=&#34;https://www.wfz521.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34;
-	width=&#34;1000&#34;
-	height=&#34;667&#34;
-	srcset=&#34;https://www.wfz521.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_e13c58d5189f892c.jpg 480w, https://www.wfz521.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_8fc948b7ee525251.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Luca Bravo on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;149&#34;
-		data-flex-basis=&#34;359px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34;
-	width=&#34;1000&#34;
-	height=&#34;750&#34;
-	srcset=&#34;https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_503c0ebcc5245e10.jpg 480w, https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_48c98de55fb3c999.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Helena Hertz on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;133&#34;
-		data-flex-basis=&#34;320px&#34;
-	
-&gt;  &lt;img src=&#34;https://www.wfz521.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34;
-	width=&#34;667&#34;
-	height=&#34;1000&#34;
-	srcset=&#34;https://www.wfz521.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_f81a3588c5c4a663.jpg 480w, https://www.wfz521.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_1c52ba2a4ad7b9a0.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Photo by Hudai Gayiran on Unsplash&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;66&#34;
-		data-flex-basis=&#34;160px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;Photo by Florian Klauer on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;florian-klauer-nptLmg6jqDo-unsplash.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;Photo by Luca Bravo on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;luca-bravo-alS7ewQ41M8-unsplash.jpg&lt;/span&gt;) 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;Photo by Helena Hertz on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;helena-hertz-wWZzXlDpMog-unsplash.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;Photo by Hudai Gayiran on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;相册语法来自 &lt;a class=&#34;link&#34; href=&#34;https://typlog.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Typlog&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Archives</title>
-        <link>https://www.wfz521.com/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Markdown Syntax Guide</title>
-        <link>https://www.wfz521.com/p/markdown-syntax-guide/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/markdown-syntax-guide/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
-&lt;h2 id=&#34;headings&#34;&gt;Headings
-&lt;/h2&gt;&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
-&lt;h1 id=&#34;h1&#34;&gt;H1
-&lt;/h1&gt;&lt;h2 id=&#34;h2&#34;&gt;H2
-&lt;/h2&gt;&lt;h3 id=&#34;h3&#34;&gt;H3
-&lt;/h3&gt;&lt;h4 id=&#34;h4&#34;&gt;H4
-&lt;/h4&gt;&lt;h5 id=&#34;h5&#34;&gt;H5
-&lt;/h5&gt;&lt;h6 id=&#34;h6&#34;&gt;H6
-&lt;/h6&gt;&lt;h2 id=&#34;paragraph&#34;&gt;Paragraph
-&lt;/h2&gt;&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;
-&lt;p&gt;Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p&gt;
-&lt;h2 id=&#34;blockquotes&#34;&gt;Blockquotes
-&lt;/h2&gt;&lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code&gt;footer&lt;/code&gt; or &lt;code&gt;cite&lt;/code&gt; element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p&gt;
-&lt;h4 id=&#34;blockquote-without-attribution&#34;&gt;Blockquote without attribution
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-&lt;strong&gt;Note&lt;/strong&gt; that you can use &lt;em&gt;Markdown syntax&lt;/em&gt; within a blockquote.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h4 id=&#34;blockquote-with-attribution&#34;&gt;Blockquote with attribution
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br&gt;
-— &lt;cite&gt;Rob Pike&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;tables&#34;&gt;Tables
-&lt;/h2&gt;&lt;p&gt;Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Name&lt;/th&gt;
-          &lt;th&gt;Age&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Bob&lt;/td&gt;
-          &lt;td&gt;27&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Alice&lt;/td&gt;
-          &lt;td&gt;23&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&#34;inline-markdown-within-tables&#34;&gt;Inline Markdown within tables
-&lt;/h4&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Italics&lt;/th&gt;
-          &lt;th&gt;Bold&lt;/th&gt;
-          &lt;th&gt;Code&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;A&lt;/th&gt;
-          &lt;th&gt;B&lt;/th&gt;
-          &lt;th&gt;C&lt;/th&gt;
-          &lt;th&gt;D&lt;/th&gt;
-          &lt;th&gt;E&lt;/th&gt;
-          &lt;th&gt;F&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
-          &lt;td&gt;Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td&gt;
-          &lt;td&gt;Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td&gt;
-          &lt;td&gt;Proin sit amet velit nec enim imperdiet vehicula.&lt;/td&gt;
-          &lt;td&gt;Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td&gt;
-          &lt;td&gt;Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;code-blocks&#34;&gt;Code Blocks
-&lt;/h2&gt;&lt;h4 id=&#34;code-block-with-backticks&#34;&gt;Code block with backticks
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Example HTML5 Document&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;code-block-indented-with-four-spaces&#34;&gt;Code block indented with four spaces
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
+$$&lt;ul>
+&lt;li>
+&lt;p>注意到，在RLWE中似乎都使用非对称形式的全同态加密，在LWE中更倾向于使用对称形式的，这里应该有一些原因，需要我仔细分析一下。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自举难点&lt;/p>
+&lt;p>$Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$，这里很显然有一个问题：$c$本身就是密文，如果对密文进行加密呢？这需要对$\overline{Enc}$进行特别设计，既要和原来的$Enc$能够转换又要满足可以对密文进行同态加密。这是一个非常值得讨论的问题，可以通过这个切入点来看BGV/BFV/CKKS/TFHE等全同态方案的自举是如何设计的？&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自举的设计&lt;/p>
+&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;h2 id="全同态编码">全同态编码
+&lt;/h2>&lt;p>seal库里面直接系数编码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Plaintext&lt;/span> &lt;span class="n">pt_bfv&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">pt_bfv&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Plaintext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">gsl&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="n">span&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="k">const&lt;/span> &lt;span class="n">uint64_t&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">coeffs&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>批处理编码CRT&lt;/p>
+&lt;h2 id="混合同态加密">混合同态加密
+&lt;/h2>&lt;ul>
+&lt;li>比较不同同态算法下一些国产对称密码的使用效果&lt;/li>
+&lt;li>比较不同同态算法下一些统计或机器学习的算法实现效果&lt;/li>
+&lt;/ul>
+&lt;h2 id="rtf框架">RtF框架
+&lt;/h2></description></item><item><title>Chinese Test</title><link>https://www.wfz521.com/p/test-chinese/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/test-chinese/</guid><description>&lt;img src="https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试
+&lt;/h2>&lt;p>而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p>
+&lt;p>奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p>
+&lt;h2 id="引用">引用
+&lt;/h2>&lt;blockquote>
+&lt;p>思念是最暖的忧伤像一双翅膀&lt;br>
+让我停不了飞不远在过往游荡&lt;br>
+不告而别的你 就算为了我着想&lt;br>
+这么沉痛的呵护 我怎么能翱翔&lt;/p>
+&lt;p>&lt;em>&lt;a class="link" href="https://www.youtube.com/watch?v=3aypp_YlBzI" target="_blank" rel="noopener"
+>最暖的憂傷 - 田馥甄&lt;/a>&lt;/em>&lt;/p>&lt;/blockquote>
+&lt;h2 id="图片">图片
+&lt;/h2>&lt;p>&lt;img src="https://www.wfz521.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg"
+width="667"
+height="1000"
+srcset="https://www.wfz521.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e98fca2b4272416e.jpg 480w, https://www.wfz521.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu_e3d37c9ded115b12.jpg 1024w"
+loading="lazy"
+alt="Photo by Florian Klauer on Unsplash"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+> &lt;img src="https://www.wfz521.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg"
+width="1000"
+height="667"
+srcset="https://www.wfz521.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_e13c58d5189f892c.jpg 480w, https://www.wfz521.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu_8fc948b7ee525251.jpg 1024w"
+loading="lazy"
+alt="Photo by Luca Bravo on Unsplash"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+>&lt;/p>
+&lt;p>&lt;img src="https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg"
+width="1000"
+height="750"
+srcset="https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_503c0ebcc5245e10.jpg 480w, https://www.wfz521.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu_48c98de55fb3c999.jpg 1024w"
+loading="lazy"
+alt="Photo by Helena Hertz on Unsplash"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+> &lt;img src="https://www.wfz521.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg"
+width="667"
+height="1000"
+srcset="https://www.wfz521.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_f81a3588c5c4a663.jpg 480w, https://www.wfz521.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hu_1c52ba2a4ad7b9a0.jpg 1024w"
+loading="lazy"
+alt="Photo by Hudai Gayiran on Unsplash"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">![&lt;span class="nt">Photo by Florian Klauer on Unsplash&lt;/span>](&lt;span class="na">florian-klauer-nptLmg6jqDo-unsplash.jpg&lt;/span>) ![&lt;span class="nt">Photo by Luca Bravo on Unsplash&lt;/span>](&lt;span class="na">luca-bravo-alS7ewQ41M8-unsplash.jpg&lt;/span>)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">![&lt;span class="nt">Photo by Helena Hertz on Unsplash&lt;/span>](&lt;span class="na">helena-hertz-wWZzXlDpMog-unsplash.jpg&lt;/span>) ![&lt;span class="nt">Photo by Hudai Gayiran on Unsplash&lt;/span>](&lt;span class="na">hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>相册语法来自 &lt;a class="link" href="https://typlog.com/" target="_blank" rel="noopener"
+>Typlog&lt;/a>&lt;/p></description></item><item><title>Archives</title><link>https://www.wfz521.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/archives/</guid><description/></item><item><title>Markdown Syntax Guide</title><link>https://www.wfz521.com/p/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/markdown-syntax-guide/</guid><description>&lt;img src="https://www.wfz521.com/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+&lt;h2 id="headings">Headings
+&lt;/h2>&lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
+&lt;h1 id="h1">H1
+&lt;/h1>&lt;h2 id="h2">H2
+&lt;/h2>&lt;h3 id="h3">H3
+&lt;/h3>&lt;h4 id="h4">H4
+&lt;/h4>&lt;h5 id="h5">H5
+&lt;/h5>&lt;h6 id="h6">H6
+&lt;/h6>&lt;h2 id="paragraph">Paragraph
+&lt;/h2>&lt;p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p>
+&lt;p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p>
+&lt;h2 id="blockquotes">Blockquotes
+&lt;/h2>&lt;p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code>footer&lt;/code> or &lt;code>cite&lt;/code> element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p>
+&lt;h4 id="blockquote-without-attribution">Blockquote without attribution
+&lt;/h4>&lt;blockquote>
+&lt;p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&lt;strong>Note&lt;/strong> that you can use &lt;em>Markdown syntax&lt;/em> within a blockquote.&lt;/p>&lt;/blockquote>
+&lt;h4 id="blockquote-with-attribution">Blockquote with attribution
+&lt;/h4>&lt;blockquote>
+&lt;p>Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br>
+— &lt;cite>Rob Pike&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/cite>&lt;/p>&lt;/blockquote>
+&lt;h2 id="tables">Tables
+&lt;/h2>&lt;p>Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Age&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Bob&lt;/td>
+&lt;td>27&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alice&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="inline-markdown-within-tables">Inline Markdown within tables
+&lt;/h4>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Italics&lt;/th>
+&lt;th>Bold&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>italics&lt;/em>&lt;/td>
+&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>A&lt;/th>
+&lt;th>B&lt;/th>
+&lt;th>C&lt;/th>
+&lt;th>D&lt;/th>
+&lt;th>E&lt;/th>
+&lt;th>F&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td>
+&lt;td>Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td>
+&lt;td>Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td>
+&lt;td>Proin sit amet velit nec enim imperdiet vehicula.&lt;/td>
+&lt;td>Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td>
+&lt;td>Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="code-blocks">Code Blocks
+&lt;/h2>&lt;h4 id="code-block-with-backticks">Code block with backticks
+&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Example HTML5 Document&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Test&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="code-block-indented-with-four-spaces">Code block indented with four spaces
+&lt;/h4>&lt;pre>&lt;code>&amp;lt;!doctype html&amp;gt;
 &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
 &amp;lt;head&amp;gt;
-  &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
-  &amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
 &amp;lt;/head&amp;gt;
 &amp;lt;body&amp;gt;
-  &amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
 &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;code-block-with-hugos-internal-highlight-shortcode&#34;&gt;Code block with Hugo&amp;rsquo;s internal highlight shortcode
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;charset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Example HTML5 Document&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h4 id=&#34;diff-code-block&#34;&gt;Diff code block
-&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[dependencies.bevy]
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gd&#34;&gt;- features = [&amp;#34;dynamic&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gd&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gi&#34;&gt;+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;list-types&#34;&gt;List Types
-&lt;/h2&gt;&lt;h4 id=&#34;ordered-list&#34;&gt;Ordered List
-&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;First item&lt;/li&gt;
-&lt;li&gt;Second item&lt;/li&gt;
-&lt;li&gt;Third item&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;unordered-list&#34;&gt;Unordered List
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;List item&lt;/li&gt;
-&lt;li&gt;Another item&lt;/li&gt;
-&lt;li&gt;And another item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;nested-list&#34;&gt;Nested list
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Fruit
-&lt;ul&gt;
-&lt;li&gt;Apple&lt;/li&gt;
-&lt;li&gt;Orange&lt;/li&gt;
-&lt;li&gt;Banana&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Dairy
-&lt;ul&gt;
-&lt;li&gt;Milk&lt;/li&gt;
-&lt;li&gt;Cheese&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;other-elements--abbr-sub-sup-kbd-mark&#34;&gt;Other Elements — abbr, sub, sup, kbd, mark
-&lt;/h2&gt;&lt;p&gt;&lt;abbr title=&#34;Graphics Interchange Format&#34;&gt;GIF&lt;/abbr&gt; is a bitmap image format.&lt;/p&gt;
-&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
-&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Press &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Delete&lt;/kbd&gt; to end the session.&lt;/p&gt;
-&lt;p&gt;Most &lt;mark&gt;salamanders&lt;/mark&gt; are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p&gt;
-&lt;h2 id=&#34;hyperlinked-image&#34;&gt;Hyperlinked image
-&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Google&#34;
-	
-	
-&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;The above quote is excerpted from Rob Pike&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=PAAkCSZUG1c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;talk&lt;/a&gt; during Gopherfest, November 18, 2015.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Placeholder Text</title>
-        <link>https://www.wfz521.com/p/placeholder-text/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/placeholder-text/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
-&lt;p&gt;Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Exierant elisi ambit vivere dedere&lt;/li&gt;
-&lt;li&gt;Duce pollice&lt;/li&gt;
-&lt;li&gt;Eris modo&lt;/li&gt;
-&lt;li&gt;Spargitque ferrea quos palude&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Comas hunc haec pietate fetum procerum dixit&lt;/li&gt;
-&lt;li&gt;Post torum vates letum Tiresia&lt;/li&gt;
-&lt;li&gt;Flumen querellas&lt;/li&gt;
-&lt;li&gt;Arcanaque montibus omnes&lt;/li&gt;
-&lt;li&gt;Quidem et&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;vagus-elidunt&#34;&gt;Vagus elidunt
-&lt;/h1&gt;&lt;p&gt;&lt;svg class=&#34;canon&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; overflow=&#34;visible&#34; viewBox=&#34;0 0 496 373&#34; height=&#34;373&#34; width=&#34;496&#34;&gt;&lt;g fill=&#34;none&#34;&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#ED1C24&#34; stroke-width=&#34;.75&#34; d=&#34;M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.479.375h495v372h-495zM247.979.875v372&#34;&gt;&lt;/path&gt;&lt;ellipse cx=&#34;498.729&#34; cy=&#34;177.625&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;ellipse cx=&#34;247.229&#34; cy=&#34;377.375&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;The Van de Graaf Canon&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;mane-refeci-capiebant-unda-mulcebat&#34;&gt;Mane refeci capiebant unda mulcebat
-&lt;/h2&gt;&lt;p&gt;Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong&gt;Faces illo pepulere&lt;/strong&gt; tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p&gt;
-&lt;p&gt;Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p&gt;
-&lt;p&gt;Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong&gt;mitis temploque&lt;/strong&gt; vocatus, inque alis, &lt;em&gt;oculos nomen&lt;/em&gt; non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong&gt;parte&lt;/strong&gt;.&lt;/p&gt;</description>
-        </item>
-        <item>
-        <title>Math Typesetting</title>
-        <link>https://www.wfz521.com/p/math-typesetting/</link>
-        <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/math-typesetting/</guid>
-        <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
-&lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Create a partial under &lt;code&gt;/layouts/partials/math.html&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Within this partial reference the &lt;a class=&#34;link&#34; href=&#34;https://katex.org/docs/autorender.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Auto-render Extension&lt;/a&gt; or host these scripts locally.&lt;/li&gt;
-&lt;li&gt;Include the partial in your templates like so:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; or .Params.math .Site.Params.math &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; partial &lt;span class=&#34;s2&#34;&gt;&amp;#34;math.html&amp;#34;&lt;/span&gt; . &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{{&lt;/span&gt; end &lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;To enable KaTeX globally set the parameter &lt;code&gt;math&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in a project&amp;rsquo;s configuration&lt;/li&gt;
-&lt;li&gt;To enable KaTeX on a per page basis include the parameter &lt;code&gt;math: true&lt;/code&gt; in content files&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Use the online reference of &lt;a class=&#34;link&#34; href=&#34;https://katex.org/docs/supported.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Supported TeX Functions&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;examples&#34;&gt;Examples
-&lt;/h3&gt;&lt;p&gt;Inline math: $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$&lt;/p&gt;
-&lt;p&gt;Block math:
-&lt;/p&gt;
+&lt;/code>&lt;/pre>
+&lt;h4 id="code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo&amp;rsquo;s internal highlight shortcode
+&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Example HTML5 Document&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Test&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;h4 id="diff-code-block">Diff code block
+&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">[dependencies.bevy]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">- features = [&amp;#34;dynamic&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="list-types">List Types
+&lt;/h2>&lt;h4 id="ordered-list">Ordered List
+&lt;/h4>&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;h4 id="unordered-list">Unordered List
+&lt;/h4>&lt;ul>
+&lt;li>List item&lt;/li>
+&lt;li>Another item&lt;/li>
+&lt;li>And another item&lt;/li>
+&lt;/ul>
+&lt;h4 id="nested-list">Nested list
+&lt;/h4>&lt;ul>
+&lt;li>Fruit
+&lt;ul>
+&lt;li>Apple&lt;/li>
+&lt;li>Orange&lt;/li>
+&lt;li>Banana&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dairy
+&lt;ul>
+&lt;li>Milk&lt;/li>
+&lt;li>Cheese&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark
+&lt;/h2>&lt;p>&lt;abbr title="Graphics Interchange Format">GIF&lt;/abbr> is a bitmap image format.&lt;/p>
+&lt;p>H&lt;sub>2&lt;/sub>O&lt;/p>
+&lt;p>X&lt;sup>n&lt;/sup> + Y&lt;sup>n&lt;/sup> = Z&lt;sup>n&lt;/sup>&lt;/p>
+&lt;p>Press &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>ALT&lt;/kbd> + &lt;kbd>Delete&lt;/kbd> to end the session.&lt;/p>
+&lt;p>Most &lt;mark>salamanders&lt;/mark> are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p>
+&lt;h2 id="hyperlinked-image">Hyperlinked image
+&lt;/h2>&lt;p>&lt;a class="link" href="https://google.com" target="_blank" rel="noopener"
+>&lt;img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
+loading="lazy"
+alt="Google"
+>&lt;/a>&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>The above quote is excerpted from Rob Pike&amp;rsquo;s &lt;a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c" target="_blank" rel="noopener"
+>talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Placeholder Text</title><link>https://www.wfz521.com/p/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/placeholder-text/</guid><description>&lt;img src="https://www.wfz521.com/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" />&lt;p>Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p>
+&lt;p>Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p>
+&lt;ol>
+&lt;li>Exierant elisi ambit vivere dedere&lt;/li>
+&lt;li>Duce pollice&lt;/li>
+&lt;li>Eris modo&lt;/li>
+&lt;li>Spargitque ferrea quos palude&lt;/li>
+&lt;/ol>
+&lt;p>Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.&lt;/p>
+&lt;ol>
+&lt;li>Comas hunc haec pietate fetum procerum dixit&lt;/li>
+&lt;li>Post torum vates letum Tiresia&lt;/li>
+&lt;li>Flumen querellas&lt;/li>
+&lt;li>Arcanaque montibus omnes&lt;/li>
+&lt;li>Quidem et&lt;/li>
+&lt;/ol>
+&lt;h1 id="vagus-elidunt">Vagus elidunt
+&lt;/h1>&lt;p>&lt;svg class="canon" xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 496 373" height="373" width="496">&lt;g fill="none">&lt;path stroke="#000" stroke-width=".75" d="M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515">&lt;/path>&lt;path stroke="#ED1C24" stroke-width=".75" d="M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z">&lt;/path>&lt;path stroke="#000" stroke-width=".75" d="M.479.375h495v372h-495zM247.979.875v372">&lt;/path>&lt;ellipse cx="498.729" cy="177.625" rx=".75" ry="1.25">&lt;/ellipse>&lt;ellipse cx="247.229" cy="377.375" rx=".75" ry="1.25">&lt;/ellipse>&lt;/g>&lt;/svg>&lt;/p>
+&lt;p>&lt;a class="link" href="https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon" target="_blank" rel="noopener"
+>The Van de Graaf Canon&lt;/a>&lt;/p>
+&lt;h2 id="mane-refeci-capiebant-unda-mulcebat">Mane refeci capiebant unda mulcebat
+&lt;/h2>&lt;p>Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong>Faces illo pepulere&lt;/strong> tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p>
+&lt;p>Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p>
+&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item><item><title>Math Typesetting</title><link>https://www.wfz521.com/p/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/math-typesetting/</guid><description>&lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
+&lt;p>In this example we will be using &lt;a class="link" href="https://katex.org/" target="_blank" rel="noopener"
+>KaTeX&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Create a partial under &lt;code>/layouts/partials/math.html&lt;/code>&lt;/li>
+&lt;li>Within this partial reference the &lt;a class="link" href="https://katex.org/docs/autorender.html" target="_blank" rel="noopener"
+>Auto-render Extension&lt;/a> or host these scripts locally.&lt;/li>
+&lt;li>Include the partial in your templates like so:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">{{&lt;/span> &lt;span class="k">if&lt;/span> or .Params.math .Site.Params.math &lt;span class="o">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">{{&lt;/span> partial &lt;span class="s2">&amp;#34;math.html&amp;#34;&lt;/span> . &lt;span class="o">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">{{&lt;/span> end &lt;span class="o">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>To enable KaTeX globally set the parameter &lt;code>math&lt;/code> to &lt;code>true&lt;/code> in a project&amp;rsquo;s configuration&lt;/li>
+&lt;li>To enable KaTeX on a per page basis include the parameter &lt;code>math: true&lt;/code> in content files&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Note:&lt;/strong> Use the online reference of &lt;a class="link" href="https://katex.org/docs/supported.html" target="_blank" rel="noopener"
+>Supported TeX Functions&lt;/a>&lt;/p>
+&lt;h3 id="examples">Examples
+&lt;/h3>&lt;p>Inline math: $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$&lt;/p>
+&lt;p>Block math:
+&lt;/p>
 $$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
-$$</description>
-        </item>
-        <item>
-        <title>Emoji Support</title>
-        <link>https://www.wfz521.com/p/emoji-support/</link>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/emoji-support/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
-&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/functions/emojify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To enable emoji globally, set &lt;code&gt;enableEmoji&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in your site&amp;rsquo;s &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/getting-started/configuration/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;configuration&lt;/a&gt; and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt; &lt;code&gt;:see_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙉&lt;/span&gt; &lt;code&gt;:hear_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙊&lt;/span&gt; &lt;code&gt;:speak_no_evil:&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;http://www.emoji-cheat-sheet.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Emoji cheat sheet&lt;/a&gt; is a useful reference for emoji shorthand codes.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.emoji {
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Links</title>
-        <link>https://www.wfz521.com/links/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/links/</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Search</title>
-        <link>https://www.wfz521.com/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/search/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>关于</title>
-        <link>https://www.wfz521.com/%E5%85%B3%E4%BA%8E/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
-&lt;/h2&gt;&lt;p&gt;我是 wfz，一名密码学研究者，目前在中国科学院大学（UCAS）攻读网络空间安全方向的研究生。&lt;/p&gt;
-&lt;p&gt;我的研究兴趣包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;全同态加密 (FHE)&lt;/strong&gt;：BGV、BFV、CKKS、TFHE 等方案&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;对称密码设计&lt;/strong&gt;：FHE 友好的对称密码算法&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;格密码学&lt;/strong&gt;：LWE、RLWE 问题的困难性&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;隐私计算&lt;/strong&gt;：安全多方计算、零知识证明&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;关于本博客&#34;&gt;关于本博客
-&lt;/h2&gt;&lt;p&gt;这个博客用于记录我在密码学学习和研究过程中的笔记与心得。目前文章不多，会慢慢更新。&lt;/p&gt;
-&lt;p&gt;本博客使用 &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Hugo&lt;/a&gt; 构建，主题基于 &lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;hugo-theme-stack&lt;/a&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;联系方式&#34;&gt;联系方式
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/wang2000star/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;@wang2000star&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;邮箱: 可通过博客评论联系我&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</description></item><item><title>Emoji Support</title><link>https://www.wfz521.com/p/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/emoji-support/</guid><description>&lt;img src="https://www.wfz521.com/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" />&lt;p>Emoji can be enabled in a Hugo project in a number of ways.&lt;/p>
+&lt;p>The &lt;a class="link" href="https://gohugo.io/functions/emojify/" target="_blank" rel="noopener"
+>&lt;code>emojify&lt;/code>&lt;/a> function can be called directly in templates or &lt;a class="link" href="https://gohugo.io/templates/shortcode-templates/#inline-shortcodes" target="_blank" rel="noopener"
+>Inline Shortcodes&lt;/a>.&lt;/p>
+&lt;p>To enable emoji globally, set &lt;code>enableEmoji&lt;/code> to &lt;code>true&lt;/code> in your site&amp;rsquo;s &lt;a class="link" href="https://gohugo.io/getting-started/configuration/" target="_blank" rel="noopener"
+>configuration&lt;/a> and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p>
+&lt;p>&lt;span class="nowrap">&lt;span class="emojify">🙈&lt;/span> &lt;code>:see_no_evil:&lt;/code>&lt;/span> &lt;span class="nowrap">&lt;span class="emojify">🙉&lt;/span> &lt;code>:hear_no_evil:&lt;/code>&lt;/span> &lt;span class="nowrap">&lt;span class="emojify">🙊&lt;/span> &lt;code>:speak_no_evil:&lt;/code>&lt;/span>&lt;/p>
+&lt;br>
+&lt;p>The &lt;a class="link" href="http://www.emoji-cheat-sheet.com/" target="_blank" rel="noopener"
+>Emoji cheat sheet&lt;/a> is a useful reference for emoji shorthand codes.&lt;/p>
+&lt;hr>
+&lt;p>&lt;strong>N.B.&lt;/strong> The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">.emoji {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Links</title><link>https://www.wfz521.com/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/links/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">links&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://www.typescriptlang.org&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ts-logo-128.jpg&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Search</title><link>https://www.wfz521.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/search/</guid><description/></item><item><title>关于</title><link>https://www.wfz521.com/%E5%85%B3%E4%BA%8E/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/%E5%85%B3%E4%BA%8E/</guid><description>&lt;h2 id="关于我">关于我
+&lt;/h2>&lt;p>我是 wfz，一名密码学研究者，目前在中国科学院大学（UCAS）攻读网络空间安全方向的研究生。&lt;/p>
+&lt;p>我的研究兴趣包括：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>全同态加密 (FHE)&lt;/strong>：BGV、BFV、CKKS、TFHE 等方案&lt;/li>
+&lt;li>&lt;strong>对称密码设计&lt;/strong>：FHE 友好的对称密码算法&lt;/li>
+&lt;li>&lt;strong>格密码学&lt;/strong>：LWE、RLWE 问题的困难性&lt;/li>
+&lt;li>&lt;strong>隐私计算&lt;/strong>：安全多方计算、零知识证明&lt;/li>
+&lt;/ul>
+&lt;h2 id="关于本博客">关于本博客
+&lt;/h2>&lt;p>这个博客用于记录我在密码学学习和研究过程中的笔记与心得。目前文章不多，会慢慢更新。&lt;/p>
+&lt;p>本博客使用 &lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+>Hugo&lt;/a> 构建，主题基于 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+>hugo-theme-stack&lt;/a>。&lt;/p>
+&lt;h2 id="联系方式">联系方式
+&lt;/h2>&lt;ul>
+&lt;li>GitHub: &lt;a class="link" href="https://github.com/wang2000star/" target="_blank" rel="noopener"
+>@wang2000star&lt;/a>&lt;/li>
+&lt;li>邮箱: 可通过博客评论联系我&lt;/li>
+&lt;/ul></description></item></channel></rss>

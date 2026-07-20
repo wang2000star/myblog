@@ -1,125 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Tag With Whitespaces on wfz的博客</title>
-        <link>https://www.wfz521.com/tags/tag-with-whitespaces/</link>
-        <description>Recent content in Tag With Whitespaces on wfz的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <copyright>2025-皮卡丘的守护神</copyright>
-        <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/tags/tag-with-whitespaces/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>FHE</title>
-        <link>https://www.wfz521.com/p/fhe/</link>
-        <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/fhe/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/fhe/pkq.png" alt="Featured image of post FHE" /&gt;&lt;h1 id=&#34;全同态加密对称密码隐私计算学习记录&#34;&gt;全同态加密+对称密码+隐私计算学习记录
-&lt;/h1&gt;&lt;h2 id=&#34;全同态加密&#34;&gt;全同态加密
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;全同态加密目前都指的是环同态&lt;/p&gt;
-&lt;p&gt;给定两个环结构A和B，各自定义了两种运算$(+_A,\times_A)$和$(+_B,\times_B)$，&lt;/p&gt;
-&lt;p&gt;如果存在一个映射f: A-&amp;gt;B，满足&lt;/p&gt;
-&lt;p&gt;$f(a_0 +_A a_1)=f(a_0) +_B f(a_1)$&lt;/p&gt;
-&lt;p&gt;$f(a_0 \times_A a_1)=f(a_0) \times_B f(a_1)$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;​	则称f是A到B的同态映射。&lt;/p&gt;
-&lt;p&gt;​	对于密码方案来说，可以理解为&lt;/p&gt;
-&lt;p&gt;$a_0 +_A a_1=Dec(Enc(a_0) +_B Enc(a_1))$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如何构造全同态？&lt;/p&gt;
-&lt;p&gt;有两个难点，一是如何找到两种环结构，二是如何如何针对两种环结构设计出同态映射。&lt;/p&gt;
-&lt;p&gt;2009年，MIT的博士生Gentry基于格构造出了首个全同态方案，这个方案的实际性能很差，但是它其中的思想却一直贯彻未来的全同态方案设计当中。直接点说，Gentry基于格的方案是含有噪声的，因此必须要保证最终解密时噪声控制在某个界内，因为同态本质是针对运算做出限制，所以只需要保证每次运算后都能控制噪声在界内即可。Gentry提出了一种叫做“自举”的方法，对运算后的密文进行“同态地解密”，事实上，我觉得这个同态解密的说法不合适。下面想讲一下我个人的理解：&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;理解“自举”&lt;/p&gt;
-&lt;p&gt;一般来说，全同态加密会有一对密钥：pk、sk，也就是公钥和私钥。&lt;/p&gt;
-&lt;p&gt;$c=Enc_{pk}(m),m=Dec_{sk}(c)$&lt;/p&gt;
-&lt;p&gt;现在如果再构造一对密钥：$\overline{bsk},\overline{pk}$，满足$\overline{bsk}=\overline{Enc}_{\overline{pk}}(sk)$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;自举最关键的步骤是需要把$c=Enc_{pk}(m),m=Dec_{sk}(c)$变为$\overline{c}=\overline{Enc}_{\overline{pk}}(m)$，这一步也被称作重加密，这个称呼是比较贴切的，相当于换个公钥重新加密，解密后的密文可以通过参数的调整保证噪声以“极大概率”落在界内。之后还需要进行一步密钥切换，就是从$\overline{c}=Enc_{\overline{pk}}(m)$变成$\hat{c}=Enc_{pk}(m)$，此时也可以通过调整参数使得噪声以“极大概率”落在界内。这里需要注意一点，自举都是概率性的，无法保证100%成功。&lt;/p&gt;
-&lt;p&gt;$\overline{Enc}_{\overline{pk}}(m)=\overline{Enc}_{\overline{pk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$&lt;/p&gt;
-&lt;p&gt;通过这个公式，可以看出同态解密这个说法有点不合适，准确的理解应该是先对自举前的密文进行加密再同态地解密。
-&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tag With Whitespaces on wfz的博客</title><link>https://www.wfz521.com/tags/tag-with-whitespaces/</link><description>Recent content in Tag With Whitespaces on wfz的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>2025-皮卡丘的守护神</copyright><lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.wfz521.com/tags/tag-with-whitespaces/index.xml" rel="self" type="application/rss+xml"/><item><title>FHE</title><link>https://www.wfz521.com/p/fhe/</link><pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/fhe/</guid><description>&lt;img src="https://www.wfz521.com/p/fhe/pkq.png" alt="Featured image of post FHE" />&lt;h1 id="全同态加密对称密码隐私计算学习记录">全同态加密+对称密码+隐私计算学习记录
+&lt;/h1>&lt;h2 id="全同态加密">全同态加密
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>全同态加密目前都指的是环同态&lt;/p>
+&lt;p>给定两个环结构A和B，各自定义了两种运算$(+_A,\times_A)$和$(+_B,\times_B)$，&lt;/p>
+&lt;p>如果存在一个映射f: A-&amp;gt;B，满足&lt;/p>
+&lt;p>$f(a_0 +_A a_1)=f(a_0) +_B f(a_1)$&lt;/p>
+&lt;p>$f(a_0 \times_A a_1)=f(a_0) \times_B f(a_1)$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>​ 则称f是A到B的同态映射。&lt;/p>
+&lt;p>​ 对于密码方案来说，可以理解为&lt;/p>
+&lt;p>$a_0 +_A a_1=Dec(Enc(a_0) +_B Enc(a_1))$&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如何构造全同态？&lt;/p>
+&lt;p>有两个难点，一是如何找到两种环结构，二是如何如何针对两种环结构设计出同态映射。&lt;/p>
+&lt;p>2009年，MIT的博士生Gentry基于格构造出了首个全同态方案，这个方案的实际性能很差，但是它其中的思想却一直贯彻未来的全同态方案设计当中。直接点说，Gentry基于格的方案是含有噪声的，因此必须要保证最终解密时噪声控制在某个界内，因为同态本质是针对运算做出限制，所以只需要保证每次运算后都能控制噪声在界内即可。Gentry提出了一种叫做“自举”的方法，对运算后的密文进行“同态地解密”，事实上，我觉得这个同态解密的说法不合适。下面想讲一下我个人的理解：&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>理解“自举”&lt;/p>
+&lt;p>一般来说，全同态加密会有一对密钥：pk、sk，也就是公钥和私钥。&lt;/p>
+&lt;p>$c=Enc_{pk}(m),m=Dec_{sk}(c)$&lt;/p>
+&lt;p>现在如果再构造一对密钥：$\overline{bsk},\overline{pk}$，满足$\overline{bsk}=\overline{Enc}_{\overline{pk}}(sk)$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>自举最关键的步骤是需要把$c=Enc_{pk}(m),m=Dec_{sk}(c)$变为$\overline{c}=\overline{Enc}_{\overline{pk}}(m)$，这一步也被称作重加密，这个称呼是比较贴切的，相当于换个公钥重新加密，解密后的密文可以通过参数的调整保证噪声以“极大概率”落在界内。之后还需要进行一步密钥切换，就是从$\overline{c}=Enc_{\overline{pk}}(m)$变成$\hat{c}=Enc_{pk}(m)$，此时也可以通过调整参数使得噪声以“极大概率”落在界内。这里需要注意一点，自举都是概率性的，无法保证100%成功。&lt;/p>
+&lt;p>$\overline{Enc}_{\overline{pk}}(m)=\overline{Enc}_{\overline{pk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$&lt;/p>
+&lt;p>通过这个公式，可以看出同态解密这个说法有点不合适，准确的理解应该是先对自举前的密文进行加密再同态地解密。
+&lt;/p>
 $$
 c=Enc_{pk}(m),m=Dec_{sk}(c)\\
 \overline{bsk}=\overline{Enc}_{\overline{pk}}(sk)\\
 \overline{Enc}_{\overline{pk}}(m)=\overline{Enc}_{\overline{pk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))
-$$&lt;p&gt;
+$$&lt;p>
 当然，也有对称形式的：
-&lt;/p&gt;
+&lt;/p>
 $$
 c=Enc_{sk}(m),m=Dec_{sk}(c)\\
 \overline{bsk}=Enc_{\overline{sk}}(sk)\\
 Enc_{\overline{sk}}(m)=Enc_{\overline{sk}}(Dec_{sk}(c))=Dec_{\overline{bsk}}(Enc_{\overline{sk}}(c))
-$$&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;注意到，在RLWE中似乎都使用非对称形式的全同态加密，在LWE中更倾向于使用对称形式的，这里应该有一些原因，需要我仔细分析一下。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;自举难点&lt;/p&gt;
-&lt;p&gt;$Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$，这里很显然有一个问题：$c$本身就是密文，如果对密文进行加密呢？这需要对$\overline{Enc}$进行特别设计，既要和原来的$Enc$能够转换又要满足可以对密文进行同态加密。这是一个非常值得讨论的问题，可以通过这个切入点来看BGV/BFV/CKKS/TFHE等全同态方案的自举是如何设计的？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;自举的设计&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;全同态编码&#34;&gt;全同态编码
-&lt;/h2&gt;&lt;p&gt;seal库里面直接系数编码&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Plaintext&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pt_bfv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;pt_bfv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Plaintext&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gsl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;span&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;uint64_t&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;coeffs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;批处理编码CRT&lt;/p&gt;
-&lt;h2 id=&#34;混合同态加密&#34;&gt;混合同态加密
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;比较不同同态算法下一些国产对称密码的使用效果&lt;/li&gt;
-&lt;li&gt;比较不同同态算法下一些统计或机器学习的算法实现效果&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;rtf框架&#34;&gt;RtF框架
-&lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>Placeholder Text</title>
-        <link>https://www.wfz521.com/p/placeholder-text/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.wfz521.com/p/placeholder-text/</guid>
-        <description>&lt;img src="https://www.wfz521.com/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
-&lt;p&gt;Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Exierant elisi ambit vivere dedere&lt;/li&gt;
-&lt;li&gt;Duce pollice&lt;/li&gt;
-&lt;li&gt;Eris modo&lt;/li&gt;
-&lt;li&gt;Spargitque ferrea quos palude&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Comas hunc haec pietate fetum procerum dixit&lt;/li&gt;
-&lt;li&gt;Post torum vates letum Tiresia&lt;/li&gt;
-&lt;li&gt;Flumen querellas&lt;/li&gt;
-&lt;li&gt;Arcanaque montibus omnes&lt;/li&gt;
-&lt;li&gt;Quidem et&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;vagus-elidunt&#34;&gt;Vagus elidunt
-&lt;/h1&gt;&lt;p&gt;&lt;svg class=&#34;canon&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; overflow=&#34;visible&#34; viewBox=&#34;0 0 496 373&#34; height=&#34;373&#34; width=&#34;496&#34;&gt;&lt;g fill=&#34;none&#34;&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#ED1C24&#34; stroke-width=&#34;.75&#34; d=&#34;M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z&#34;&gt;&lt;/path&gt;&lt;path stroke=&#34;#000&#34; stroke-width=&#34;.75&#34; d=&#34;M.479.375h495v372h-495zM247.979.875v372&#34;&gt;&lt;/path&gt;&lt;ellipse cx=&#34;498.729&#34; cy=&#34;177.625&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;ellipse cx=&#34;247.229&#34; cy=&#34;377.375&#34; rx=&#34;.75&#34; ry=&#34;1.25&#34;&gt;&lt;/ellipse&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;The Van de Graaf Canon&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;mane-refeci-capiebant-unda-mulcebat&#34;&gt;Mane refeci capiebant unda mulcebat
-&lt;/h2&gt;&lt;p&gt;Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong&gt;Faces illo pepulere&lt;/strong&gt; tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p&gt;
-&lt;p&gt;Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p&gt;
-&lt;p&gt;Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong&gt;mitis temploque&lt;/strong&gt; vocatus, inque alis, &lt;em&gt;oculos nomen&lt;/em&gt; non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong&gt;parte&lt;/strong&gt;.&lt;/p&gt;</description>
-        </item>
-        
-    </channel>
-</rss>
+$$&lt;ul>
+&lt;li>
+&lt;p>注意到，在RLWE中似乎都使用非对称形式的全同态加密，在LWE中更倾向于使用对称形式的，这里应该有一些原因，需要我仔细分析一下。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自举难点&lt;/p>
+&lt;p>$Dec_{\overline{bsk}}(\overline{Enc}_{\overline{pk}}(c))$，这里很显然有一个问题：$c$本身就是密文，如果对密文进行加密呢？这需要对$\overline{Enc}$进行特别设计，既要和原来的$Enc$能够转换又要满足可以对密文进行同态加密。这是一个非常值得讨论的问题，可以通过这个切入点来看BGV/BFV/CKKS/TFHE等全同态方案的自举是如何设计的？&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自举的设计&lt;/p>
+&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;h2 id="全同态编码">全同态编码
+&lt;/h2>&lt;p>seal库里面直接系数编码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">Plaintext&lt;/span> &lt;span class="n">pt_bfv&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">pt_bfv&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Plaintext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">gsl&lt;/span>&lt;span class="p">::&lt;/span>&lt;span class="n">span&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="k">const&lt;/span> &lt;span class="n">uint64_t&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">coeffs&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>批处理编码CRT&lt;/p>
+&lt;h2 id="混合同态加密">混合同态加密
+&lt;/h2>&lt;ul>
+&lt;li>比较不同同态算法下一些国产对称密码的使用效果&lt;/li>
+&lt;li>比较不同同态算法下一些统计或机器学习的算法实现效果&lt;/li>
+&lt;/ul>
+&lt;h2 id="rtf框架">RtF框架
+&lt;/h2></description></item><item><title>Placeholder Text</title><link>https://www.wfz521.com/p/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://www.wfz521.com/p/placeholder-text/</guid><description>&lt;img src="https://www.wfz521.com/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" />&lt;p>Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p>
+&lt;p>Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p>
+&lt;ol>
+&lt;li>Exierant elisi ambit vivere dedere&lt;/li>
+&lt;li>Duce pollice&lt;/li>
+&lt;li>Eris modo&lt;/li>
+&lt;li>Spargitque ferrea quos palude&lt;/li>
+&lt;/ol>
+&lt;p>Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.&lt;/p>
+&lt;ol>
+&lt;li>Comas hunc haec pietate fetum procerum dixit&lt;/li>
+&lt;li>Post torum vates letum Tiresia&lt;/li>
+&lt;li>Flumen querellas&lt;/li>
+&lt;li>Arcanaque montibus omnes&lt;/li>
+&lt;li>Quidem et&lt;/li>
+&lt;/ol>
+&lt;h1 id="vagus-elidunt">Vagus elidunt
+&lt;/h1>&lt;p>&lt;svg class="canon" xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 496 373" height="373" width="496">&lt;g fill="none">&lt;path stroke="#000" stroke-width=".75" d="M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515">&lt;/path>&lt;path stroke="#ED1C24" stroke-width=".75" d="M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z">&lt;/path>&lt;path stroke="#000" stroke-width=".75" d="M.479.375h495v372h-495zM247.979.875v372">&lt;/path>&lt;ellipse cx="498.729" cy="177.625" rx=".75" ry="1.25">&lt;/ellipse>&lt;ellipse cx="247.229" cy="377.375" rx=".75" ry="1.25">&lt;/ellipse>&lt;/g>&lt;/svg>&lt;/p>
+&lt;p>&lt;a class="link" href="https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon" target="_blank" rel="noopener"
+>The Van de Graaf Canon&lt;/a>&lt;/p>
+&lt;h2 id="mane-refeci-capiebant-unda-mulcebat">Mane refeci capiebant unda mulcebat
+&lt;/h2>&lt;p>Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. &lt;strong>Faces illo pepulere&lt;/strong> tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.&lt;/p>
+&lt;p>Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.&lt;/p>
+&lt;p>Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel &lt;strong>mitis temploque&lt;/strong> vocatus, inque alis, &lt;em>oculos nomen&lt;/em> non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides &lt;strong>parte&lt;/strong>.&lt;/p></description></item></channel></rss>

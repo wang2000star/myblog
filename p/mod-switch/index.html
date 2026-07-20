@@ -1,453 +1,45 @@
-<!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="模数切换">
-<title>Mod Switch</title>
-
-<link rel='canonical' href='https://www.wfz521.com/p/mod-switch/'>
-
-<link rel="stylesheet" href="/scss/style.min.f668d274cc69d7fc932ccd47694ee48e20e84392f3e5acacc45746e109d2dfc9.css"><meta property='og:title' content="Mod Switch">
-<meta property='og:description' content="模数切换">
-<meta property='og:url' content='https://www.wfz521.com/p/mod-switch/'>
-<meta property='og:site_name' content='wfz的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='BGV' /><meta property='article:tag' content='Scale' /><meta property='article:tag' content='Mod Switch' /><meta property='article:published_time' content='2025-09-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-09-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://www.wfz521.com/p/mod-switch/pkq.png' />
-<meta name="twitter:title" content="Mod Switch">
-<meta name="twitter:description" content="模数切换"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://www.wfz521.com/p/mod-switch/pkq.png' /><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    </head>
-    <body class="
-    article-page
-    ">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
-
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
-</script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header>
-        
-            
-            <figure class="site-avatar">
-                <a href="/">
-                
-                    
-
-                    
-                        
-                        <img src="/img/avatar_hu_ad769d231db0056a.png" width="300"
-                            height="169" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-                </a>
-                
-                    <span class="emoji">🤩</span>
-                
-            </figure>
-            
-        
-
-        <div class="site-meta">
-            <h1 class="site-name"><a href="/">wfz的博客</a></h1>
-            <h2 class="site-description">密码学 · 数学 · 编程 · 生活</h2>
-        </div>
-    </header><ol class="menu-social">
-            
-                <li>
-                    <a
-                        href='https://github.com/wang2000star/'
-                        target="_blank"
-                        title="GitHub"
-                        rel="me"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
-        </ol><ol class="menu" id="main-menu">
-        
-        
-        
-        <li >
-            <a href='/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="5 12 3 12 12 3 21 12 19 12" />
-  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-</svg>
-
-
-
-                
-                <span>主页</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/%E5%85%B3%E4%BA%8E/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>关于</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/archives/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <rect x="3" y="4" width="18" height="4" rx="2" />
-  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
-  <line x1="10" y1="12" x2="14" y2="12" />
-</svg>
-
-
-
-                
-                <span>Archives</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/search/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>Search</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/links/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-
-                
-                <span>Links</span>
-            </a>
-        </li>
-        
-        <li class="menu-bottom-section">
-            <ol class="menu">
-
-                
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                        <span>暗色模式</span>
-                    </li>
-                
-            </ol>
-        </li>
-    </ol>
-</aside>
-
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title toc-title">
-            目录
-            
-            <button id="toc-toggle" class="toc-toggle-btn" aria-label="Toggle table of contents">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6,9 12,15 18,9"></polyline>
-                </svg>
-            </button>
-        </h2>
-        
-        <div class="widget--toc" id="widget-toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#符号">符号</a></li>
-    <li><a href="#原始">原始</a></li>
-    <li><a href="#拓展1">拓展1</a></li>
-    <li><a href="#拓展2">拓展2</a></li>
-    <li><a href="#总结">总结</a></li>
-    <li><a href="#参考">参考</a></li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
-
-            <main class="main full-width">
-    <article class="has-image main-article">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="/p/mod-switch/">
-                <img src="/p/mod-switch/pkq_hu_2835ab43f9ecedad.png"
-                        srcset="/p/mod-switch/pkq_hu_2835ab43f9ecedad.png 800w, /p/mod-switch/pkq_hu_8f950791cca56957.png 1600w"
-                        width="800" 
-                        height="500" 
-                        loading="lazy"
-                        alt="Featured image of post Mod Switch" />
-                
-            </a>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/cryptography/" >
-                Cryptography
-            </a>
-        
-            <a href="/categories/fhe/" >
-                FHE
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/mod-switch/">Mod Switch</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            模数切换
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">09月01日, 2025年</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 9 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-
-    <section class="article-content">
-    
-    
-    <h2 id="符号">符号
-</h2><p>$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。</p>
-<p>$\lceil x \rfloor$：表示四舍五入取整即round。</p>
-<h2 id="原始">原始
-</h2><ul>
-<li>
-<p><strong>Scale</strong><a class="link" href="#ref-BGV11" ><sup>1</sup></a>：</p>
-<p><img src="/p/mod-switch/scale.png"
-	width="1392"
-	height="86"
-	srcset="/p/mod-switch/scale_hu_be4c70ae9e118a7f.png 480w, /p/mod-switch/scale_hu_28944b1dc9c52d3e.png 1024w"
-	loading="lazy"
-	
-		alt="scale"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="1618"
-		data-flex-basis="3884px"
-	
-></p>
-</li>
-<li>
-<p><strong>Scale</strong>实现：</p>
-</li>
-</ul>
-$$
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="模数切换"><title>Mod Switch</title><link rel=canonical href=https://www.wfz521.com/p/mod-switch/><link rel=stylesheet href=/scss/style.min.b959d0cec38286c7177fd6f40ef37abd578840df2bec890118ee53af8a540f71.css><meta property='og:title' content="Mod Switch"><meta property='og:description' content="模数切换"><meta property='og:url' content='https://www.wfz521.com/p/mod-switch/'><meta property='og:site_name' content='wfz的博客'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='BGV'><meta property='article:tag' content='Scale'><meta property='article:tag' content='Mod Switch'><meta property='article:published_time' content='2025-09-01T00:00:00+00:00'><meta property='article:modified_time' content='2025-09-01T00:00:00+00:00'><meta property='og:image' content='https://www.wfz521.com/p/mod-switch/pkq.png'><meta name=twitter:title content="Mod Switch"><meta name=twitter:description content="模数切换"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://www.wfz521.com/p/mod-switch/pkq.png'><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel=stylesheet></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu_ad769d231db0056a.png width=300 height=169 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🤩</span></figure><div class=site-meta><h1 class=site-name><a href=/>wfz的博客</a></h1><h2 class=site-description>密码学 · 数学 · 编程 · 生活</h2></div></header><ol class=menu-social><li><a href=https://github.com/wang2000star/ target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>主页</span></a></li><li><a href=/%E5%85%B3%E4%BA%8E/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>关于</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title toc-title">目录
+<button id=toc-toggle class=toc-toggle-btn aria-label="Toggle table of contents">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg></button></h2><div class=widget--toc id=widget-toc><nav id=TableOfContents><ol><li><a href=#符号>符号</a></li><li><a href=#原始>原始</a></li><li><a href=#拓展1>拓展1</a></li><li><a href=#拓展2>拓展2</a></li><li><a href=#总结>总结</a></li><li><a href=#参考>参考</a></li></ol></nav></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/mod-switch/><img src=/p/mod-switch/pkq_hu_2835ab43f9ecedad.png srcset="/p/mod-switch/pkq_hu_2835ab43f9ecedad.png 800w, /p/mod-switch/pkq_hu_8f950791cca56957.png 1600w" width=800 height=500 loading=lazy alt="Featured image of post Mod Switch"></a></div><div class=article-details><header class=article-category><a href=/categories/cryptography/>Cryptography
+</a><a href=/categories/fhe/>FHE</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/mod-switch/>Mod Switch</a></h2><h3 class=article-subtitle>模数切换</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>09月01日, 2025年</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 9 分钟</time></div></footer></div></header><section class=article-content><h2 id=符号>符号</h2><p>$\left[x\right]_Q$：表示对整数$x$进行中心模$Q$运算，”中心“指的是需要保证$\left|\left[x\right]_Q\right|\leq Q/2$，这里的$Q$一般是奇数。</p><p>$\lceil x \rfloor$：表示四舍五入取整即round。</p><h2 id=原始>原始</h2><ul><li><p><strong>Scale</strong><a class=link href=#ref-BGV11><sup>1</sup></a>：</p><p><img src=/p/mod-switch/scale.png width=1392 height=86 srcset="/p/mod-switch/scale_hu_be4c70ae9e118a7f.png 480w, /p/mod-switch/scale_hu_28944b1dc9c52d3e.png 1024w" loading=lazy alt=scale class=gallery-image data-flex-grow=1618 data-flex-basis=3884px></p></li><li><p><strong>Scale</strong>实现：</p></li></ul>$$
 x'=x+\lceil\frac{(p-q)x}{qr}\rfloor r
-$$<p>如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。</p>
-<ul>
-<li>分析</li>
-</ul>
-$$
+$$<p>如果四舍五入时，如果刚好小数位等于0.5，则有两种选择即$x+kr$和$x+(k+1)r$，这时可以随机选择一个或者使用四舍五入选择，当然也可以选择使得最后$[*]_p$之后绝对值较小的那一个。这对于噪声上界估计无明显影响。</p><ul><li>分析</li></ul>$$
 \begin{aligned}
 \left|\lceil\frac{(p-q)x}{qr}\rfloor-\frac{(p-q)x}{qr}\right|\leq 1/2\\
 \left|\lceil\frac{(p-q)x}{qr}\rfloor r-\frac{(p-q)x}{q}\right|\leq r/2\\
 \left|x'-x-\frac{(p-q)x}{q}\right|\leq r/2\\
 \left|x'-\frac{px}{q}\right|\leq r/2
 \end{aligned}
-$$<p>显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位$=0.5$时成立。</p>
-<p>当然实际使用时，这里$\left|x'-\frac{px}{q}\right|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。</p>
-<ul>
-<li>
-<p>BGV密文模数切换</p>
-<p>设BGV明文模数为$P$，密文初始模数为$Q=Q_L$对于级别$L$，类似级别$t(0\leq t\leq L)$对应$Q_t$，$Q_t=\prod_{i=0}^{t} p_i$</p>
-<p>给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t'}$上的密文$c'=(c_0',c_1')$，其中$t'\lt t$。</p>
-<p>注意：$c_i\in Z_{Q_t}[x]/X^N+1$</p>
-<p>操作如下：</p>
-</li>
-</ul>
-$$
+$$<p>显然，等号当且仅当$\frac{(p-q)x}{qr}$的小数位$=0.5$时成立。</p><p>当然实际使用时，这里$\left|x'-\frac{px}{q}\right|$是可以计算出来的，直接用计算出来的数参与上界估计即可。但是理论分析上界直接使用$r/2$就行了。</p><ul><li><p>BGV密文模数切换</p><p>设BGV明文模数为$P$，密文初始模数为$Q=Q_L$对于级别$L$，类似级别$t(0\leq t\leq L)$对应$Q_t$，$Q_t=\prod_{i=0}^{t} p_i$</p><p>给定一个模数$Q_t$上的BGV密文$c=(c_0,c_1)$，需要将其切换到$Q_{t'}$上的密文$c'=(c_0',c_1')$，其中$t'\lt t$。</p><p>注意：$c_i\in Z_{Q_t}[x]/X^N+1$</p><p>操作如下：</p></li></ul>$$
 \begin{aligned}
 c' &= \text{Scale}(c) \\
 c_0' &= \text{Scale}(c_0) \\
 c_1' &= \text{Scale}(c_1) \\
 \left|c_0'[j] - Q_{t'}c_0[j]/Q_t\right| &\lt P/2, \quad (j=0,1,\dots,N-1)
 \end{aligned}
-$$<p>分析：设私钥为$s$，则BGV公钥加密如下，
-</p>
-$$
+$$<p>分析：设私钥为$s$，则BGV公钥加密如下，</p>$$
 b=a\cdot s+P\cdot e_s\\
 c_0=b\cdot v+P\cdot e_0+m\\
 c_1=-a\cdot v+P\cdot e_1
-$$<p>
-其中$a,b,s,e_s,v,e_0,e_1$都需要满足特定的离散概率分布才能保证安全性。</p>
-<p>解密操作为$m=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P$，$c_0+c_1\cdot s=m+P(e_s\cdot v+e_0+s\cdot e_1)$</p>
-<p>令$e=e_s\cdot v+e_0+s\cdot e_1$，则
-</p>
-$$
+$$<p>其中$a,b,s,e_s,v,e_0,e_1$都需要满足特定的离散概率分布才能保证安全性。</p><p>解密操作为$m=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P$，$c_0+c_1\cdot s=m+P(e_s\cdot v+e_0+s\cdot e_1)$</p><p>令$e=e_s\cdot v+e_0+s\cdot e_1$，则</p>$$
 \begin{aligned}
 \left|m\right| &\leq P/2\\
 \left(c_0,c_1\right)&\rightarrow c_0+c_1\cdot s = m+Pe\\
 m&=\left[m+Pe\right]_P=\left[c_0+c_1\cdot s\right]_P\\
 \left[\left[c_0\right]_{Q_t}+\left[c_1\cdot s\right]_{Q_t}\right]_{Q_t}&=\left[c_0+c_1\cdot s\right]_{Q_t}=\left[m+Pe\right]_{Q_t}\\
 \end{aligned}
-$$<p>
-我们需要确保$\left[\left[m+Pe\right]_{Q_t}\right]_P=m$，因此需要满足$\left|m+Pe\right|=\left|c_0+c_1\cdot s\right|\lt Q_t/2$</p>
-<p>事实上，这里的$e$可以根据加密参数设置一个上界比如$e_b>0$，需要满足$\left|m+Pe\right|\leq\left|m\right|+P\left|e\right|\lt P/2 +P\left|e\right|\lt Q_t/2$</p>
-<p>即$\left|e\right|\leq e_b\lt \frac{Q_t}{2P}-\frac{1}{2}$</p>
-<p>又$\left|e\right|=\left|e_s\cdot v+e_0+s\cdot e_1\right|$，所以$\Vert e\Vert_{\infty}\leq \Vert e_s\Vert_2 \Vert v\Vert_2+\Vert e_0\Vert_{\infty}+\Vert s\Vert_2 \Vert e_1\Vert_2$</p>
-<p>显然，$e_b$的大小应该和$s,e_s,v,e_0,e_1$的离散概率分布参数有关。</p>
-<p>注意，上面的分析是在解密前没有对密文进行运算的前提下展开的，下面分析如果密文参与运算如何解密分析：</p>
-<p>$(\left[c_0^*\right]_{Q_t},\left[c_1^*\right]_{Q_t})$，</p>
-<p>以加法为例，不妨假设密文$(\left[c_0^0\right]_{Q_t},\left[c_1^0\right]_{Q_t},e_b^0),(\left[c_0^1\right]_{Q_t},\left[c_1^1\right]_{Q_t},e_b^1)$进行加法运算得到
-</p>
-$$
+$$<p>我们需要确保$\left[\left[m+Pe\right]_{Q_t}\right]_P=m$，因此需要满足$\left|m+Pe\right|=\left|c_0+c_1\cdot s\right|\lt Q_t/2$</p><p>事实上，这里的$e$可以根据加密参数设置一个上界比如$e_b>0$，需要满足$\left|m+Pe\right|\leq\left|m\right|+P\left|e\right|\lt P/2 +P\left|e\right|\lt Q_t/2$</p><p>即$\left|e\right|\leq e_b\lt \frac{Q_t}{2P}-\frac{1}{2}$</p><p>又$\left|e\right|=\left|e_s\cdot v+e_0+s\cdot e_1\right|$，所以$\Vert e\Vert_{\infty}\leq \Vert e_s\Vert_2 \Vert v\Vert_2+\Vert e_0\Vert_{\infty}+\Vert s\Vert_2 \Vert e_1\Vert_2$</p><p>显然，$e_b$的大小应该和$s,e_s,v,e_0,e_1$的离散概率分布参数有关。</p><p>注意，上面的分析是在解密前没有对密文进行运算的前提下展开的，下面分析如果密文参与运算如何解密分析：</p><p>$(\left[c_0^*\right]_{Q_t},\left[c_1^*\right]_{Q_t})$，</p><p>以加法为例，不妨假设密文$(\left[c_0^0\right]_{Q_t},\left[c_1^0\right]_{Q_t},e_b^0),(\left[c_0^1\right]_{Q_t},\left[c_1^1\right]_{Q_t},e_b^1)$进行加法运算得到</p>$$
 \left(c_0^*=\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t},c_1^*=\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right)\\
 \left(\left[c_0^*\right]_{Q_t}=\left[\left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}\right]_{Q_t},\left[c_1^*\right]_{Q_t}=\left[\left[c_1^0\right]_{Q_t}+\left[c_1^1\right]_{Q_t}\right]_{Q_t}\right)\\
 c_0^0+c_1^0\cdot s = m^0+Pe^0,\left|e^0\right|\leq e_b^0\\
@@ -457,22 +49,7 @@ c_0^*+c_1^*\cdot s = \left[c_0^0\right]_{Q_t}+\left[c_0^1\right]_{Q_t}+\left[c_1
 \left[\left[c_0^*\right]_{Q_t}+\left[c_1^*\right]_{Q_t}\cdot s\right]_{Q_t}=
 \left[\left[c_0^0+c_0^1\right]_{Q_t}+\left[c_1^0+c_1^1\right]_{Q_t}\cdot s\right]_{Q_t}
 =\left[c_0^0+c_0^1+(c_1^0+c_1^1)\cdot s\right]_{Q_t}=\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}
-$$<p>
-我们显然期待$\left[\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}\right]_P=\left[m^0+m^1\right]_P$</p>
-<p>由前面的分析，可知，需要保证$\left|e^0+e^1\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$，只需要$e_b^0+e_b^1\lt \frac{Q_t}{2P}-\frac{1}{2}$即可。</p>
-<p>这也是为什么经常说加法的噪声是累加的。</p>
-<p>推广：</p>
-<p>$\left[\left[f\left(m^0,m^1,\dots,m^k\right)+Pg\left(e^0,e^1,\dots,e^k\right)\right]_{Q_t}\right]_P=\left[f\left(m^0,m^1,\dots,m^k\right)\right]_P$</p>
-<p>成立的条件是$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$</p>
-<p>通过各种不等式放缩，一般可以得到$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\leq h(e_b^0,e_b^1,\dots,e_b^k)\lt \frac{Q_t}{2P}-\frac{1}{2}$</p>
-<p>模数切换成立的条件是解密后对应的明文相同，因此可以对应三个充分条件：</p>
-<ul>
-<li>(1) $c_0'=\text{Scale}(c_0),\;c_1'=\text{Scale}(c_1)$</li>
-<li>(2) $Q_t\equiv Q_{t'}\equiv 1(\text{mod}\; P)$</li>
-<li>(3) $\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</li>
-</ul>
-<p>证明：</p>
-$$
+$$<p>我们显然期待$\left[\left[(m^0+m^1)+P(e^0+e^1)\right]_{Q_t}\right]_P=\left[m^0+m^1\right]_P$</p><p>由前面的分析，可知，需要保证$\left|e^0+e^1\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$，只需要$e_b^0+e_b^1\lt \frac{Q_t}{2P}-\frac{1}{2}$即可。</p><p>这也是为什么经常说加法的噪声是累加的。</p><p>推广：</p><p>$\left[\left[f\left(m^0,m^1,\dots,m^k\right)+Pg\left(e^0,e^1,\dots,e^k\right)\right]_{Q_t}\right]_P=\left[f\left(m^0,m^1,\dots,m^k\right)\right]_P$</p><p>成立的条件是$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\lt \frac{Q_t}{2P}-\frac{1}{2}$</p><p>通过各种不等式放缩，一般可以得到$\left|g\left(e^0,e^1,\dots,e^k\right)\right|\leq h(e_b^0,e_b^1,\dots,e_b^k)\lt \frac{Q_t}{2P}-\frac{1}{2}$</p><p>模数切换成立的条件是解密后对应的明文相同，因此可以对应三个充分条件：</p><ul><li>(1) $c_0'=\text{Scale}(c_0),\;c_1'=\text{Scale}(c_1)$</li><li>(2) $Q_t\equiv Q_{t'}\equiv 1(\text{mod}\; P)$</li><li>(3) $\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</li></ul><p>证明：</p>$$
 \begin{aligned}
 c_0[j]+(c_1\cdot s)[j]&=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
 c_0'[j]+(c_1'\cdot s)[j]&=M+k[j]Q_t+r[j]P\\
@@ -481,10 +58,7 @@ M+k[j]Q_t+r[j]P&=M'+k'[j]Q_{t'}\\
 M+k[j]Q_t+r[j]P&=M'+k'[j]Q_{t'}(\text{mod}\;P)\\
 M+k[j]&\equiv M'+k'[j](\text{mod}\;P)\\
 \end{aligned}
-$$<p>显然只需要说明$k[j]=k'[j]$，即可得到$M\equiv M'(\text{mod}\;P)$，因此对应明文相同。</p>
-<p>证明$k=k'$等价于证明当$k=k'$时有$\left|M'\right|\lt Q_{t'/2}$成立即$\left|c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}\right|\lt Q_{t'}/2$</p>
-<p>直接代入验证，令 $M^*[j]=c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}$，则</p>
-$$
+$$<p>显然只需要说明$k[j]=k'[j]$，即可得到$M\equiv M'(\text{mod}\;P)$，因此对应明文相同。</p><p>证明$k=k'$等价于证明当$k=k'$时有$\left|M'\right|\lt Q_{t'/2}$成立即$\left|c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}\right|\lt Q_{t'}/2$</p><p>直接代入验证，令 $M^*[j]=c_0'[j]+(c_1'\cdot s)[j]-k[j]Q_{t'}$，则</p>$$
 \begin{aligned}
 M^*[j]&=c_0'[j]-Q_{t'}c_0[j]/Q_t+Q_{t'}c_0[j]/Q_t+(c_1'\cdot s)[j]+(Q_{t'}c_1/Q_t\cdot s)[j]-(Q_{t'}c_1/Q_t\cdot s)[j]-k[j]Q_{t'}\\
 &=(-k[j]Q_{t'}+Q_{t'}c_0[j]/Q_t+(Q_{t'}c_1/Q_t\cdot s)[j])\\
@@ -494,404 +68,65 @@ M^*[j]&=c_0'[j]-Q_{t'}c_0[j]/Q_t+Q_{t'}c_0[j]/Q_t+(c_1'\cdot s)[j]+(Q_{t'}c_1/Q_
 &+c_0'[j]-Q_{t'}c_0[j]/Q_t\\
 &+((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]
 \end{aligned}
-$$<p>只需要说明此时的$\left|M^*[j]\right|\lt Q_{t'}/2 $即$M^*=M'$。</p>
-<p>多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$</p>
-<p>所以$\left|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1'-Q_{t'}c_1/Q_t)\Vert_2\Vert s\Vert_2$</p>
-<p>因为$\left|c_i'[j]-Q_{t'}c_i[j]/Q_t)\right|\leq P/2$，所以$||(c_i'-Q_{t'}c_i/Q_t)||_2\leq P\sqrt{N}/2$</p>
-<p>因此</p>
-$$
+$$<p>只需要说明此时的$\left|M^*[j]\right|\lt Q_{t'}/2 $即$M^*=M'$。</p><p>多项式乘法的系数上界可以由柯西-施瓦茨不等式确定，$\left|(c\cdot s)[j]\right|\leq \Vert c\Vert_2\Vert s\Vert_2$</p><p>所以$\left|((c_1'-Q_{t'}c_1/Q_t)\cdot s)[j]\right|\leq \Vert(c_1'-Q_{t'}c_1/Q_t)\Vert_2\Vert s\Vert_2$</p><p>因为$\left|c_i'[j]-Q_{t'}c_i[j]/Q_t)\right|\leq P/2$，所以$||(c_i'-Q_{t'}c_i/Q_t)||_2\leq P\sqrt{N}/2$</p><p>因此</p>$$
 \begin{aligned}
 \left|M^*[j]\right|&\leq \frac{Q_{t'}}{Q_t}\left|M[j]\right|+P/2+P\sqrt{N}\Vert s\Vert_2/2
 \end{aligned}
-$$<p>显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t'}/2$的，此时$M^*=M'$。注意到，如果$\left|M^*[j]\right|\lt Q_{t'}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。</p>
-<p>因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$即可，这就是条件(3)。</p>
-<p>证毕。</p>
-<ul>
-<li>
-<p>噪声</p>
-$$
-  \begin{aligned}
-  e'&=\frac{M'-m}{P}\\&=\frac{Q_{t'}M[j]/Q_t+(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)-m}{P}\\
-  &=\frac{Q_{t'}}{Q_t}\frac{M[j]-m}{P}+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\\
-  &=\frac{Q_{t'}}{Q_t}e+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}
-  \end{aligned}
-  $$$$
-  \begin{aligned}
-  \left|e'\right|&\leq \left|\frac{Q_{t'}}{Q_t}e\right|+\left|\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}\right|+\left|(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\right| \\ 
-  &\leq \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{1}{2}+\frac{\sqrt{N}\Vert s\Vert_2}{2}+1-\frac{Q_{t'}}{Q_t}
-  \\
-  &=\frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}+\frac{3}{2}-\frac{Q_{t'}}{Q_t}
-  \\
-  &\approx \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}
-  \\
-  &\leq \frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}
-  \end{aligned}
-  $$<p>所以$e_b'=\frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}$。</p>
-</li>
-<li>
-<p>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</p>
-</li>
-<li>
-<p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</p>
-</li>
-</ul>
-<h2 id="拓展1">拓展1
-</h2><p>我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。</p>
-<ul>
-<li>
-<p><strong>Scale_1<a class="link" href="#ref-HElib20" ><sup>2</sup></a></strong></p>
-<p>令$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，$Q_td_i\equiv b_i(\text{mod}\;P),\left|d_i\right|\leq P/2$，则
-</p>
-$$
-  c'_i=a_i+d_i
-  $$</li>
-<li>
-<p>新的公钥加解密操作如下：</p>
-</li>
-</ul>
-<p>（1）加密</p>
-<p>令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$</p>
-$$
+$$<p>显然，如果控制$\left|M[j]\right|$和$\Vert s\Vert_2$的上界不太大，是可以做到$\left|M^*[j]\right|\lt Q_{t'}/2$的，此时$M^*=M'$。注意到，如果$\left|M^*[j]\right|\lt Q_{t'}/2$，则必须要求$\left|M[j]\right|\lt Q_t/2$，这是必然的。</p><p>因为$\left|M[j]\right|\lt P/2 +Pe_b$，所以只需要$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+P/2+P\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$即可，这就是条件(3)。</p><p>证毕。</p><ul><li><p>噪声</p>$$
+\begin{aligned}
+e'&=\frac{M'-m}{P}\\&=\frac{Q_{t'}M[j]/Q_t+(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)-m}{P}\\
+&=\frac{Q_{t'}}{Q_t}\frac{M[j]-m}{P}+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\\
+&=\frac{Q_{t'}}{Q_t}e+\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}+(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}
+\end{aligned}
+$$$$
+\begin{aligned}
+\left|e'\right|&\leq \left|\frac{Q_{t'}}{Q_t}e\right|+\left|\frac{(c_0'-Q_{t'}c_0/Q_t)+\left(\left(c_1'-Q_{t'}c_1/Q_t\right)\cdot s\right)}{P}\right|+\left|(\frac{Q_{t'}}{Q_t}-1)\frac{m}{P}\right| \\
+&\leq \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{1}{2}+\frac{\sqrt{N}\Vert s\Vert_2}{2}+1-\frac{Q_{t'}}{Q_t}
+\\
+&=\frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}+\frac{3}{2}-\frac{Q_{t'}}{Q_t}
+\\
+&\approx \frac{Q_{t'}}{Q_t}\left|e\right|+\frac{\sqrt{N}\Vert s\Vert_2}{2}
+\\
+&\leq \frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}
+\end{aligned}
+$$<p>所以$e_b'=\frac{Q_{t'}}{Q_t}e_b+\frac{\sqrt{N}\Vert s\Vert_2}{2}$。</p></li><li><p>如何设置噪声和私钥的上界是核心问题，太大了会导致支持的级别变少。当然此时安全性也会发生变化。</p></li><li><p>还有我这里是逐个元素进行绝对值判断，也可以从向量的角度进行范数分析，比如无穷范数/欧几里得范数/嵌入范数等等。</p></li></ul><h2 id=拓展1>拓展1</h2><p>我们不再限制$Q_t\equiv 1(\text{mod}\;P)$，只要求$\text{gcd}(Q_t,P)=1$。</p><ul><li><p><strong>Scale_1<a class=link href=#ref-HElib20><sup>2</sup></a></strong></p><p>令$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，$Q_td_i\equiv b_i(\text{mod}\;P),\left|d_i\right|\leq P/2$，则</p>$$
+c'_i=a_i+d_i
+$$</li><li><p>新的公钥加解密操作如下：</p></li></ul><p>（1）加密</p><p>令$k_t =\left[Q_t\right]_P,\hat{m}=\left[m\cdot k_t\right]_P$</p>$$
 b=a\cdot s+P\cdot e_s\\
 c_0=b\cdot v+P\cdot e_0+\hat{m}\cdot Q_t\\
 c_1=-a\cdot v+P\cdot e_1
-$$<p>（2）解密</p>
-$$
+$$<p>（2）解密</p>$$
 \hat{m}=\left[\left[c_0+c_1\cdot s\right]_{Q_t}\right]_P\\
 m=\left[\hat{m}\cdot k_t^{-1}\right]_P
-$$<p>重写上述证明如下：</p>
-$$
+$$<p>重写上述证明如下：</p>$$
 \begin{aligned}
 c_0[j]+(c_1\cdot s)[j]&=M+k[j]Q_t,\left|M\right|\lt Q_t/2\\
 c_0'[j]+(c_1'\cdot s)[j]&=M'+k'[j]Q_{t'},\left|M'\right|\lt Q_{t'}/2\\
 \end{aligned}
-$$<p>此时我们不需要证明$M\equiv M'(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M'\cdot Q_{t'}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t'}\equiv M'\cdot Q_t(\text{mod}\;P)$。也就是要验证</p>
-$$
+$$<p>此时我们不需要证明$M\equiv M'(\text{mod}\;P)$，而是要证明$M\cdot Q_t^{-1}\equiv M'\cdot Q_{t'}^{-1}(\text{mod}\;P)$即$M\cdot Q_{t'}\equiv M'\cdot Q_t(\text{mod}\;P)$。也就是要验证</p>$$
 (c_0[j]+(c_1\cdot s)[j]-k[j]Q_t)Q_{t'}=(c_0'[j]+(c_1'\cdot s)[j]-k'[j]Q_{t'})Q_{t}(\text{mod}\;P)\\
 (c_0[j]+(c_1\cdot s)[j])Q_{t'}-k[j]Q_tQ_{t'}=(c_0'[j]+(c_1'\cdot s)[j])Q_{t}-k'[j]Q_tQ_{t'}(\text{mod}\;P)
-$$<p>由Scale_new操作可得，</p>
-$$
+$$<p>由Scale_new操作可得，</p>$$
 Q_{t'}c_i=Q_ta_i+b_i\\
 Q_{t'}c_i\equiv Q_ta_i+Q_td_i(\text{mod}\;P)\\
 Q_{t'}c_i\equiv Q_t(a_i+d_i)(\text{mod}\;P)\\
 Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)\\
-$$<p>所以和前面的证明类似，我们只需要说明$k[j]=k'[j]$即可。</p>
-<p>类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。</p>
-$$
+$$<p>所以和前面的证明类似，我们只需要说明$k[j]=k'[j]$即可。</p><p>类似的，还是带入$k$计算$M^*$，结果和前面一样，噪声分析时的唯一一点区别在于：$\left|c_0'[j]-Q_{t'}c_0[j]/Q_t)\right|\leq P/2$这个上界不严格成立了，需要重新估计。</p>$$
 c_0'[j]-Q_{t'}c_0[j]/Q_t=a_0+d_0-Q_{t'}c_0/Q_t=d_0-b_0/Q_t
-$$<p>因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以</p>
-$$
+$$<p>因为$\left|d_0\right|\leq P/2,\left|b_0/Q_t\right|\leq 1/2$，所以</p>$$
 \left|d_0-b_0/Q_t\right|\leq \left|d_0\right|+\left|b_0/Q_t\right|\leq \frac{P+1}{2}
-$$<p>相当于原来的上界增加1/2，这个几乎可以看做没有增加了。</p>
-<p>条件(3)也可以更新为$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+(P+1)\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</p>
-<p>总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！</p>
-<p>当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。</p>
-<h2 id="拓展2">拓展2
-</h2><p>拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t'}|Q_t, t'\lt t$。设$R=Q_t/Q_{t'}$</p>
-<p>我们想保证$Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)$，一个想法是：</p>
-<p>令$Q_tc_i'=Q_{t'}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。</p>
-<p>显然，此时有$c_i'=\frac{Q_{t'}(c_i+r_iP)}{Q_t}$。</p>
-<p>令$Q_{t'}|Q_t$，则$c_i'=\frac{c_i+r_iP}{R}$</p>
-<p>所以$r_iP\equiv -c_i(\text{mod}\;R)$</p>
-<p>因为$\text{gcd}(P,R)=1$，令$r_i=-c_iP^{-1}(\text{mod}\;R)$。</p>
-<p>所以新的scale是</p>
-<ul>
-<li>
-<p><strong>Scale_2</strong><a class="link" href="#ref-KPZ22" ><sup>3</sup></a></p>
-$$
-  c_i'=\frac{c_i+\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}
-  $$</li>
-</ul>
-<p>类似的，有$\left|c_i'-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$</p>
-<h2 id="总结">总结
-</h2><p>这是目前看到的三种实现BGV mod-switch的方法，三种方法既有相同之处又有各自的特点，应该根据参数选取，性能，噪声等等指标来权衡使用哪一种方式。注意：拓展2和拓展3是可以一起使用的。</p>
-<p>补充：在BGV方案中，私钥$s$的系数属于$\{0,1,-1\}$，并且规定了汉明重量h即非零元素个数。我们用$w(s)$表示。显然有:
-</p>
-$$
+$$<p>相当于原来的上界增加1/2，这个几乎可以看做没有增加了。</p><p>条件(3)也可以更新为$\frac{Q_{t'}}{Q_t}\left(P/2+Pe_b\right)+\frac{P+1}{2}+(P+1)\sqrt{N}\Vert s\Vert_2/2\leq Q_{t'}/2$</p><p>总的来说，用几乎没有增加的上界来放松对$Q_t$的约束，这个改变是非常成功的！！！</p><p>当然还有其他的代价，比如需要存储$Q_t(\text{mod}\;P)$和$Q_t^{-1}(\text{mod}\;P)$且加解密都增加额外的乘法操作。</p><h2 id=拓展2>拓展2</h2><p>拓展1的$Q_t$足够放松了，但是存在一个缺陷，$Q_{t'}c_i=Q_ta_i+b_i,\left|b_i\right|\leq Q_t/2$，这里计算$a_i,b_i$是比较浪费时间的，因此我们对$Q_t$添加·一个约束，令$Q_{t'}|Q_t, t'\lt t$。设$R=Q_t/Q_{t'}$</p><p>我们想保证$Q_{t'}c_i\equiv Q_tc_i'(\text{mod}\;P)$，一个想法是：</p><p>令$Q_tc_i'=Q_{t'}(c_i+r_iP)$，这个$r_i$的取值目前还没有确定。</p><p>显然，此时有$c_i'=\frac{Q_{t'}(c_i+r_iP)}{Q_t}$。</p><p>令$Q_{t'}|Q_t$，则$c_i'=\frac{c_i+r_iP}{R}$</p><p>所以$r_iP\equiv -c_i(\text{mod}\;R)$</p><p>因为$\text{gcd}(P,R)=1$，令$r_i=-c_iP^{-1}(\text{mod}\;R)$。</p><p>所以新的scale是</p><ul><li><p><strong>Scale_2</strong><a class=link href=#ref-KPZ22><sup>3</sup></a></p>$$
+c_i'=\frac{c_i+\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}
+$$</li></ul><p>类似的，有$\left|c_i'-\frac{c_i}{R}\right|=\left|\frac{\left(-c_iP^{-1}\left(\text{mod}\;R\right)\right)P}{R}\right|\leq P/2$</p><h2 id=总结>总结</h2><p>这是目前看到的三种实现BGV mod-switch的方法，三种方法既有相同之处又有各自的特点，应该根据参数选取，性能，噪声等等指标来权衡使用哪一种方式。注意：拓展2和拓展3是可以一起使用的。</p><p>补充：在BGV方案中，私钥$s$的系数属于$\{0,1,-1\}$，并且规定了汉明重量h即非零元素个数。我们用$w(s)$表示。显然有:</p>$$
 \Vert s\Vert_2=\sqrt{w(s)}
-$$<h2 id="参考">参考
-</h2><div id="ref-BGV11"></div>
-- [1] [BGV11](https://eprint.iacr.org/2011/277.pdf)
-<div id="ref-HElib20"></div>
-- [2] [HElib20](https://eprint.iacr.org/2020/1481.pdf)
-<div id="ref-KPZ22"></div> 
-- [3] [KPZ22](https://eprint.iacr.org/2021/204.pdf)
-</section>
-
-
-    <footer class="article-footer">
-    
-    <section class="article-tags">
-        
-            <a href="/tags/bgv/">BGV</a>
-        
-            <a href="/tags/scale/">Scale</a>
-        
-            <a href="/tags/mod-switch/">Mod Switch</a>
-        
-    </section>
-
-
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
-    </footer>
-
-
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-	const mainArticleElement = document.querySelector(".main-article");
-        renderMathInElement(mainArticleElement, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
-
-    
-</article>
-
-    
-
-    
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/key-switch-bgv/">
-        
-        
-            <div class="article-image">
-                <img src="/p/key-switch-bgv/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Key Switch (BGV)"
-                        
-                        data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Key Switch (BGV)</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 快速傅里叶变换"
-                        
-                        data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">快速傅里叶变换</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/">
-        
-        
-            <div class="article-image">
-                <img src="/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 范数不等式"
-                        
-                        data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">范数不等式</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
-
-     
-    
-        
-    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
-<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-        --waline-font-size: var(--article-font-size);
-    }
-    .waline-container .wl-count {
-        color: var(--card-text-color-main);
-    }
-</style><script>
-    
-    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili@1.0.6"],"locale":{"admin":"博主","placeholder":"有什么新点子？🎉（上方留下邮箱可以收到通知哦）"},"requiredMeta":["name","email","url"]});
-</script>
-
-    
-
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy;
-        
-            2025 -
-        
-        2026 2025-皮卡丘的守护神
-    </section>
-</footer>
-
-
-    
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
-            >
-
-            </main>
-        </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.38fc777524febcd98fc30c5c7330fda1e205905370b11c0989aa187800f23411.js" defer></script><script type="text/javascript" src="/ts/custom.f4a304e4017c51f671eaa6f0134d22e8c756366acf113a4f7d9eb11b296990b9.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
-
-    </body>
-</html>
+$$<h2 id=参考>参考</h2><div id=ref-BGV11></div>- [1] [BGV11](https://eprint.iacr.org/2011/277.pdf)<div id=ref-HElib20></div>- [2] [HElib20](https://eprint.iacr.org/2020/1481.pdf)<div id=ref-KPZ22></div>- [3] [KPZ22](https://eprint.iacr.org/2021/204.pdf)</section><footer class=article-footer><section class=article-tags><a href=/tags/bgv/>BGV</a>
+<a href=/tags/scale/>Scale</a>
+<a href=/tags/mod-switch/>Mod Switch</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".main-article");renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})</script></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/key-switch-bgv/><div class=article-image><img src=/p/key-switch-bgv/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png width=250 height=150 loading=lazy alt="Featured image of post Key Switch (BGV)" data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA=="></div><div class=article-details><h2 class=article-title>Key Switch (BGV)</h2></div></a></article><article class=has-image><a href=/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/><div class=article-image><img src=/p/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png width=250 height=150 loading=lazy alt="Featured image of post 快速傅里叶变换" data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA=="></div><div class=article-details><h2 class=article-title>快速傅里叶变换</h2></div></a></article><article class=has-image><a href=/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/><div class=article-image><img src=/p/%E8%8C%83%E6%95%B0%E4%B8%8D%E7%AD%89%E5%BC%8F/pkq.a7b2d49a065b7196530d153d00ca4890_hu_a977c3fa16d1789f.png width=250 height=150 loading=lazy alt="Featured image of post 范数不等式" data-hash="md5-p7LUmgZbcZZTDRU9AMpIkA=="></div><div class=article-details><h2 class=article-title>范数不等式</h2></div></a></article></div></div></aside><script src=//unpkg.com/@waline/client@v2/dist/waline.js></script><link href=//unpkg.com/@waline/client@v2/dist/waline.css rel=stylesheet><div id=waline class=waline-container></div><style>.waline-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding);--waline-font-size:var(--article-font-size)}.waline-container .wl-count{color:var(--card-text-color-main)}</style><script>Waline.init({dark:'html[data-scheme="dark"]',el:"#waline",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili@1.0.6"],locale:{admin:"博主",placeholder:"有什么新点子？🎉（上方留下邮箱可以收到通知哦）"},requiredMeta:["name","email","url"]})</script><footer class=site-footer><section class=copyright>&copy;
+2025 -
+2026 2025-皮卡丘的守护神</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.38fc777524febcd98fc30c5c7330fda1e205905370b11c0989aa187800f23411.js defer></script><script type=text/javascript src=/ts/custom.8d2ee4ad7c31f1d977082ea328f852e24e84bb42dbf46e5f6759d2df17599685.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
